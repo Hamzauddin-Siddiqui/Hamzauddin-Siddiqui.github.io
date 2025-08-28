@@ -71,7 +71,13 @@ Welcome to my portfolio! I'm a data analyst with expertise in SQL, Python, Table
   <p><strong>📍 Location:</strong> Magdeburg, Germany</p>
   <p><strong>🕒 Timezone:</strong> Central European Time (CET)</p>
 </div>
+## 📄 My Resume
 
+<p style="text-align: center; margin: 2rem 0;">
+  <a href="./assets/documents/Hamzauddin_Siddiqui_CV.pdf" target="_blank" class="btn">
+    📄 View/Download My CV
+  </a>
+</p>
 <p style="text-align: center; margin-top: 2rem;">
   <a href="./contact" class="btn">Get In Touch</a>
   <a href="./about" class="btn" style="margin-left: 1rem;">Learn More About Me</a>
