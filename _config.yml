@@ -41,3 +41,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor/
+# Theme settings
+minima:
+  skin: auto
