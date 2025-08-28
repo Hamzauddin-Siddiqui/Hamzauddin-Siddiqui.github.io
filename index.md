@@ -5,9 +5,14 @@ description: "Data Analyst specializing in Operations Research, Business Analyti
 ---
 
 <div class="hero-section">
-  <h1>Hamzauddin Siddiqui</h1>
-  <h2>Data Analyst | Business Intelligence Specialist | Supply Chain Analytics</h2>
-  <p>Transforming data into actionable insights for operational excellence</p>
+  <div class="profile-section">
+    <img src="./23 Hamza.jpg" alt="Hamzauddin Siddiqui" class="profile-image">
+    <div>
+      <h1>Hamzauddin Siddiqui</h1>
+      <h2>Data Analyst | Business Intelligence Specialist | Supply Chain Analytics</h2>
+      <p>Transforming data into actionable insights for operational excellence</p>
+    </div>
+  </div>
 </div>
 
 ## 👨‍💼 About Me
