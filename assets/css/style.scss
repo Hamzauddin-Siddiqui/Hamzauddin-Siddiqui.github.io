@@ -1,27 +1,61 @@
 ---
 ---
 
-@import "minima";
+@import "minima/skins/{{ site.minima.skin | default: 'auto' }}";
+@import "minima/initialize";
 
-// Custom variables
-$brand-color: #2563eb;
-$text-color: #374151;
-$background-color: #ffffff;
-$grey-color-light: #f9fafb;
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1a1a1a;
+    --text-color: #e5e5e5;
+    --brand-color: #60a5fa;
+    --grey-color-light: #2d2d2d;
+    --border-color: #404040;
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .site-header {
+    background-color: var(--background-color);
+    border-bottom: 2px solid var(--brand-color);
+  }
+  
+  .hero-section {
+    background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%);
+    color: var(--text-color);
+  }
+  
+  .skill-card, .project-card, .contact-info {
+    background-color: var(--grey-color-light);
+    border-color: var(--border-color);
+  }
+}
 
-// Custom styles
+// Light mode (default)
+:root {
+  --background-color: #ffffff;
+  --text-color: #374151;
+  --brand-color: #2563eb;
+  --grey-color-light: #f9fafb;
+  --border-color: #e5e7eb;
+}
+
+// Rest of your existing styles using CSS variables
 .site-header {
-  border-bottom: 2px solid $brand-color;
+  border-bottom: 2px solid var(--brand-color);
   min-height: 60px;
 }
 
 .site-title {
   font-size: 24px !important;
   font-weight: 600;
-  color: $brand-color !important;
+  color: var(--brand-color) !important;
 }
 
-// Homepage hero section
 .hero-section {
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   padding: 3rem 0;
@@ -30,7 +64,6 @@ $grey-color-light: #f9fafb;
   text-align: center;
 }
 
-// Skills section styling
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -39,15 +72,14 @@ $grey-color-light: #f9fafb;
 }
 
 .skill-card {
-  background: $grey-color-light;
+  background: var(--grey-color-light);
   padding: 1.5rem;
   border-radius: 8px;
-  border-left: 4px solid $brand-color;
+  border-left: 4px solid var(--brand-color);
 }
 
-// Project cards
 .project-card {
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 1.5rem;
   margin-bottom: 2rem;
@@ -58,15 +90,29 @@ $grey-color-light: #f9fafb;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-// Contact page styling
 .contact-info {
-  background: $grey-color-light;
+  background: var(--grey-color-light);
   padding: 2rem;
   border-radius: 8px;
   margin: 2rem 0;
 }
 
-// Responsive improvements
+// Profile image styling
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--brand-color);
+}
+
 @media screen and (max-width: 768px) {
   .hero-section {
     padding: 2rem 1rem;
@@ -75,29 +121,39 @@ $grey-color-light: #f9fafb;
   .skills-grid {
     grid-template-columns: 1fr;
   }
-}
-
-// Professional color scheme
-a {
-  color: $brand-color;
   
-  &:hover {
-    color: darken($brand-color, 15%);
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .profile-image {
+    width: 120px;
+    height: 120px;
   }
 }
 
-// Button styling
+a {
+  color: var(--brand-color);
+  
+  &:hover {
+    color: var(--brand-color);
+    filter: brightness(1.2);
+  }
+}
+
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background-color: $brand-color;
+  background-color: var(--brand-color);
   color: white;
   text-decoration: none;
   border-radius: 6px;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   
   &:hover {
-    background-color: darken($brand-color, 10%);
+    background-color: var(--brand-color);
+    filter: brightness(1.1);
     color: white;
   }
 }
