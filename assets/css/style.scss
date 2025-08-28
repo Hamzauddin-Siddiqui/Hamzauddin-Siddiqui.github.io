@@ -157,3 +157,20 @@ a {
     color: white;
   }
 }
+.site-title {
+  font-size: 24px !important;
+  font-weight: 600;
+  color: var(--brand-color) !important;
+  text-decoration: none;
+  cursor: default;
+  
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.site-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
