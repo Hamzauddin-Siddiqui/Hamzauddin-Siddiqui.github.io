@@ -24,9 +24,21 @@ plugins:
 
 # Navigation menu
 header_pages:
+  - index.md
   - about.md
   - projects.md
   - contact.md
+
+# Custom navigation labels
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "About" 
+    url: "/about/"
+  - title: "Projects"
+    url: "/projects/"
+  - title: "Contact"
+    url: "/contact/"
 
 # Social media (for theme)
 github_username: Hamzauddin-Siddiqui
