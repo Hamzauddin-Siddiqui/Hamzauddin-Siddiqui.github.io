@@ -4,14 +4,25 @@ title: "Hamzauddin Siddiqui - Data Analyst"
 description: "Data Analyst specializing in Operations Research, Business Analytics, and Supply Chain optimization"
 ---
 
+<script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
+
 <div class="hero-section">
-  <div class="profile-section">
-    <img src="./23 Hamza.jpg" alt="Hamzauddin Siddiqui" class="profile-image">
-    <div>
+  <div class="profile-header">
+    <div class="profile-text">
       <h1>Hamzauddin Siddiqui</h1>
       <h2>Data Analyst | Business Intelligence Specialist | Supply Chain Analytics</h2>
       <p>Transforming data into actionable insights for operational excellence</p>
+      
+      <div class="profile-links">
+        <a href="https://www.linkedin.com/in/hamzauddin-siddiqui-786180175" target="_blank" class="btn">
+          💼 LinkedIn
+        </a>
+        <a href="./assets/documents/Hamzauddin_Siddiqui_CV.pdf" target="_blank" class="btn btn-secondary">
+          📄 Download CV
+        </a>
+      </div>
     </div>
+    <img src="./assets/images/profile.jpg" alt="Hamzauddin Siddiqui" class="profile-image">
   </div>
 </div>
 
@@ -71,14 +82,8 @@ Welcome to my portfolio! I'm a data analyst with expertise in SQL, Python, Table
   <p><strong>📍 Location:</strong> Magdeburg, Germany</p>
   <p><strong>🕒 Timezone:</strong> Central European Time (CET)</p>
 </div>
-## 📄 My Resume
 
-<p style="text-align: center; margin: 2rem 0;">
-  <a href="./assets/documents/Hamzauddin_Siddiqui_CV.pdf" target="_blank" class="btn">
-    📄 View/Download My CV
-  </a>
-</p>
 <p style="text-align: center; margin-top: 2rem;">
   <a href="./contact" class="btn">Get In Touch</a>
-  <a href="./about" class="btn" style="margin-left: 1rem;">Learn More About Me</a>
+  <a href="./about" class="btn btn-secondary" style="margin-left: 1rem;">Learn More About Me</a>
 </p>
