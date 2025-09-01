@@ -1,0 +1,25 @@
+<header class="site-header" role="banner">
+  <div class="wrapper">
+    <div class="site-header-flex">
+      <div class="site-header-left">
+        <span class="site-title-static">{{ site.title | escape }}</span>
+      </div>
+      
+      <div class="site-header-right">
+        <button id="header-theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <span class="sun-icon">☀️</span>
+          <span class="moon-icon">🌙</span>
+        </button>
+        
+        <nav class="site-nav">
+          <div class="trigger">
+            <a class="page-link" href="{{ '/' | relative_url }}">Home</a>
+            <a class="page-link" href="{{ '/about/' | relative_url }}">About</a>
+            <a class="page-link" href="{{ '/projects/' | relative_url }}">Projects</a>
+            <a class="page-link" href="{{ '/contact/' | relative_url }}">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
