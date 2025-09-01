@@ -4,114 +4,6 @@ title: "Hamzauddin Siddiqui - Data Analyst"
 description: "Data Analyst specializing in Operations Research, Business Analytics, and Supply Chain optimization"
 ---
 
-<script>
-// Dark mode toggle with inline style backup (keeping the working solution)
-document.addEventListener('DOMContentLoaded', function() {
-    const toggleButton = document.getElementById('header-theme-toggle');
-    const body = document.body;
-    
-    if (!toggleButton) return;
-    
-    // Check system preference on load
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (prefersDark) {
-        applyDarkMode(true);
-    } else {
-        applyLightMode(true);
-    }
-    
-    // Toggle theme when button is clicked
-    toggleButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const isDark = body.classList.contains('dark-mode');
-        
-        if (isDark) {
-            applyLightMode();
-        } else {
-            applyDarkMode();
-        }
-    });
-    
-    function applyDarkMode(isInitial = false) {
-        body.classList.add('dark-mode');
-        
-        // Minimal inline styles for guaranteed dark mode
-        body.style.backgroundColor = '#1a1a1a';
-        body.style.color = '#e5e5e5';
-        
-        const header = document.querySelector('.site-header');
-        if (header) {
-            header.style.backgroundColor = '#1a1a1a';
-            header.style.borderBottomColor = '#404040';
-        }
-        
-        const textElements = document.querySelectorAll('h1, h2, h3, h4, p, li, span');
-        textElements.forEach(el => {
-            el.style.color = '#e5e5e5';
-        });
-        
-        const links = document.querySelectorAll('a:not(.btn)');
-        links.forEach(link => {
-            link.style.color = '#60a5fa';
-        });
-        
-        const navLinks = document.querySelectorAll('.page-link, .site-title-static');
-        navLinks.forEach(link => {
-            link.style.color = '#e5e5e5';
-        });
-        
-        updateToggleIcon(true);
-    }
-    
-    function applyLightMode(isInitial = false) {
-        body.classList.remove('dark-mode');
-        
-        // Minimal inline styles for guaranteed light mode
-        body.style.backgroundColor = '#ffffff';
-        body.style.color = '#374151';
-        
-        const header = document.querySelector('.site-header');
-        if (header) {
-            header.style.backgroundColor = '#ffffff';
-            header.style.borderBottomColor = '#e5e7eb';
-        }
-        
-        const textElements = document.querySelectorAll('h1, h2, h3, h4, p, li, span');
-        textElements.forEach(el => {
-            el.style.color = '#374151';
-        });
-        
-        const links = document.querySelectorAll('a:not(.btn)');
-        links.forEach(link => {
-            link.style.color = '#2563eb';
-        });
-        
-        const navLinks = document.querySelectorAll('.page-link, .site-title-static');
-        navLinks.forEach(link => {
-            link.style.color = '#374151';
-        });
-        
-        updateToggleIcon(false);
-    }
-    
-    function updateToggleIcon(isDark) {
-        const sunIcon = toggleButton.querySelector('.sun-icon');
-        const moonIcon = toggleButton.querySelector('.moon-icon');
-        
-        if (sunIcon && moonIcon) {
-            if (isDark) {
-                sunIcon.style.display = 'inline';
-                moonIcon.style.display = 'none';
-            } else {
-                sunIcon.style.display = 'none';
-                moonIcon.style.display = 'inline';
-            }
-        }
-    }
-});
-</script>
-
 <div class="profile-header">
   <div class="profile-text">
     <h1>Hamzauddin Siddiqui</h1>
@@ -120,10 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <div class="profile-links">
       <a href="https://www.linkedin.com/in/hamzauddin-siddiqui-786180175" target="_blank" class="btn">
-        💼 LinkedIn
+        LinkedIn
       </a>
       <a href="./assets/documents/Hamzauddin_Siddiqui_CV.pdf" target="_blank" class="btn btn-secondary">
-        📄 Download CV
+        Download CV
       </a>
     </div>
   </div>
@@ -160,9 +52,9 @@ Leading comprehensive analysis of performance metrics across multiple logistics 
 
 ## Currently
 
-- 🎓 MSc Operations Research & Business Analytics at Otto-von-Guericke University, Germany
-- 🌍 Erasmus Exchange at University of Ljubljana, Slovenia  
-- 💼 User Insights & Support at Bettermile (GLS eCom Lab)
+- MSc Operations Research & Business Analytics at Otto-von-Guericke University, Germany
+- Erasmus Exchange at University of Ljubljana, Slovenia  
+- User Insights & Support at Bettermile (GLS eCom Lab)
 
 ## Contact
 
