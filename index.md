@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (prefersDark) {
         body.classList.add('dark-mode');
         updateToggleIcon(true);
+    } else {
+        updateToggleIcon(false);
     }
     
     // Toggle theme when button is clicked
@@ -42,18 +44,23 @@ document.addEventListener('DOMContentLoaded', function() {
         const moonIcon = toggleButton.querySelector('.moon-icon');
         
         console.log('Updating icons - isDark:', isDark);
+        console.log('Sun icon found:', sunIcon);
+        console.log('Moon icon found:', moonIcon);
         
         if (sunIcon && moonIcon) {
+            // CORRECTED LOGIC:
+            // Light mode: show moon icon (to switch TO dark mode)
+            // Dark mode: show sun icon (to switch TO light mode)
             if (isDark) {
+                // In dark mode, show sun (to go back to light)
                 sunIcon.style.display = 'inline';
                 moonIcon.style.display = 'none';
-                toggleButton.style.background = '#1a1a1a';
-                toggleButton.style.color = 'white';
+                console.log('Dark mode: showing sun icon');
             } else {
+                // In light mode, show moon (to go to dark)
                 sunIcon.style.display = 'none';
                 moonIcon.style.display = 'inline';
-                toggleButton.style.background = 'white';
-                toggleButton.style.color = '#2563eb';
+                console.log('Light mode: showing moon icon');
             }
         }
     }
