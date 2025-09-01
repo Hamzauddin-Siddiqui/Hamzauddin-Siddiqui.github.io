@@ -13,50 +13,48 @@
   --header-bg: #ffffff;
 }
 
-// Force light mode when dark-mode class is NOT present
-body:not(.dark-mode) {
+// LIGHT MODE STYLES (default/fallback)
+body {
   background-color: #ffffff !important;
   color: #374151 !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body:not(.dark-mode) .site-header {
+.site-header {
   background-color: #ffffff !important;
   border-bottom: 2px solid #2563eb !important;
 }
 
-body:not(.dark-mode) .hero-section {
+.hero-section {
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
   color: #374151 !important;
 }
 
-body:not(.dark-mode) .skill-card,
-body:not(.dark-mode) .project-card,
-body:not(.dark-mode) .contact-info {
+.skill-card,
+.project-card,
+.contact-info {
   background-color: #f9fafb !important;
   border-color: #e5e7eb !important;
   color: #374151 !important;
 }
 
-body:not(.dark-mode) h1,
-body:not(.dark-mode) h2,
-body:not(.dark-mode) h3,
-body:not(.dark-mode) h4 {
+h1, h2, h3, h4 {
   color: #374151 !important;
 }
 
-body:not(.dark-mode) .page-link {
+.page-link {
   color: #374151 !important;
 }
 
-body:not(.dark-mode) a {
+a {
   color: #2563eb !important;
 }
 
-body:not(.dark-mode) .site-title-static {
+.site-title-static {
   color: #2563eb !important;
 }
 
-// Dark mode styles - only when .dark-mode class is present
+// DARK MODE STYLES - higher specificity with body.dark-mode
 body.dark-mode {
   --background-color: #1a1a1a;
   --text-color: #e5e5e5;
@@ -106,10 +104,19 @@ body.dark-mode a {
   color: #60a5fa !important;
 }
 
+body.dark-mode p {
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode li {
+  color: #e5e5e5 !important;
+}
+
 // Header styling
 .site-header {
   border-bottom: 2px solid var(--brand-color);
   min-height: 60px;
+  transition: all 0.3s ease;
 }
 
 .site-header-flex {
@@ -133,11 +140,13 @@ body.dark-mode a {
   font-size: 18px;
   font-weight: 600;
   cursor: default;
+  transition: color 0.3s ease;
 }
 
-// Theme toggle button
-.theme-toggle {
-  border: 2px solid var(--brand-color);
+// Theme toggle button - LIGHT MODE (default)
+#header-theme-toggle {
+  background: white !important;
+  border: 2px solid #2563eb !important;
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -147,10 +156,44 @@ body.dark-mode a {
   justify-content: center;
   font-size: 16px;
   transition: all 0.3s ease;
+  color: #2563eb !important;
 }
 
-.theme-toggle:hover {
+#header-theme-toggle:hover {
+  background-color: #2563eb !important;
+  color: white !important;
   transform: scale(1.1);
+}
+
+// Theme toggle button - DARK MODE
+body.dark-mode #header-theme-toggle {
+  background: #2d2d2d !important;
+  border: 2px solid #60a5fa !important;
+  color: #60a5fa !important;
+}
+
+body.dark-mode #header-theme-toggle:hover {
+  background-color: #60a5fa !important;
+  color: #1a1a1a !important;
+}
+
+// Icon display logic - CORRECTED
+// Light mode: show moon (to switch TO dark)
+#header-theme-toggle .moon-icon {
+  display: inline;
+}
+
+#header-theme-toggle .sun-icon {
+  display: none;
+}
+
+// Dark mode: show sun (to switch TO light)
+body.dark-mode #header-theme-toggle .moon-icon {
+  display: none;
+}
+
+body.dark-mode #header-theme-toggle .sun-icon {
+  display: inline;
 }
 
 // Navigation
@@ -162,6 +205,7 @@ body.dark-mode a {
   margin-left: 1rem;
   font-weight: 500;
   transition: color 0.3s ease;
+  text-decoration: none;
 }
 
 .page-link:hover {
@@ -173,6 +217,7 @@ body.dark-mode a {
   padding: 3rem 2rem;
   margin-bottom: 2rem;
   border-radius: 12px;
+  transition: all 0.3s ease;
 }
 
 .profile-header {
@@ -230,10 +275,15 @@ body.dark-mode a {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+body.dark-mode .project-card:hover {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
 .contact-info {
   padding: 2rem;
   border-radius: 8px;
   margin: 2rem 0;
+  transition: all 0.3s ease;
 }
 
 .btn {
@@ -265,6 +315,16 @@ body.dark-mode a {
   color: white;
 }
 
+body.dark-mode .btn-secondary {
+  color: #60a5fa;
+  border-color: #60a5fa;
+}
+
+body.dark-mode .btn-secondary:hover {
+  background-color: #60a5fa;
+  color: #1a1a1a;
+}
+
 // Mobile responsiveness
 @media screen and (max-width: 768px) {
   .site-header-flex {
@@ -276,13 +336,18 @@ body.dark-mode a {
     font-size: 16px;
   }
   
-  .theme-toggle {
+  #header-theme-toggle {
     width: 35px;
     height: 35px;
   }
   
   .site-nav {
     margin-left: 0.5rem;
+  }
+  
+  .page-link {
+    margin-left: 0.5rem;
+    font-size: 14px;
   }
   
   .hero-section {
@@ -306,57 +371,4 @@ body.dark-mode a {
   .profile-links {
     justify-content: center;
   }
-}
-// Header layout
-.site-header-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.site-header-left {
-  flex: 1;
-}
-
-.site-header-right {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.site-title-static {
-  font-size: 18px;
-  font-weight: 600;
-  cursor: default;
-}
-
-// Theme toggle in header
-#header-theme-toggle {
-  background: white;
-  border: 2px solid #2563eb;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  color: #2563eb;
-}
-
-#header-theme-toggle:hover {
-  background-color: #2563eb;
-  color: white;
-  transform: scale(1.1);
-}
-
-#header-theme-toggle .moon-icon {
-  display: inline;
-}
-
-#header-theme-toggle .sun-icon {
-  display: none;
 }
