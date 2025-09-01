@@ -5,7 +5,7 @@ description: "Data Analyst specializing in Operations Research, Business Analyti
 ---
 
 <script>
-// Dark mode toggle functionality
+// Robust dark mode toggle with inline style backup
 document.addEventListener('DOMContentLoaded', function() {
     const toggleButton = document.getElementById('header-theme-toggle');
     const body = document.body;
@@ -21,10 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check system preference on load
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (prefersDark) {
-        body.classList.add('dark-mode');
-        updateToggleIcon(true);
+        applyDarkMode(true);
     } else {
-        updateToggleIcon(false);
+        applyLightMode(true);
     }
     
     // Toggle theme when button is clicked
@@ -32,32 +31,147 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         console.log('Header toggle clicked - current classes:', body.className);
         
-        body.classList.toggle('dark-mode');
-        
         const isDark = body.classList.contains('dark-mode');
-        console.log('Dark mode now:', isDark);
-        updateToggleIcon(isDark);
+        
+        if (isDark) {
+            applyLightMode();
+        } else {
+            applyDarkMode();
+        }
     });
+    
+    function applyDarkMode(isInitial = false) {
+        body.classList.add('dark-mode');
+        console.log('Applying dark mode');
+        
+        // Force inline styles as backup
+        body.style.backgroundColor = '#1a1a1a';
+        body.style.color = '#e5e5e5';
+        
+        // Apply to header
+        const header = document.querySelector('.site-header');
+        if (header) {
+            header.style.backgroundColor = '#1a1a1a';
+            header.style.borderBottomColor = '#60a5fa';
+        }
+        
+        // Apply to hero section
+        const hero = document.querySelector('.hero-section');
+        if (hero) {
+            hero.style.background = 'linear-gradient(135deg, #2d2d2d 0%, #404040 100%)';
+            hero.style.color = '#e5e5e5';
+        }
+        
+        // Apply to cards
+        const cards = document.querySelectorAll('.skill-card, .project-card, .contact-info');
+        cards.forEach(card => {
+            card.style.backgroundColor = '#2d2d2d';
+            card.style.borderColor = '#404040';
+            card.style.color = '#e5e5e5';
+        });
+        
+        // Apply to text elements
+        const textElements = document.querySelectorAll('h1, h2, h3, h4, p, li');
+        textElements.forEach(el => {
+            el.style.color = '#e5e5e5';
+        });
+        
+        // Apply to links
+        const links = document.querySelectorAll('a:not(.btn)');
+        links.forEach(link => {
+            link.style.color = '#60a5fa';
+        });
+        
+        // Apply to navigation
+        const navLinks = document.querySelectorAll('.page-link, .site-title-static');
+        navLinks.forEach(link => {
+            link.style.color = '#e5e5e5';
+        });
+        
+        // Update toggle button
+        if (toggleButton) {
+            toggleButton.style.background = '#2d2d2d';
+            toggleButton.style.borderColor = '#60a5fa';
+            toggleButton.style.color = '#60a5fa';
+        }
+        
+        updateToggleIcon(true);
+        console.log('Dark mode applied with inline styles');
+    }
+    
+    function applyLightMode(isInitial = false) {
+        body.classList.remove('dark-mode');
+        console.log('Applying light mode');
+        
+        // Force inline styles as backup
+        body.style.backgroundColor = '#ffffff';
+        body.style.color = '#374151';
+        
+        // Apply to header
+        const header = document.querySelector('.site-header');
+        if (header) {
+            header.style.backgroundColor = '#ffffff';
+            header.style.borderBottomColor = '#2563eb';
+        }
+        
+        // Apply to hero section
+        const hero = document.querySelector('.hero-section');
+        if (hero) {
+            hero.style.background = 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)';
+            hero.style.color = '#374151';
+        }
+        
+        // Apply to cards
+        const cards = document.querySelectorAll('.skill-card, .project-card, .contact-info');
+        cards.forEach(card => {
+            card.style.backgroundColor = '#f9fafb';
+            card.style.borderColor = '#e5e7eb';
+            card.style.color = '#374151';
+        });
+        
+        // Apply to text elements
+        const textElements = document.querySelectorAll('h1, h2, h3, h4, p, li');
+        textElements.forEach(el => {
+            el.style.color = '#374151';
+        });
+        
+        // Apply to links
+        const links = document.querySelectorAll('a:not(.btn)');
+        links.forEach(link => {
+            link.style.color = '#2563eb';
+        });
+        
+        // Apply to navigation
+        const navLinks = document.querySelectorAll('.page-link, .site-title-static');
+        navLinks.forEach(link => {
+            link.style.color = '#374151';
+        });
+        
+        // Update toggle button
+        if (toggleButton) {
+            toggleButton.style.background = 'white';
+            toggleButton.style.borderColor = '#2563eb';
+            toggleButton.style.color = '#2563eb';
+        }
+        
+        updateToggleIcon(false);
+        console.log('Light mode applied with inline styles');
+    }
     
     function updateToggleIcon(isDark) {
         const sunIcon = toggleButton.querySelector('.sun-icon');
         const moonIcon = toggleButton.querySelector('.moon-icon');
         
         console.log('Updating icons - isDark:', isDark);
-        console.log('Sun icon found:', sunIcon);
-        console.log('Moon icon found:', moonIcon);
         
         if (sunIcon && moonIcon) {
-            // CORRECTED LOGIC:
-            // Light mode: show moon icon (to switch TO dark mode)
-            // Dark mode: show sun icon (to switch TO light mode)
             if (isDark) {
-                // In dark mode, show sun (to go back to light)
+                // Dark mode: show sun (to go back to light)
                 sunIcon.style.display = 'inline';
                 moonIcon.style.display = 'none';
                 console.log('Dark mode: showing sun icon');
             } else {
-                // In light mode, show moon (to go to dark)
+                // Light mode: show moon (to go to dark)
                 sunIcon.style.display = 'none';
                 moonIcon.style.display = 'inline';
                 console.log('Light mode: showing moon icon');
