@@ -4,52 +4,59 @@ title: "Hamzauddin Siddiqui - Data Analyst"
 description: "Data Analyst specializing in Operations Research, Business Analytics, and Supply Chain optimization"
 ---
 
-<div style="text-align: right; padding: 10px 0; margin-bottom: 20px;">
-  <button id="theme-toggle" class="theme-toggle" style="background: white; border: 2px solid #2563eb; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; font-size: 16px;">
-    <span class="sun-icon" style="display: none;">☀️</span>
-    <span class="moon-icon" style="display: inline;">🌙</span>
-  </button>
-</div>
-
 <script>
-// Dark mode toggle - inline version
+// Dark mode toggle functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const toggleButton = document.getElementById('theme-toggle');
+    const toggleButton = document.getElementById('header-theme-toggle');
     const body = document.body;
     
-    console.log('Script running...');
-    console.log('Button found:', toggleButton);
+    console.log('Script loaded');
+    console.log('Toggle button found:', toggleButton);
     
     if (!toggleButton) {
-        console.error('Toggle button not found!');
+        console.log('Header toggle button not found');
         return;
     }
     
-    // Toggle functionality
-    toggleButton.addEventListener('click', function() {
-        console.log('Button clicked!');
+    // Check system preference on load
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDark) {
+        body.classList.add('dark-mode');
+        updateToggleIcon(true);
+    }
+    
+    // Toggle theme when button is clicked
+    toggleButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        console.log('Header toggle clicked - current classes:', body.className);
         
         body.classList.toggle('dark-mode');
         
         const isDark = body.classList.contains('dark-mode');
-        console.log('Dark mode active:', isDark);
-        
-        // Update button appearance
+        console.log('Dark mode now:', isDark);
+        updateToggleIcon(isDark);
+    });
+    
+    function updateToggleIcon(isDark) {
         const sunIcon = toggleButton.querySelector('.sun-icon');
         const moonIcon = toggleButton.querySelector('.moon-icon');
         
-        if (isDark) {
-            sunIcon.style.display = 'inline';
-            moonIcon.style.display = 'none';
-            toggleButton.style.background = '#1a1a1a';
-            toggleButton.style.color = 'white';
-        } else {
-            sunIcon.style.display = 'none';
-            moonIcon.style.display = 'inline';
-            toggleButton.style.background = 'white';
-            toggleButton.style.color = '#2563eb';
+        console.log('Updating icons - isDark:', isDark);
+        
+        if (sunIcon && moonIcon) {
+            if (isDark) {
+                sunIcon.style.display = 'inline';
+                moonIcon.style.display = 'none';
+                toggleButton.style.background = '#1a1a1a';
+                toggleButton.style.color = 'white';
+            } else {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'inline';
+                toggleButton.style.background = 'white';
+                toggleButton.style.color = '#2563eb';
+            }
         }
-    });
+    }
 });
 </script>
 
