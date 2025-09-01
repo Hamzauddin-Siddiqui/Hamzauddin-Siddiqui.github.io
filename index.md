@@ -4,7 +4,54 @@ title: "Hamzauddin Siddiqui - Data Analyst"
 description: "Data Analyst specializing in Operations Research, Business Analytics, and Supply Chain optimization"
 ---
 
-<script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
+<div style="text-align: right; padding: 10px 0; margin-bottom: 20px;">
+  <button id="theme-toggle" class="theme-toggle" style="background: white; border: 2px solid #2563eb; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; font-size: 16px;">
+    <span class="sun-icon" style="display: none;">☀️</span>
+    <span class="moon-icon" style="display: inline;">🌙</span>
+  </button>
+</div>
+
+<script>
+// Dark mode toggle - inline version
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
+    
+    console.log('Script running...');
+    console.log('Button found:', toggleButton);
+    
+    if (!toggleButton) {
+        console.error('Toggle button not found!');
+        return;
+    }
+    
+    // Toggle functionality
+    toggleButton.addEventListener('click', function() {
+        console.log('Button clicked!');
+        
+        body.classList.toggle('dark-mode');
+        
+        const isDark = body.classList.contains('dark-mode');
+        console.log('Dark mode active:', isDark);
+        
+        // Update button appearance
+        const sunIcon = toggleButton.querySelector('.sun-icon');
+        const moonIcon = toggleButton.querySelector('.moon-icon');
+        
+        if (isDark) {
+            sunIcon.style.display = 'inline';
+            moonIcon.style.display = 'none';
+            toggleButton.style.background = '#1a1a1a';
+            toggleButton.style.color = 'white';
+        } else {
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'inline';
+            toggleButton.style.background = 'white';
+            toggleButton.style.color = '#2563eb';
+        }
+    });
+});
+</script>
 
 <div class="hero-section">
   <div class="profile-header">
