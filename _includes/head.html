@@ -12,40 +12,73 @@
     {% include google-analytics.html %}
   {% endif %}
   
-  <!-- Universal Dark Mode Script -->
+  <!-- Universal Dark Mode & Mobile Navigation Script -->
   <script>
-    // Universal dark mode toggle that works on all pages
     document.addEventListener('DOMContentLoaded', function() {
         const toggleButton = document.getElementById('header-theme-toggle');
+        const mobileToggle = document.querySelector('.mobile-nav-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
         const body = document.body;
         
-        if (!toggleButton) return;
-        
-        // Check system preference on load
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (prefersDark) {
-            applyDarkMode(true);
-        } else {
-            applyLightMode(true);
-        }
-        
-        // Toggle theme when button is clicked
-        toggleButton.addEventListener('click', function(e) {
-            e.preventDefault();
+        // Theme Management with Persistence
+        function initializeTheme() {
+            // Check for saved user preference first, then system preference
+            const savedTheme = localStorage.getItem('theme-preference');
+            let isDark = false;
             
-            const isDark = body.classList.contains('dark-mode');
+            if (savedTheme) {
+                // User has manually set a preference
+                isDark = savedTheme === 'dark';
+            } else {
+                // No saved preference, use system default
+                isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            }
             
             if (isDark) {
-                applyLightMode();
+                applyDarkMode(true);
             } else {
-                applyDarkMode();
+                applyLightMode(true);
             }
-        });
+        }
+        
+        // Theme toggle functionality
+        if (toggleButton) {
+            toggleButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const isDark = body.classList.contains('dark-mode');
+                
+                if (isDark) {
+                    applyLightMode();
+                    localStorage.setItem('theme-preference', 'light');
+                } else {
+                    applyDarkMode();
+                    localStorage.setItem('theme-preference', 'dark');
+                }
+            });
+        }
+        
+        // Mobile navigation toggle
+        if (mobileToggle && mobileNav) {
+            mobileToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                mobileNav.classList.toggle('active');
+                mobileToggle.classList.toggle('active');
+            });
+            
+            // Close mobile nav when clicking a link
+            const mobileLinks = mobileNav.querySelectorAll('.page-link');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileNav.classList.remove('active');
+                    mobileToggle.classList.remove('active');
+                });
+            });
+        }
         
         function applyDarkMode(isInitial = false) {
             body.classList.add('dark-mode');
             
-            // Force inline styles for guaranteed dark mode
             body.style.backgroundColor = '#1a1a1a';
             body.style.color = '#e5e5e5';
             
@@ -71,13 +104,11 @@
             });
             
             updateToggleIcon(true);
-            console.log('Dark mode applied');
         }
         
         function applyLightMode(isInitial = false) {
             body.classList.remove('dark-mode');
             
-            // Force inline styles for guaranteed light mode
             body.style.backgroundColor = '#ffffff';
             body.style.color = '#374151';
             
@@ -103,10 +134,11 @@
             });
             
             updateToggleIcon(false);
-            console.log('Light mode applied');
         }
         
         function updateToggleIcon(isDark) {
+            if (!toggleButton) return;
+            
             const sunIcon = toggleButton.querySelector('.sun-icon');
             const moonIcon = toggleButton.querySelector('.moon-icon');
             
@@ -120,6 +152,9 @@
                 }
             }
         }
+        
+        // Initialize theme on page load
+        initializeTheme();
     });
   </script>
 </head>
