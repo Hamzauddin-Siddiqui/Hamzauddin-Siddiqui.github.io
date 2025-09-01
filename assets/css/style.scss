@@ -1,8 +1,16 @@
 ---
 ---
 
-@import "minima/skins/{{ site.minima.skin | default: 'auto' }}";
-@import "minima/initialize";
+@import "minima";
+
+// Custom variables for light mode
+:root {
+  --background-color: #ffffff;
+  --text-color: #374151;
+  --brand-color: #2563eb;
+  --grey-color-light: #f9fafb;
+  --border-color: #e5e7eb;
+}
 
 // Dark mode support
 @media (prefers-color-scheme: dark) {
@@ -15,36 +23,39 @@
   }
   
   body {
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
   }
   
   .site-header {
-    background-color: var(--background-color);
-    border-bottom: 2px solid var(--brand-color);
+    background-color: var(--background-color) !important;
+    border-bottom: 2px solid var(--brand-color) !important;
+  }
+  
+  .site-title, .site-title:visited {
+    color: var(--text-color) !important;
+  }
+  
+  .page-link {
+    color: var(--text-color) !important;
   }
   
   .hero-section {
-    background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%);
-    color: var(--text-color);
+    background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%) !important;
+    color: var(--text-color) !important;
   }
   
   .skill-card, .project-card, .contact-info {
-    background-color: var(--grey-color-light);
-    border-color: var(--border-color);
+    background-color: var(--grey-color-light) !important;
+    border-color: var(--border-color) !important;
+  }
+  
+  .post-content, .page-content {
+    color: var(--text-color) !important;
   }
 }
 
-// Light mode (default)
-:root {
-  --background-color: #ffffff;
-  --text-color: #374151;
-  --brand-color: #2563eb;
-  --grey-color-light: #f9fafb;
-  --border-color: #e5e7eb;
-}
-
-// Rest of your existing styles using CSS variables
+// Custom styles that work with both themes
 .site-header {
   border-bottom: 2px solid var(--brand-color);
   min-height: 60px;
@@ -54,6 +65,12 @@
   font-size: 24px !important;
   font-weight: 600;
   color: var(--brand-color) !important;
+  text-decoration: none !important;
+  cursor: default;
+}
+
+.site-title:hover {
+  text-decoration: none !important;
 }
 
 .hero-section {
@@ -62,6 +79,22 @@
   margin-bottom: 2rem;
   border-radius: 8px;
   text-align: center;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--brand-color);
 }
 
 .skills-grid {
@@ -97,22 +130,24 @@
   margin: 2rem 0;
 }
 
-// Profile image styling
-.profile-section {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--brand-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
-.profile-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid var(--brand-color);
+.btn:hover {
+  background-color: var(--brand-color);
+  filter: brightness(1.1);
+  color: white;
+  text-decoration: none;
 }
 
+// Mobile responsive design
 @media screen and (max-width: 768px) {
   .hero-section {
     padding: 2rem 1rem;
@@ -131,46 +166,4 @@
     width: 120px;
     height: 120px;
   }
-}
-
-a {
-  color: var(--brand-color);
-  
-  &:hover {
-    color: var(--brand-color);
-    filter: brightness(1.2);
-  }
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--brand-color);
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background-color: var(--brand-color);
-    filter: brightness(1.1);
-    color: white;
-  }
-}
-.site-title {
-  font-size: 24px !important;
-  font-weight: 600;
-  color: var(--brand-color) !important;
-  text-decoration: none;
-  cursor: default;
-  
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-.site-header-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
