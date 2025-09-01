@@ -22,7 +22,7 @@ description: "Data Analyst specializing in Operations Research, Business Analyti
         </a>
       </div>
     </div>
-    <img src="./assets/images/profile.jpg" alt="Hamzauddin Siddiqui" class="profile-image">
+    <img src="./23 Hamza.jpg" alt="Hamzauddin Siddiqui" class="profile-image">
   </div>
 </div>
 
