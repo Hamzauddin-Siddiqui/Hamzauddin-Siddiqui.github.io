@@ -299,6 +299,10 @@ p {
   transition: all 0.3s ease;
 }
 
+html body:not(.dark-mode) .hamburger-line {
+  background-color: #374151 !important;
+}
+
 html body.dark-mode .hamburger-line {
   background-color: #e5e5e5 !important;
 }
