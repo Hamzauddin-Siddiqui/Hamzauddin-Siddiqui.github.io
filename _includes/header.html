@@ -6,12 +6,14 @@
       </div>
       
       <div class="site-header-right">
+        <!-- Theme toggle button -->
         <button id="header-theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
           <span class="sun-icon">☀️</span>
           <span class="moon-icon">🌙</span>
         </button>
         
-        <nav class="site-nav">
+        <!-- Desktop navigation -->
+        <nav class="site-nav desktop-nav">
           <div class="trigger">
             <a class="page-link" href="{{ '/' | relative_url }}">Home</a>
             <a class="page-link" href="{{ '/about/' | relative_url }}">About</a>
@@ -19,7 +21,24 @@
             <a class="page-link" href="{{ '/contact/' | relative_url }}">Contact</a>
           </div>
         </nav>
+        
+        <!-- Mobile hamburger menu -->
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
       </div>
+    </div>
+  </div>
+  
+  <!-- Mobile navigation dropdown -->
+  <div class="mobile-nav">
+    <div class="mobile-nav-content">
+      <a class="page-link" href="{{ '/' | relative_url }}">Home</a>
+      <a class="page-link" href="{{ '/about/' | relative_url }}">About</a>
+      <a class="page-link" href="{{ '/projects/' | relative_url }}">Projects</a>
+      <a class="page-link" href="{{ '/contact/' | relative_url }}">Contact</a>
     </div>
   </div>
 </header>
