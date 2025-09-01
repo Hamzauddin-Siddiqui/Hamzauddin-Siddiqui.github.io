@@ -24,28 +24,13 @@ plugins:
 
 # Navigation menu
 header_pages:
-  - index.md
   - about.md
   - projects.md
   - contact.md
 
-# Custom navigation labels
-navigation:
-  - title: "Home"
-    url: "/"
-  - title: "About" 
-    url: "/about/"
-  - title: "Projects"
-    url: "/projects/"
-  - title: "Contact"
-    url: "/contact/"
-
 # Social media (for theme)
 github_username: Hamzauddin-Siddiqui
 linkedin_username: hamzauddin-siddiqui-786180175
-
-# Google Analytics (optional - you can add this later)
-# google_analytics: "G-XXXXXXXXXX"
 
 # Exclude files from processing
 exclude:
@@ -53,6 +38,3 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor/
-# Theme settings
-minima:
-  skin: auto
