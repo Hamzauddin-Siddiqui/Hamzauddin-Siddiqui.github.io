@@ -3,116 +3,125 @@
 
 @import "minima";
 
-// CSS Variables for light mode (default)
+// CSS Variables
 :root {
-  --background-color: #ffffff;
-  --text-color: #374151;
-  --brand-color: #2563eb;
-  --grey-color-light: #f9fafb;
-  --border-color: #e5e7eb;
-  --header-bg: #ffffff;
+  --light-bg: #ffffff;
+  --light-text: #374151;
+  --light-brand: #2563eb;
+  --dark-bg: #1a1a1a;
+  --dark-text: #e5e5e5;
+  --dark-brand: #60a5fa;
 }
 
-// LIGHT MODE STYLES (default/fallback)
-body {
-  background-color: #ffffff !important;
-  color: #374151 !important;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.site-header {
-  background-color: #ffffff !important;
-  border-bottom: 2px solid #2563eb !important;
-}
-
-.hero-section {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
-  color: #374151 !important;
-}
-
-.skill-card,
-.project-card,
-.contact-info {
-  background-color: #f9fafb !important;
-  border-color: #e5e7eb !important;
-  color: #374151 !important;
-}
-
-h1, h2, h3, h4 {
-  color: #374151 !important;
-}
-
-.page-link {
-  color: #374151 !important;
-}
-
-a {
-  color: #2563eb !important;
-}
-
-.site-title-static {
-  color: #2563eb !important;
-}
-
-// DARK MODE STYLES - higher specificity with body.dark-mode
-body.dark-mode {
-  --background-color: #1a1a1a;
-  --text-color: #e5e5e5;
-  --brand-color: #60a5fa;
-  --grey-color-light: #2d2d2d;
-  --border-color: #404040;
-  --header-bg: #1a1a1a;
-  
+// FORCE OVERRIDE ALL MINIMA STYLES - Maximum Specificity
+html body.dark-mode,
+html body.dark-mode * {
   background-color: #1a1a1a !important;
   color: #e5e5e5 !important;
 }
 
-body.dark-mode .site-header {
+html body:not(.dark-mode),
+html body:not(.dark-mode) * {
+  background-color: #ffffff !important;
+  color: #374151 !important;
+}
+
+// Header overrides
+html body.dark-mode .site-header,
+html body.dark-mode header.site-header {
   background-color: #1a1a1a !important;
   border-bottom: 2px solid #60a5fa !important;
 }
 
-body.dark-mode .site-title-static {
-  color: #e5e5e5 !important;
+html body:not(.dark-mode) .site-header,
+html body:not(.dark-mode) header.site-header {
+  background-color: #ffffff !important;
+  border-bottom: 2px solid #2563eb !important;
 }
 
-body.dark-mode .page-link {
-  color: #e5e5e5 !important;
-}
-
-body.dark-mode .hero-section {
+// Hero section overrides
+html body.dark-mode .hero-section {
   background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%) !important;
   color: #e5e5e5 !important;
 }
 
-body.dark-mode .skill-card,
-body.dark-mode .project-card,
-body.dark-mode .contact-info {
+html body:not(.dark-mode) .hero-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
+  color: #374151 !important;
+}
+
+// Cards overrides
+html body.dark-mode .skill-card,
+html body.dark-mode .project-card,
+html body.dark-mode .contact-info {
   background-color: #2d2d2d !important;
   border-color: #404040 !important;
   color: #e5e5e5 !important;
 }
 
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode h4 {
+html body:not(.dark-mode) .skill-card,
+html body:not(.dark-mode) .project-card,
+html body:not(.dark-mode) .contact-info {
+  background-color: #f9fafb !important;
+  border-color: #e5e7eb !important;
+  color: #374151 !important;
+}
+
+// Typography overrides
+html body.dark-mode h1,
+html body.dark-mode h2,
+html body.dark-mode h3,
+html body.dark-mode h4,
+html body.dark-mode p,
+html body.dark-mode li,
+html body.dark-mode span {
   color: #e5e5e5 !important;
 }
 
-body.dark-mode a {
+html body:not(.dark-mode) h1,
+html body:not(.dark-mode) h2,
+html body:not(.dark-mode) h3,
+html body:not(.dark-mode) h4,
+html body:not(.dark-mode) p,
+html body:not(.dark-mode) li,
+html body:not(.dark-mode) span {
+  color: #374151 !important;
+}
+
+// Link overrides
+html body.dark-mode a {
   color: #60a5fa !important;
 }
 
-body.dark-mode p {
+html body:not(.dark-mode) a {
+  color: #2563eb !important;
+}
+
+// Navigation overrides
+html body.dark-mode .page-link,
+html body.dark-mode .site-title-static {
   color: #e5e5e5 !important;
 }
 
-body.dark-mode li {
-  color: #e5e5e5 !important;
+html body:not(.dark-mode) .page-link,
+html body:not(.dark-mode) .site-title-static {
+  color: #374151 !important;
 }
 
-// Header styling
+// Button overrides
+html body.dark-mode #header-theme-toggle {
+  background: #2d2d2d !important;
+  border: 2px solid #60a5fa !important;
+  color: #60a5fa !important;
+}
+
+html body:not(.dark-mode) #header-theme-toggle {
+  background: white !important;
+  border: 2px solid #2563eb !important;
+  color: #2563eb !important;
+}
+
+// Rest of your existing styles...
 .site-header {
   border-bottom: 2px solid var(--brand-color);
   min-height: 60px;
@@ -143,10 +152,7 @@ body.dark-mode li {
   transition: color 0.3s ease;
 }
 
-// Theme toggle button - LIGHT MODE (default)
 #header-theme-toggle {
-  background: white !important;
-  border: 2px solid #2563eb !important;
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -156,47 +162,12 @@ body.dark-mode li {
   justify-content: center;
   font-size: 16px;
   transition: all 0.3s ease;
-  color: #2563eb !important;
 }
 
 #header-theme-toggle:hover {
-  background-color: #2563eb !important;
-  color: white !important;
   transform: scale(1.1);
 }
 
-// Theme toggle button - DARK MODE
-body.dark-mode #header-theme-toggle {
-  background: #2d2d2d !important;
-  border: 2px solid #60a5fa !important;
-  color: #60a5fa !important;
-}
-
-body.dark-mode #header-theme-toggle:hover {
-  background-color: #60a5fa !important;
-  color: #1a1a1a !important;
-}
-
-// Icon display logic - CORRECTED
-// Light mode: show moon (to switch TO dark)
-#header-theme-toggle .moon-icon {
-  display: inline;
-}
-
-#header-theme-toggle .sun-icon {
-  display: none;
-}
-
-// Dark mode: show sun (to switch TO light)
-body.dark-mode #header-theme-toggle .moon-icon {
-  display: none;
-}
-
-body.dark-mode #header-theme-toggle .sun-icon {
-  display: inline;
-}
-
-// Navigation
 .site-nav {
   margin-left: 1rem;
 }
@@ -208,11 +179,6 @@ body.dark-mode #header-theme-toggle .sun-icon {
   text-decoration: none;
 }
 
-.page-link:hover {
-  color: var(--brand-color) !important;
-}
-
-// Hero section
 .hero-section {
   padding: 3rem 2rem;
   margin-bottom: 2rem;
@@ -248,7 +214,6 @@ body.dark-mode #header-theme-toggle .sun-icon {
   flex-wrap: wrap;
 }
 
-// Skills and projects
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -269,14 +234,6 @@ body.dark-mode #header-theme-toggle .sun-icon {
   padding: 1.5rem;
   margin-bottom: 2rem;
   transition: box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-body.dark-mode .project-card:hover {
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
 }
 
 .contact-info {
@@ -313,16 +270,6 @@ body.dark-mode .project-card:hover {
 .btn-secondary:hover {
   background-color: var(--brand-color);
   color: white;
-}
-
-body.dark-mode .btn-secondary {
-  color: #60a5fa;
-  border-color: #60a5fa;
-}
-
-body.dark-mode .btn-secondary:hover {
-  background-color: #60a5fa;
-  color: #1a1a1a;
 }
 
 // Mobile responsiveness
