@@ -103,6 +103,12 @@
                 link.style.color = '#e5e5e5';
             });
             
+            // Fix hamburger lines for dark mode
+            const hamburgerLines = document.querySelectorAll('.hamburger-line');
+            hamburgerLines.forEach(line => {
+                line.style.backgroundColor = '#e5e5e5';
+            });
+            
             updateToggleIcon(true);
         }
         
@@ -131,6 +137,12 @@
             const navLinks = document.querySelectorAll('.page-link, .site-title-static');
             navLinks.forEach(link => {
                 link.style.color = '#374151';
+            });
+            
+            // Fix hamburger lines for light mode
+            const hamburgerLines = document.querySelectorAll('.hamburger-line');
+            hamburgerLines.forEach(line => {
+                line.style.backgroundColor = '#374151';
             });
             
             updateToggleIcon(false);
