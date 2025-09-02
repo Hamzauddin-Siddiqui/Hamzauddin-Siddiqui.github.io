@@ -1,38 +1,49 @@
-<header class="site-header" role="banner">
-  <div class="wrapper">
-    <div class="site-nav-container">
-      <!-- Desktop Navigation -->
-      <nav class="site-nav desktop-nav">
-        <div class="nav-links">
-          <a class="page-link" href="{{ "/" | relative_url }}">Home</a>
-          <a class="page-link" href="{{ "/projects" | relative_url }}">Projects</a>
-          <a class="page-link" href="{{ "/about" | relative_url }}">About</a>
-          <a class="page-link" href="{{ "/contact" | relative_url }}">Contact</a>
-        </div>
-        <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">
-          <span class="theme-icon">🌓</span>
-        </button>
-      </nav>
-
-      <!-- Mobile Navigation -->
-      <div class="mobile-nav">
-        <button class="hamburger" onclick="toggleMobileMenu()">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-        <button id="mobile-theme-toggle" class="theme-toggle" onclick="toggleTheme()">
-          <span class="theme-icon">🌓</span>
-        </button>
+<header class="site-header" role="banner" style="position: relative; z-index: 1000;">
+  <div class="wrapper" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0;">
+    
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <div class="nav-links" style="display: flex; gap: 2rem;">
+        <a class="page-link" href="{{ "/" | relative_url }}" style="text-decoration: none; font-weight: 500;">Home</a>
+        <a class="page-link" href="{{ "/projects" | relative_url }}" style="text-decoration: none; font-weight: 500;">Projects</a>
+        <a class="page-link" href="{{ "/about" | relative_url }}" style="text-decoration: none; font-weight: 500;">About</a>
+        <a class="page-link" href="{{ "/contact" | relative_url }}" style="text-decoration: none; font-weight: 500;">Contact</a>
       </div>
+      <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" style="background: none; border: 2px solid; border-radius: 20px; padding: 5px 10px; cursor: pointer; font-size: 16px;">
+        <span class="theme-icon">🌓</span>
+      </button>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" style="display: none; align-items: center; gap: 10px;">
+      <button class="hamburger" onclick="toggleMobileMenu()" style="background: none; border: none; cursor: pointer; display: flex; flex-direction: column; gap: 3px; padding: 5px;">
+        <span class="hamburger-line" style="width: 20px; height: 2px; transition: all 0.3s ease;"></span>
+        <span class="hamburger-line" style="width: 20px; height: 2px; transition: all 0.3s ease;"></span>
+        <span class="hamburger-line" style="width: 20px; height: 2px; transition: all 0.3s ease;"></span>
+      </button>
+      <button id="mobile-theme-toggle" class="theme-toggle" onclick="toggleTheme()" style="background: none; border: 2px solid; border-radius: 20px; padding: 5px 10px; cursor: pointer; font-size: 16px;">
+        <span class="theme-icon">🌓</span>
+      </button>
     </div>
 
     <!-- Mobile Dropdown Menu -->
-    <div class="mobile-menu" id="mobile-menu">
-      <a class="mobile-link" href="{{ "/" | relative_url }}">Home</a>
-      <a class="mobile-link" href="{{ "/projects" | relative_url }}">Projects</a>
-      <a class="mobile-link" href="{{ "/about" | relative_url }}">About</a>
-      <a class="mobile-link" href="{{ "/contact" | relative_url }}">Contact</a>
+    <div class="mobile-menu" id="mobile-menu" style="display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; padding: 1rem; z-index: 1000;">
+      <a class="mobile-link" href="{{ "/" | relative_url }}" style="padding: 10px 0; text-decoration: none;">Home</a>
+      <a class="mobile-link" href="{{ "/projects" | relative_url }}" style="padding: 10px 0; text-decoration: none;">Projects</a>
+      <a class="mobile-link" href="{{ "/about" | relative_url }}" style="padding: 10px 0; text-decoration: none;">About</a>
+      <a class="mobile-link" href="{{ "/contact" | relative_url }}" style="padding: 10px 0; text-decoration: none;">Contact</a>
     </div>
+    
   </div>
 </header>
+
+<style>
+@media screen and (max-width: 768px) {
+  .desktop-nav { display: none !important; }
+  .mobile-nav { display: flex !important; }
+  .mobile-menu.active { display: flex !important; }
+  .hamburger.active .hamburger-line:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .hamburger.active .hamburger-line:nth-child(2) { opacity: 0; }
+  .hamburger.active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+}
+</style>
