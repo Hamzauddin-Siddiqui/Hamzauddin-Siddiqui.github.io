@@ -16,8 +16,8 @@ layout: default
 
 <div class="experience-section">
   <div class="experience-card" onclick="openModal('bettermile')">
-    <div class="company-logo">
-      <img src="https://media.licdn.com/dms/image/C4D0BAQGxqjamYvLGNg/company-logo_100_100/0/1630514231297/bettermile_logo?e=1743033600&v=beta&t=XnJdLSLhqW5vLkJXQT8qjxQOCPbGiajJgA8g7gOmUOY" alt="Bettermile" class="logo-img">
+    <div class="company-logo bettermile-logo">
+      <span class="logo-text">B</span>
     </div>
     <div class="experience-content">
       <h3>User Insight and Support</h3>
@@ -28,8 +28,8 @@ layout: default
   </div>
 
   <div class="experience-card" onclick="openModal('usmobile')">
-    <div class="company-logo">
-      <img src="https://media.licdn.com/dms/image/C560BAQEhKzBbCb7zWQ/company-logo_100_100/0/1630615918309/us_mobile_logo?e=1743033600&v=beta&t=VB3k8T2h5LkjL4K-Xt_QbKD9uV3TLCqH6w9WGXWvPow" alt="US Mobile" class="logo-img">
+    <div class="company-logo usmobile-logo">
+      <span class="logo-text">U</span>
     </div>
     <div class="experience-content">
       <h3>Product Experience Analyst</h3>
@@ -40,8 +40,8 @@ layout: default
   </div>
 
   <div class="experience-card" onclick="openModal('swvl')">
-    <div class="company-logo">
-      <img src="https://media.licdn.com/dms/image/C560BAQGGcHdnZ3UGkA/company-logo_100_100/0/1631316064851?e=1743033600&v=beta&t=OyGZdKHY2LkjL4K-Xt_QbKD9uV3TLCqH6w9WGXWvPow" alt="Swvl" class="logo-img">
+    <div class="company-logo swvl-logo">
+      <span class="logo-text">S</span>
     </div>
     <div class="experience-content">
       <h3>Business Intelligence Specialist</h3>
@@ -57,13 +57,25 @@ layout: default
   </div>
 
   <div class="experience-card" onclick="openModal('meezan')">
-    <div class="company-logo">
-      <img src="https://media.licdn.com/dms/image/C510BAQHxF8g1tRLYYQ/company-logo_100_100/0/1631309893853?e=1743033600&v=beta&t=YEcKrjxQOCPbGiajJgA8g7gOmUOYLkjL4K-Xt_QbKD9u" alt="Meezan Bank" class="logo-img">
+    <div class="company-logo meezan-logo">
+      <span class="logo-text">M</span>
     </div>
     <div class="experience-content">
       <h3>Product Development Intern</h3>
       <h4>Meezan Bank Limited</h4>
       <p class="duration">June 2019 - August 2019 (3 months)</p>
+      <p class="location">Karachi, Pakistan • Internship</p>
+    </div>
+  </div>
+
+  <div class="experience-card" onclick="openModal('standard')">
+    <div class="company-logo standard-logo">
+      <span class="logo-text">S</span>
+    </div>
+    <div class="experience-content">
+      <h3>Summer Finance Intern</h3>
+      <h4>Standard Chartered Bank</h4>
+      <p class="duration">June 2013 - July 2013 (2 months)</p>
       <p class="location">Karachi, Pakistan • Internship</p>
     </div>
   </div>
@@ -73,8 +85,8 @@ layout: default
 
 <div class="education-section">
   <div class="education-card" onclick="openModal('ovgu')">
-    <div class="institution-logo">
-      <img src="https://media.licdn.com/dms/image/C4E0BAQGxqjamYvLGNg/company-logo_100_100/0/1630514231297/otto_von_guericke_university_magdeburg_logo?e=1743033600&v=beta&t=XnJdLSLhqW5vLkJXQT8qjxQOCPbGiajJgA8g7gOmUOY" alt="Otto-von-Guericke University" class="logo-img">
+    <div class="institution-logo ovgu-logo">
+      <span class="logo-text">O</span>
     </div>
     <div class="education-content">
       <h3>Master of Science - MS, Operations Research and Business Analytics</h3>
@@ -84,8 +96,8 @@ layout: default
   </div>
 
   <div class="education-card" onclick="openModal('ljubljana')">
-    <div class="institution-logo">
-      <img src="https://media.licdn.com/dms/image/C4D0BAQGxqjamYvLGNg/company-logo_100_100/0/1630514231297/university_of_ljubljana_logo?e=1743033600&v=beta&t=XnJdLSLhqW5vLkJXQT8qjxQOCPbGiajJgA8g7gOmUOY" alt="University of Ljubljana" class="logo-img">
+    <div class="institution-logo ljubljana-logo">
+      <span class="logo-text">U</span>
     </div>
     <div class="education-content">
       <h3>Erasmus+, Study Abroad Exchange Program</h3>
@@ -95,8 +107,8 @@ layout: default
   </div>
 
   <div class="education-card" onclick="openModal('acca')">
-    <div class="institution-logo">
-      <img src="https://media.licdn.com/dms/image/C560BAQEhKzBbCb7zWQ/company-logo_100_100/0/1630615918309/acca_logo?e=1743033600&v=beta&t=VB3k8T2h5LkjL4K-Xt_QbKD9uV3TLCqH6w9WGXWvPow" alt="ACCA" class="logo-img">
+    <div class="institution-logo acca-logo">
+      <span class="logo-text">A</span>
     </div>
     <div class="education-content">
       <h3>ACCA, Accounting and Finance</h3>
@@ -106,8 +118,8 @@ layout: default
   </div>
 
   <div class="education-card" onclick="openModal('iba')">
-    <div class="institution-logo">
-      <img src="https://media.licdn.com/dms/image/C510BAQHxF8g1tRLYYQ/company-logo_100_100/0/1631309893853/iba_karachi_logo?e=1743033600&v=beta&t=YEcKrjxQOCPbGiajJgA8g7gOmUOYLkjL4K-Xt_QbKD9u" alt="IBA Karachi" class="logo-img">
+    <div class="institution-logo iba-logo">
+      <span class="logo-text">I</span>
     </div>
     <div class="education-content">
       <h3>Bachelor's degree, Accounting and Finance</h3>
@@ -167,17 +179,28 @@ html body.dark-mode .education-card:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f0f0f0;
-  overflow: hidden;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
-.logo-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background: white;
-  border-radius: 8px;
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 700;
 }
+
+/* Company-specific logo colors */
+.bettermile-logo { background: linear-gradient(135deg, #00a8ff 0%, #0097e6 100%); }
+.usmobile-logo { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }
+.swvl-logo { background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); }
+.meezan-logo { background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); }
+.standard-logo { background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); }
+
+/* Institution-specific logo colors */
+.ovgu-logo { background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); }
+.ljubljana-logo { background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%); }
+.acca-logo { background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%); }
+.iba-logo { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }
 
 .experience-content, .education-content {
   flex: 1;
@@ -365,6 +388,16 @@ function openModal(role) {
         <li>Conducted a feasibility study for MBL's transition to branchless banking, including regulatory compliance and capital asset requirements assessment</li>
         <li>Developed an innovative subscription-based sub-leasing model tailored to the software service industry</li>
       </ul>
+    `,
+    'standard': `
+      <h2>Summer Finance Intern - Standard Chartered Bank</h2>
+      <p><strong>Duration:</strong> June 2013 - July 2013</p>
+      <p><strong>Location:</strong> Karachi, Pakistan</p>
+      <ul>
+        <li>Collaborated with agents in the acquisition department to gain expertise in marketing and selling personal loans through cold and warm calling strategies</li>
+        <li>Acquired knowledge on the functioning of the Electronic Credit Information Bureau (eCIB) system, including tracking credit defaulters and maintaining the credit rating system</li>
+      </ul>
+      <p><strong>Skills:</strong> Credit Analysis • Loans • Finance • Loan Servicing</p>
     `
   };
   
