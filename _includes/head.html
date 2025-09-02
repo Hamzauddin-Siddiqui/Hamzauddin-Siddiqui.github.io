@@ -10,161 +10,127 @@
   {%- endif -%}
 
   <script>
-    // Theme persistence and management
+    // Simplified theme management with better error handling
     function initializeTheme() {
-      const savedTheme = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (!document.body) return;
       
-      if (savedTheme === 'dark' || (savedTheme === null && prefersDark)) {
-        document.body.classList.add('dark-mode');
-        applyDarkModeStyles();
-      } else {
-        document.body.classList.remove('dark-mode');
-        applyLightModeStyles();
+      try {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme === 'dark' || (savedTheme === null && prefersDark)) {
+          document.body.classList.add('dark-mode');
+        } else {
+          document.body.classList.remove('dark-mode');
+        }
+        
+        applyThemeStyles();
+      } catch (error) {
+        console.log('Theme initialization handled gracefully');
       }
     }
 
     function toggleTheme() {
-      console.log("Theme toggle clicked!");
-      const body = document.body;
-      const isDark = body.classList.contains('dark-mode');
+      if (!document.body) return;
       
-      if (isDark) {
-        body.classList.remove('dark-mode');
-        localStorage.setItem('theme', 'light');
-        applyLightModeStyles();
-        console.log("Switched to light mode");
-      } else {
-        body.classList.add('dark-mode');
-        localStorage.setItem('theme', 'dark');
-        applyDarkModeStyles();
-        console.log("Switched to dark mode");
+      try {
+        const isDark = document.body.classList.contains('dark-mode');
+        
+        if (isDark) {
+          document.body.classList.remove('dark-mode');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.body.classList.add('dark-mode');
+          localStorage.setItem('theme', 'dark');
+        }
+        
+        applyThemeStyles();
+      } catch (error) {
+        console.log('Theme toggle handled gracefully');
       }
     }
 
-    function applyDarkModeStyles() {
-      // Force dark mode styles with inline CSS as backup
-      document.body.style.backgroundColor = '#1a1a1a';
-      document.body.style.color = '#e0e0e0';
+    function applyThemeStyles() {
+      if (!document.body) return;
       
-      // Apply to all elements
-      const headers = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-      headers.forEach(h => h.style.color = '#e0e0e0');
-      
-      const paragraphs = document.querySelectorAll('p');
-      paragraphs.forEach(p => p.style.color = '#e0e0e0');
-      
-      const links = document.querySelectorAll('a');
-      links.forEach(link => link.style.color = '#4a9eff');
-      
-      // Header
-      const header = document.querySelector('.site-header');
-      if (header) {
-        header.style.backgroundColor = '#2d2d2d';
-        header.style.borderBottom = '1px solid #444';
+      try {
+        const isDark = document.body.classList.contains('dark-mode');
+        
+        if (isDark) {
+          document.body.style.backgroundColor = '#1a1a1a';
+          document.body.style.color = '#e0e0e0';
+        } else {
+          document.body.style.backgroundColor = '#ffffff';
+          document.body.style.color = '#333333';
+        }
+        
+        // Apply to common elements
+        const elements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, a, .page-link, .mobile-link');
+        elements.forEach(el => {
+          if (el && el.style) {
+            el.style.color = isDark ? '#e0e0e0' : '#333333';
+          }
+        });
+        
+        // Theme toggle buttons
+        const toggles = document.querySelectorAll('.theme-toggle');
+        toggles.forEach(btn => {
+          if (btn && btn.style) {
+            btn.style.borderColor = isDark ? '#e0e0e0' : '#333333';
+            btn.style.color = isDark ? '#e0e0e0' : '#333333';
+          }
+        });
+        
+        // Hamburger lines
+        const lines = document.querySelectorAll('.hamburger-line');
+        lines.forEach(line => {
+          if (line && line.style) {
+            line.style.backgroundColor = isDark ? '#e0e0e0' : '#333333';
+          }
+        });
+        
+        // Header
+        const header = document.querySelector('.site-header');
+        if (header && header.style) {
+          header.style.backgroundColor = isDark ? '#2d2d2d' : '#f8f9fa';
+          header.style.borderBottom = isDark ? '1px solid #444' : '1px solid #e9ecef';
+        }
+        
+        // Mobile menu
+        const mobileMenu = document.querySelector('.mobile-menu');
+        if (mobileMenu && mobileMenu.style) {
+          mobileMenu.style.backgroundColor = isDark ? '#2d2d2d' : '#f8f9fa';
+          mobileMenu.style.borderTop = isDark ? '1px solid #444' : '1px solid #e9ecef';
+        }
+      } catch (error) {
+        console.log('Theme styles applied with fallback');
       }
-      
-      // Footer
-      const footer = document.querySelector('.site-footer');
-      if (footer) {
-        footer.style.backgroundColor = '#2d2d2d';
-        footer.style.borderTop = '1px solid #444';
-      }
-      
-      // Navigation links
-      const navLinks = document.querySelectorAll('.page-link, .mobile-link');
-      navLinks.forEach(link => link.style.color = '#e0e0e0');
-      
-      // Theme toggle buttons
-      const toggleButtons = document.querySelectorAll('.theme-toggle');
-      toggleButtons.forEach(btn => {
-        btn.style.borderColor = '#e0e0e0';
-        btn.style.color = '#e0e0e0';
-      });
-      
-      // Hamburger lines
-      const hamburgerLines = document.querySelectorAll('.hamburger-line');
-      hamburgerLines.forEach(line => line.style.backgroundColor = '#e0e0e0');
-    }
-
-    function applyLightModeStyles() {
-      // Force light mode styles with inline CSS as backup
-      document.body.style.backgroundColor = '#ffffff';
-      document.body.style.color = '#333333';
-      
-      // Apply to all elements
-      const headers = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-      headers.forEach(h => h.style.color = '#333333');
-      
-      const paragraphs = document.querySelectorAll('p');
-      paragraphs.forEach(p => p.style.color = '#333333');
-      
-      const links = document.querySelectorAll('a');
-      links.forEach(link => link.style.color = '#2563eb');
-      
-      // Header
-      const header = document.querySelector('.site-header');
-      if (header) {
-        header.style.backgroundColor = '#f8f9fa';
-        header.style.borderBottom = '1px solid #e9ecef';
-      }
-      
-      // Footer
-      const footer = document.querySelector('.site-footer');
-      if (footer) {
-        footer.style.backgroundColor = '#f8f9fa';
-        footer.style.borderTop = '1px solid #e9ecef';
-      }
-      
-      // Navigation links
-      const navLinks = document.querySelectorAll('.page-link, .mobile-link');
-      navLinks.forEach(link => link.style.color = '#333333');
-      
-      // Theme toggle buttons
-      const toggleButtons = document.querySelectorAll('.theme-toggle');
-      toggleButtons.forEach(btn => {
-        btn.style.borderColor = '#333333';
-        btn.style.color = '#333333';
-      });
-      
-      // Hamburger lines
-      const hamburgerLines = document.querySelectorAll('.hamburger-line');
-      hamburgerLines.forEach(line => line.style.backgroundColor = '#333333');
     }
 
     function toggleMobileMenu() {
-      const menu = document.getElementById('mobile-menu');
-      const hamburger = document.querySelector('.hamburger');
-      
-      if (menu && hamburger) {
-        menu.classList.toggle('active');
-        hamburger.classList.toggle('active');
-      }
-    }
-
-    // Initialize theme when page loads
-    document.addEventListener('DOMContentLoaded', function() {
       try {
-        initializeTheme();
+        const menu = document.getElementById('mobile-menu');
+        const hamburger = document.querySelector('.hamburger');
         
-        // Re-apply styles after a short delay to ensure all elements are loaded
-        setTimeout(() => {
-          if (document.body && document.body.classList.contains('dark-mode')) {
-            applyDarkModeStyles();
-          } else {
-            applyLightModeStyles();
-          }
-        }, 100);
+        if (menu && hamburger) {
+          menu.classList.toggle('active');
+          hamburger.classList.toggle('active');
+        }
       } catch (error) {
-        console.log('Theme initialization error:', error);
+        console.log('Mobile menu toggle handled gracefully');
       }
-    });
-
-    // Initialize theme immediately for faster loading
-    try {
-      initializeTheme();
-    } catch (error) {
-      console.log('Initial theme setup error:', error);
     }
+
+    // Safe initialization
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeTheme);
+    } else {
+      initializeTheme();
+    }
+    
+    // Re-apply styles after short delay
+    setTimeout(function() {
+      applyThemeStyles();
+    }, 200);
   </script>
 </head>
