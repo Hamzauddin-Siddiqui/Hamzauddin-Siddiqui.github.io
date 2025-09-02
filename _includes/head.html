@@ -102,6 +102,7 @@
           mobileMenu.style.backgroundColor = isDark ? '#2d2d2d' : '#f8f9fa';
           mobileMenu.style.borderTop = isDark ? '1px solid #444' : '1px solid #e9ecef';
         }
+        applyButtonStyles();
       } catch (error) {
         console.log('Theme styles applied with fallback');
       }
@@ -132,5 +133,77 @@
     setTimeout(function() {
       applyThemeStyles();
     }, 200);
+    // Create profile buttons dynamically
+    function createProfileButtons() {
+      try {
+        const profileContent = document.querySelector('.profile-content');
+        
+        if (profileContent && !document.querySelector('.profile-buttons')) {
+          const buttonContainer = document.createElement('div');
+          buttonContainer.className = 'profile-buttons';
+          
+          // LinkedIn button
+          const linkedinBtn = document.createElement('a');
+          linkedinBtn.href = 'https://www.linkedin.com/in/hamzauddinsiddiqui-786180175';
+          linkedinBtn.target = '_blank';
+          linkedinBtn.className = 'btn-primary';
+          linkedinBtn.textContent = 'LinkedIn';
+          
+          // Download CV button
+          const cvBtn = document.createElement('a');
+          cvBtn.href = '/assets/documents/Hamzauddin_Siddiqui_CV.pdf';
+          cvBtn.target = '_blank';
+          cvBtn.className = 'btn-secondary';
+          cvBtn.textContent = 'Download CV';
+          
+          buttonContainer.appendChild(linkedinBtn);
+          buttonContainer.appendChild(cvBtn);
+          profileContent.appendChild(buttonContainer);
+          
+          // Apply theme-appropriate styles
+          applyButtonStyles();
+        }
+      } catch (error) {
+        console.log('Profile buttons creation handled gracefully');
+      }
+    }
+    
+    function applyButtonStyles() {
+      const isDark = document.body.classList.contains('dark-mode');
+      
+      const primaryBtns = document.querySelectorAll('.btn-primary');
+      const secondaryBtns = document.querySelectorAll('.btn-secondary');
+      
+      primaryBtns.forEach(btn => {
+        btn.style.backgroundColor = '#0066cc';
+        btn.style.color = 'white';
+        btn.style.padding = '12px 24px';
+        btn.style.borderRadius = '6px';
+        btn.style.textDecoration = 'none';
+        btn.style.marginRight = '12px';
+        btn.style.display = 'inline-block';
+        btn.style.transition = 'all 0.3s ease';
+      });
+      
+      secondaryBtns.forEach(btn => {
+        btn.style.backgroundColor = isDark ? 'transparent' : 'transparent';
+        btn.style.color = isDark ? '#e0e0e0' : '#333333';
+        btn.style.border = isDark ? '2px solid #e0e0e0' : '2px solid #333333';
+        btn.style.padding = '10px 22px';
+        btn.style.borderRadius = '6px';
+        btn.style.textDecoration = 'none';
+        btn.style.display = 'inline-block';
+        btn.style.transition = 'all 0.3s ease';
+      });
+    }
+
+    // Initialize buttons after DOM loads
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(createProfileButtons, 300);
+      });
+    } else {
+      setTimeout(createProfileButtons, 300);
+    }
   </script>
 </head>
