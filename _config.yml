@@ -19,14 +19,8 @@ plugins:
 minima:
   skin: auto
 
-# Navigation
-header_pages:
-  - index.md
-  - projects.md
-  - about.md
-  - contact.md
-
-# Footer settings (empty to minimize footer content)
-author: ""
+# Remove twitter
 twitter_username: ""
-github_username: ""
+
+# Footer settings - keep minimal
+author: ""
