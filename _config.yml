@@ -18,10 +18,24 @@ plugins:
 # Minima theme customization
 minima:
   skin: auto
-
-# Disable default header pages to prevent double navigation
+  
+# Completely disable default navigation
+show_excerpts: false
 header_pages: []
 
-# Remove all other social links
+# Remove all other social links and author info
 twitter_username: ""
 author: ""
+
+# Exclude files
+exclude:
+  - node_modules/
+  - vendor/
+
+# Page defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
