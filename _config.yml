@@ -1,40 +1,32 @@
-title: "Hamzauddin Siddiqui - Data Analyst Portfolio"
-description: "Data Analyst specializing in Operations Research, Business Analytics, and Supply Chain optimization. Currently based in Germany."
-url: "https://hamzauddin-siddiqui.github.io"
+# Site settings
+title: ""
+email: hamzauddin54@gmail.com
+description: ""
 baseurl: ""
+url: "https://hamzauddin-siddiqui.github.io"
 
-# Personal information
-author:
-  name: "Hamzauddin Siddiqui"
-  email: "hamzauddin54@gmail.com"
-  linkedin: "https://www.linkedin.com/in/hamzauddin-siddiqui-786180175"
-  github: "https://github.com/Hamzauddin-Siddiqui"
-  location: "Magdeburg, Germany"
-
-# SEO and social
-lang: en_US
-timezone: Europe/Berlin
-
-# Build settings for GitHub Pages
-theme: minima
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
-
-# Navigation menu
-header_pages:
-  - about.md
-  - projects.md
-  - contact.md
-
-# Social media (for theme)
+# Social media and contact
 github_username: Hamzauddin-Siddiqui
 linkedin_username: hamzauddin-siddiqui-786180175
 
-# Exclude files from processing
-exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
-  - vendor/
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+# Minima theme customization
+minima:
+  skin: auto
+
+# Navigation
+header_pages:
+  - index.md
+  - projects.md
+  - about.md
+  - contact.md
+
+# Footer settings (empty to minimize footer content)
+author: ""
+twitter_username: ""
+github_username: ""
