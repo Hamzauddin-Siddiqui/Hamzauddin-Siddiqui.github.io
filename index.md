@@ -16,8 +16,8 @@ layout: default
 
 <div class="experience-section">
   <div class="experience-card" onclick="openModal('bettermile')">
-    <div class="company-logo bettermile-logo">
-      <span class="logo-text">B</span>
+    <div class="company-logo">
+      <img src="assets/Bettermile_logo.jpg" alt="Bettermile" class="logo-img">
     </div>
     <div class="experience-content">
       <h3>User Insight and Support</h3>
@@ -28,8 +28,8 @@ layout: default
   </div>
 
   <div class="experience-card" onclick="openModal('usmobile')">
-    <div class="company-logo usmobile-logo">
-      <span class="logo-text">U</span>
+    <div class="company-logo">
+      <img src="assets/USMobile_logo.jpg" alt="US Mobile" class="logo-img">
     </div>
     <div class="experience-content">
       <h3>Product Experience Analyst</h3>
@@ -40,8 +40,8 @@ layout: default
   </div>
 
   <div class="experience-card" onclick="openModal('swvl')">
-    <div class="company-logo swvl-logo">
-      <span class="logo-text">S</span>
+    <div class="company-logo">
+      <img src="assets/Swvl_Logo.png" alt="Swvl" class="logo-img">
     </div>
     <div class="experience-content">
       <h3>Business Intelligence Specialist</h3>
@@ -57,8 +57,8 @@ layout: default
   </div>
 
   <div class="experience-card" onclick="openModal('meezan')">
-    <div class="company-logo meezan-logo">
-      <span class="logo-text">M</span>
+    <div class="company-logo">
+      <img src="assets/meezan_logo.webp" alt="Meezan Bank" class="logo-img">
     </div>
     <div class="experience-content">
       <h3>Product Development Intern</h3>
@@ -69,8 +69,8 @@ layout: default
   </div>
 
   <div class="experience-card" onclick="openModal('standard')">
-    <div class="company-logo standard-logo">
-      <span class="logo-text">S</span>
+    <div class="company-logo">
+      <img src="assets/Standard_logo.png" alt="Standard Chartered" class="logo-img">
     </div>
     <div class="experience-content">
       <h3>Summer Finance Intern</h3>
@@ -85,8 +85,8 @@ layout: default
 
 <div class="education-section">
   <div class="education-card" onclick="openModal('ovgu')">
-    <div class="institution-logo ovgu-logo">
-      <span class="logo-text">O</span>
+    <div class="institution-logo">
+      <img src="assets/OVGU_logo.jpeg" alt="Otto-von-Guericke University" class="logo-img">
     </div>
     <div class="education-content">
       <h3>Master of Science - MS, Operations Research and Business Analytics</h3>
@@ -96,8 +96,8 @@ layout: default
   </div>
 
   <div class="education-card" onclick="openModal('ljubljana')">
-    <div class="institution-logo ljubljana-logo">
-      <span class="logo-text">U</span>
+    <div class="institution-logo">
+      <img src="assets/ULSEB_logo.png" alt="University of Ljubljana" class="logo-img">
     </div>
     <div class="education-content">
       <h3>Erasmus+, Study Abroad Exchange Program</h3>
@@ -107,8 +107,8 @@ layout: default
   </div>
 
   <div class="education-card" onclick="openModal('acca')">
-    <div class="institution-logo acca-logo">
-      <span class="logo-text">A</span>
+    <div class="institution-logo">
+      <img src="assets/ACCA_logo.png" alt="ACCA" class="logo-img">
     </div>
     <div class="education-content">
       <h3>ACCA, Accounting and Finance</h3>
@@ -118,13 +118,13 @@ layout: default
   </div>
 
   <div class="education-card" onclick="openModal('iba')">
-    <div class="institution-logo iba-logo">
-      <span class="logo-text">I</span>
+    <div class="institution-logo">
+      <img src="assets/IBA_logo.png" alt="IBA Karachi" class="logo-img">
     </div>
     <div class="education-content">
       <h3>Bachelor's degree, Accounting and Finance</h3>
       <h4>Institute of Business Administration</h4>
-      <p class="duration">2016 - 2020</p>
+      <p class="duration">2016 - 2020 • CGPA: 3.42</p>
     </div>
   </div>
 </div>
@@ -179,28 +179,17 @@ html body.dark-mode .education-card:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
+  background: white;
+  padding: 4px;
+  overflow: hidden;
 }
 
-.logo-text {
-  font-size: 1.4rem;
-  font-weight: 700;
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
 }
-
-/* Company-specific logo colors */
-.bettermile-logo { background: linear-gradient(135deg, #00a8ff 0%, #0097e6 100%); }
-.usmobile-logo { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }
-.swvl-logo { background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); }
-.meezan-logo { background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); }
-.standard-logo { background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); }
-
-/* Institution-specific logo colors */
-.ovgu-logo { background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); }
-.ljubljana-logo { background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%); }
-.acca-logo { background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%); }
-.iba-logo { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }
 
 .experience-content, .education-content {
   flex: 1;
@@ -266,7 +255,7 @@ html body:not(.dark-mode) .additional-role {
   padding: 2rem;
   border-radius: 12px;
   width: 80%;
-  max-width: 600px;
+  max-width: 700px;
   max-height: 80vh;
   overflow-y: auto;
   position: relative;
@@ -397,7 +386,107 @@ function openModal(role) {
         <li>Collaborated with agents in the acquisition department to gain expertise in marketing and selling personal loans through cold and warm calling strategies</li>
         <li>Acquired knowledge on the functioning of the Electronic Credit Information Bureau (eCIB) system, including tracking credit defaulters and maintaining the credit rating system</li>
       </ul>
-      <p><strong>Skills:</strong> Credit Analysis • Loans • Finance • Loan Servicing</p>
+    `,
+    'ovgu': `
+      <h2>Otto-von-Guericke University Magdeburg</h2>
+      <p><strong>Degree:</strong> Master of Science - Operations Research and Business Analytics</p>
+      <p><strong>Duration:</strong> April 2024 - August 2026</p>
+      <p><strong>Location:</strong> Magdeburg, Germany</p>
+      
+      <h3>Key Courses:</h3>
+      <ul>
+        <li>Behavioral Finance</li>
+        <li>Econometric Analysis of Experimental Data</li>
+        <li>Business Decision Making</li>
+        <li>Econometrics</li>
+        <li>Databases I</li>
+        <li>Introduction to Software Engineering for Engineers</li>
+        <li>Introduction to Dynamic Decision Making</li>
+        <li>Financial Engineering</li>
+        <li>Computational Transportation</li>
+        <li>Seminar: Advanced Approaches in Operations Management and Logistics</li>
+      </ul>
+    `,
+    'ljubljana': `
+      <h2>University of Ljubljana - School of Economics and Business</h2>
+      <p><strong>Program:</strong> Erasmus+ Study Abroad Exchange Program</p>
+      <p><strong>Duration:</strong> February 2025 - July 2025</p>
+      <p><strong>Location:</strong> Ljubljana, Slovenia</p>
+      
+      <h3>Courses:</h3>
+      <ul>
+        <li>Marketing and Sales Across Cultures</li>
+        <li>Sustainability and Quality in Supply Chains</li>
+        <li>Strategic Management 2</li>
+        <li>Globalization and Multinational Firms</li>
+      </ul>
+    `,
+    'acca': `
+      <h2>ACCA (Association of Chartered Certified Accountants)</h2>
+      <p><strong>Qualification:</strong> ACCA, Accounting and Finance</p>
+      <p><strong>Duration:</strong> September 2020 - June 2025</p>
+      
+      <h3>ACCA Papers Covered:</h3>
+      <ul>
+        <li>Business and Technology (BT)</li>
+        <li>Financial Accounting (FA)</li>
+        <li>Management Accounting (MA)</li>
+        <li>Corporate and Business Law (LW)</li>
+        <li>Taxation (TX)</li>
+        <li>Financial Reporting (FR)</li>
+        <li>Performance Management (PM)</li>
+        <li>Financial Management (FM)</li>
+        <li>Audit and Assurance (AA)</li>
+        <li>Strategic Business Reporting (SBR)</li>
+        <li>Strategic Business Leader (SBL)</li>
+        <li>Advanced Performance Management (APM)</li>
+      </ul>
+    `,
+    'iba': `
+      <h2>Institute of Business Administration (IBA Karachi)</h2>
+      <p><strong>Degree:</strong> Bachelor's degree, Accounting and Finance</p>
+      <p><strong>Duration:</strong> 2016 - 2020</p>
+      <p><strong>CGPA:</strong> 3.42/4.0</p>
+      <p><strong>Location:</strong> Karachi, Pakistan</p>
+      
+      <h3>Key Courses:</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 1rem;">
+        <div>
+          <strong>Finance & Investment:</strong>
+          <ul style="margin: 5px 0;">
+            <li>Financial Management</li>
+            <li>Corporate Finance</li>
+            <li>Investment Banking</li>
+            <li>Portfolio Management</li>
+            <li>Financial Risk Management</li>
+            <li>Security Analysis</li>
+            <li>Fixed Income Investments</li>
+            <li>Derivatives</li>
+            <li>Financial Modeling</li>
+            <li>Islamic Banking & Finance</li>
+          </ul>
+        </div>
+        <div>
+          <strong>Accounting & Management:</strong>
+          <ul style="margin: 5px 0;">
+            <li>Financial Accounting</li>
+            <li>Management Accounting</li>
+            <li>Advanced Financial Reporting</li>
+            <li>Auditing</li>
+            <li>Accounting Information Systems (SAP)</li>
+            <li>Advanced Managerial Accounting</li>
+            <li>Principles of Management</li>
+            <li>Organizational Behavior</li>
+            <li>Business Communication</li>
+          </ul>
+        </div>
+      </div>
+      
+      <p style="margin-top: 1rem;"><strong>Internships:</strong></p>
+      <ul>
+        <li>Corporate Internship: Meezan Bank (June 2019)</li>
+        <li>Responsible Citizen Internship: Saylani Welfare (July-August 2017)</li>
+      </ul>
     `
   };
   
