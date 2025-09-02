@@ -1,44 +1,38 @@
 <header class="site-header" role="banner">
   <div class="wrapper">
-    <div class="site-header-flex">
-      <div class="site-header-left">
-        <span class="site-title-static">{{ site.title | escape }}</span>
-      </div>
-      
-      <div class="site-header-right">
-        <!-- Theme toggle button -->
-        <button id="header-theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-          <span class="sun-icon">☀️</span>
-          <span class="moon-icon">🌙</span>
+    <div class="site-nav-container">
+      <!-- Desktop Navigation -->
+      <nav class="site-nav desktop-nav">
+        <div class="nav-links">
+          <a class="page-link" href="{{ "/" | relative_url }}">Home</a>
+          <a class="page-link" href="{{ "/projects" | relative_url }}">Projects</a>
+          <a class="page-link" href="{{ "/about" | relative_url }}">About</a>
+          <a class="page-link" href="{{ "/contact" | relative_url }}">Contact</a>
+        </div>
+        <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">
+          <span class="theme-icon">🌓</span>
         </button>
-        
-        <!-- Desktop navigation -->
-        <nav class="site-nav desktop-nav">
-          <div class="trigger">
-            <a class="page-link" href="{{ '/' | relative_url }}">Home</a>
-            <a class="page-link" href="{{ '/about/' | relative_url }}">About</a>
-            <a class="page-link" href="{{ '/projects/' | relative_url }}">Projects</a>
-            <a class="page-link" href="{{ '/contact/' | relative_url }}">Contact</a>
-          </div>
-        </nav>
-        
-        <!-- Mobile hamburger menu -->
-        <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+      </nav>
+
+      <!-- Mobile Navigation -->
+      <div class="mobile-nav">
+        <button class="hamburger" onclick="toggleMobileMenu()">
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
+        </button>
+        <button id="mobile-theme-toggle" class="theme-toggle" onclick="toggleTheme()">
+          <span class="theme-icon">🌓</span>
         </button>
       </div>
     </div>
-  </div>
-  
-  <!-- Mobile navigation dropdown -->
-  <div class="mobile-nav">
-    <div class="mobile-nav-content">
-      <a class="page-link" href="{{ '/' | relative_url }}">Home</a>
-      <a class="page-link" href="{{ '/about/' | relative_url }}">About</a>
-      <a class="page-link" href="{{ '/projects/' | relative_url }}">Projects</a>
-      <a class="page-link" href="{{ '/contact/' | relative_url }}">Contact</a>
+
+    <!-- Mobile Dropdown Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a class="mobile-link" href="{{ "/" | relative_url }}">Home</a>
+      <a class="mobile-link" href="{{ "/projects" | relative_url }}">Projects</a>
+      <a class="mobile-link" href="{{ "/about" | relative_url }}">About</a>
+      <a class="mobile-link" href="{{ "/contact" | relative_url }}">Contact</a>
     </div>
   </div>
 </header>
