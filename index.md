@@ -1,16 +1,26 @@
 ---
 layout: default
+title: Home
 ---
 
-<div class="home-container">
-  <div class="profile-section">
-    <div class="profile-content">
+<div class="profile-section">
+  <div class="profile-content">
+    <div class="profile-text">
       <h1>Hamzauddin Siddiqui</h1>
-      <p class="intro-text">Welcome to my portfolio! I'm a data analyst with expertise in SQL, Python, Tableau, and business intelligence, currently pursuing my Master's in Operations Research & Business Analytics in Germany. I specialize in turning complex data into clear, actionable business insights.</p>
+      <p class="profile-intro">Welcome to my portfolio! I'm a data analyst with expertise in SQL, Python, Tableau, and business intelligence, currently pursuing my Master's in Operations Research & Business Analytics in Germany. I specialize in turning complex data into clear, actionable business insights.</p>
+      
+      <div class="profile-buttons">
+        <a href="https://www.linkedin.com/in/hamzauddinsiddiqui-786180175" target="_blank" class="btn-primary">LinkedIn</a>
+        <a href="{{ '/Hamzauddin_Siddiqui_CV.pdf' | relative_url }}" target="_blank" class="btn-secondary">Download CV</a>
+      </div>
     </div>
-    <img src="23 Hamza.jpg" alt="Hamzauddin Siddiqui" class="profile-image">
+    <div class="profile-image">
+      <img src="{{ '/23 Hamza.jpg' | relative_url }}" alt="Hamzauddin Siddiqui">
+    </div>
   </div>
 </div>
+
+[Rest of your existing content - work experience and education sections...]
 
 ## Work Experience
 
