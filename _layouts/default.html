@@ -4,17 +4,45 @@
   {%- include head.html -%}
 
   <body>
-
+    
+    <!-- Custom Header - Override theme navigation -->
     {%- include header.html -%}
 
+    <!-- Main Content -->
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
         {{ content }}
       </div>
     </main>
 
+    <!-- Custom Footer -->
     {%- include footer.html -%}
 
   </body>
-
 </html>
+
+<style>
+/* Hide any default minima theme navigation that might still appear */
+.site-nav:not(.desktop-nav) {
+  display: none !important;
+}
+
+/* Ensure our custom navigation is always visible */
+.desktop-nav {
+  display: flex !important;
+}
+
+@media screen and (max-width: 768px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-nav {
+    display: flex !important;
+  }
+}
+
+/* Additional overrides for minima theme */
+.minima-header, .default-header {
+  display: none !important;
+}
+</style>
