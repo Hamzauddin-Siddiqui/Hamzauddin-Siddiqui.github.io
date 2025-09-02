@@ -19,8 +19,9 @@ plugins:
 minima:
   skin: auto
 
-# Remove twitter
-twitter_username: ""
+# Disable default header pages to prevent double navigation
+header_pages: []
 
-# Footer settings - keep minimal
+# Remove all other social links
+twitter_username: ""
 author: ""
