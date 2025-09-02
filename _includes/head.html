@@ -144,19 +144,27 @@
 
     // Initialize theme when page loads
     document.addEventListener('DOMContentLoaded', function() {
-      initializeTheme();
-      
-      // Re-apply styles after a short delay to ensure all elements are loaded
-      setTimeout(() => {
-        if (document.body.classList.contains('dark-mode')) {
-          applyDarkModeStyles();
-        } else {
-          applyLightModeStyles();
-        }
-      }, 100);
+      try {
+        initializeTheme();
+        
+        // Re-apply styles after a short delay to ensure all elements are loaded
+        setTimeout(() => {
+          if (document.body && document.body.classList.contains('dark-mode')) {
+            applyDarkModeStyles();
+          } else {
+            applyLightModeStyles();
+          }
+        }, 100);
+      } catch (error) {
+        console.log('Theme initialization error:', error);
+      }
     });
 
     // Initialize theme immediately for faster loading
-    initializeTheme();
+    try {
+      initializeTheme();
+    } catch (error) {
+      console.log('Initial theme setup error:', error);
+    }
   </script>
 </head>
