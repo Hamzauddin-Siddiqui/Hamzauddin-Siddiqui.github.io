@@ -44,10 +44,9 @@ title: Contact
       <div class="availability-content">
         <p>I'm open to opportunities throughout the European Union, including:</p>
         <ul>
-          <li>Full-time data analyst positions</li>
-          <li>Business intelligence consulting projects</li>
-          <li>Supply chain analytics collaborations</li>
-          <li>Research partnerships in operations research</li>
+          <li>Data analyst positions</li>
+          <li>Business intelligence</li>
+          <li>Supply chain analytics</li>
         </ul>
         <p class="eu-note">Authorized to work in all EU member states.</p>
       </div>
