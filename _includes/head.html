@@ -205,5 +205,38 @@
     } else {
       setTimeout(createProfileButtons, 300);
     }
+    // Email copy functionality
+    function copyEmail() {
+      const email = 'hamzauddin54@gmail.com';
+      const copyBtn = document.getElementById('copy-btn');
+      
+      try {
+        navigator.clipboard.writeText(email).then(function() {
+          copyBtn.textContent = 'Copied!';
+          copyBtn.classList.add('copied');
+          
+          setTimeout(function() {
+            copyBtn.textContent = 'Copy';
+            copyBtn.classList.remove('copied');
+          }, 2000);
+        });
+      } catch (err) {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = email;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        copyBtn.textContent = 'Copied!';
+        copyBtn.classList.add('copied');
+        
+        setTimeout(function() {
+          copyBtn.textContent = 'Copy';
+          copyBtn.classList.remove('copied');
+        }, 2000);
+      }
+    }
   </script>
 </head>
