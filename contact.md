@@ -5,7 +5,6 @@ title: Contact
 
 <div class="contact-page-container">
   <h1>Get In Touch</h1>
-  <p class="contact-intro">I'm always interested in discussing data analytics opportunities, collaborative projects, or sharing insights about supply chain optimization and business intelligence.</p>
 
   <div class="split-layout">
     <div class="contact-essentials">
