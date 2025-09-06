@@ -14,8 +14,8 @@ layout: default
       <div class="card-icon">🎯</div>
       <div class="card-content">
         <h2>My Approach</h2>
-        <p>I don't just analyze data. I solve business problems. At SWVL, I was responsible for presenting Weekly Business Reviews to the General Manager of Pakistan, which sharpened my ability to identify and present data that would actually be meaningful to leadership from the clutter of available information.</p>
-        <p>My background in both finance and operations research gives me a unique perspective: I understand the business impact behind every metric and can translate complex findings into actionable strategies.</p>
+        <p>I don't just analyze data, I solve business problems. At SWVL, I was responsible for presenting Weekly Business Reviews to the General Manager of Pakistan, which sharpened my ability to identify and present data that would actually be meaningful to leadership from the clutter of available information.</p>
+        <p>My academic background in both finance and operations research gives me a unique perspective: I understand the business impact behind every metric and can translate complex findings into actionable strategies.</p>
       </div>
     </div>
 
@@ -24,7 +24,7 @@ layout: default
       <div class="card-content">
         <h2>International Perspective</h2>
         <p>My journey from Pakistan's startup ecosystem to Germany's structured business environment has shaped how I approach problems. As a Business Intelligence Specialist at SWVL, I worked with partners across Egypt, Dubai, and Nigeria. This experience developed my stakeholder management and communication skills across diverse cultural contexts.</p>
-        <p>Currently pursuing my Master's in Germany while on Erasmus in Slovenia, I'm building expertise that bridges emerging markets and European business practices with precision and cultural adaptability.</p>
+        <p>Currently pursuing my Master's in Germany and having done Erasmus in Slovenia, I'm building expertise that bridges emerging markets and European business practices with precision and cultural adaptability.</p>
       </div>
     </div>
 
