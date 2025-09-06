@@ -13,7 +13,7 @@ title: Contact
       <div class="contact-item">
         <strong>Email:</strong> 
         <span id="email-text">hamzauddin54@gmail.com</span>
-        <button class="copy-btn" onclick="copyEmail()" id="copy-btn">Copy</button>
+        <button class="copy-btn" onclick="copyEmail()" id="copy-btn">⧉</button>
       </div>
       
       <div class="contact-item">
