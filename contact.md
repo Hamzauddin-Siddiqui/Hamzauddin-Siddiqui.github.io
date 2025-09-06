@@ -1,65 +1,57 @@
 ---
 layout: default
----
-layout: page
 title: Contact
-permalink: /contact/
 ---
 
-# Get In Touch
+<div class="contact-page-container">
+  <h1>Get In Touch</h1>
+  <p class="contact-intro">I'm always interested in discussing data analytics opportunities, collaborative projects, or sharing insights about supply chain optimization and business intelligence.</p>
 
-I'm always interested in discussing data analytics opportunities, collaborative projects, or sharing insights about supply chain optimization and business intelligence.
-
-## 📧 Contact Information
-
-**Email:** [hamzauddin54@gmail.com](mailto:hamzauddin54@gmail.com)  
-**LinkedIn:** [linkedin.com/in/hamzauddin-siddiqui-786180175](https://www.linkedin.com/in/hamzauddin-siddiqui-786180175)  
-**GitHub:** [github.com/Hamzauddin-Siddiqui](https://github.com/Hamzauddin-Siddiqui)  
-
-**Location:** Magdeburg, Germany  
-**Timezone:** Central European Time (CET/CEST)
-
-## 🌍 Currently Available For
-
-- **Full-time Data Analyst roles** across Europe
-- **Business Intelligence consulting** projects
-- **Supply chain analytics** collaborations
-- **Research partnerships** in operations research
-- **Speaking opportunities** about data-driven logistics
-
-## 📅 Let's Schedule a Call
-
-I'm available for:
-- **Career discussions** and opportunities
-- **Technical consultations** on BI and analytics projects
-- **Academic collaborations** related to supply chain research
-- **Mentoring conversations** for aspiring data analysts
-
-**Best times to reach me:**
-- Monday-Friday: 9:00 AM - 6:00 PM CET
-- Response time: Within 24 hours for emails
-- LinkedIn messages: Within 48 hours
-
-## 🎯 What I Can Help With
-
-**For Employers:**
-- Data analysis and business intelligence implementation
-- Supply chain optimization and performance analysis
-- Dashboard development and KPI tracking
-- Process automation and efficiency improvements
-
-**For Students/Professionals:**
-- Career guidance in data analytics
-- Technical mentoring in SQL, Python, Tableau
-- European job market insights
-- Academic project collaboration
-
-**For Businesses:**
-- Analytics consulting and strategy
-- Performance measurement frameworks
-- Data visualization and reporting solutions
-- Operational efficiency analysis
-
----
-
-*Looking forward to connecting with you!*
+  <div class="split-layout">
+    <div class="contact-essentials">
+      <h2>Contact Information</h2>
+      
+      <div class="contact-item">
+        <strong>Email:</strong> 
+        <span id="email-text">hamzauddin54@gmail.com</span>
+        <button class="copy-btn" onclick="copyEmail()" id="copy-btn">Copy</button>
+      </div>
+      
+      <div class="contact-item">
+        <strong>Phone:</strong> +49 155 66189843
+      </div>
+      
+      <div class="contact-item">
+        <strong>LinkedIn:</strong> 
+        <a href="https://www.linkedin.com/in/hamzauddinsiddiqui-786180175" target="_blank">HamzaUddin Siddiqui</a>
+      </div>
+      
+      <div class="contact-item">
+        <strong>GitHub:</strong> 
+        <a href="https://github.com/Hamzauddin-Siddiqui" target="_blank">Hamzauddin-Siddiqui</a>
+      </div>
+      
+      <div class="contact-item">
+        <strong>Location:</strong> Magdeburg, Germany
+      </div>
+      
+      <div class="contact-item">
+        <strong>Timezone:</strong> Central European Time (CET/CEST)
+      </div>
+    </div>
+    
+    <div class="availability">
+      <h2>Currently Available For</h2>
+      <div class="availability-content">
+        <p>I'm open to opportunities throughout the European Union, including:</p>
+        <ul>
+          <li>Full-time data analyst positions</li>
+          <li>Business intelligence consulting projects</li>
+          <li>Supply chain analytics collaborations</li>
+          <li>Research partnerships in operations research</li>
+        </ul>
+        <p class="eu-note">Authorized to work in all EU member states.</p>
+      </div>
+    </div>
+  </div>
+</div>
