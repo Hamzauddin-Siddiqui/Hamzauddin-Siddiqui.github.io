@@ -233,3 +233,145 @@ html body:not(.dark-mode) .footer-col a {
     height: 150px;
   }
 }
+/* Contact Page Styles */
+.contact-page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.contact-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.contact-essentials {
+  background: rgba(248, 249, 250, 0.8);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+html body.dark-mode .contact-essentials {
+  background: rgba(45, 45, 45, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-essentials h2 {
+  margin-bottom: 1.5rem;
+  color: #0066cc;
+  font-size: 1.3rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.contact-item strong {
+  min-width: 80px;
+  font-weight: 600;
+}
+
+.copy-btn {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: 8px;
+  transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+  background: #0052a3;
+}
+
+.copy-btn.copied {
+  background: #28a745;
+}
+
+.availability {
+  background: rgba(227, 242, 253, 0.8);
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 4px solid #0066cc;
+  border: 1px solid rgba(0, 102, 204, 0.2);
+}
+
+html body.dark-mode .availability {
+  background: rgba(38, 50, 56, 0.8);
+  border: 1px solid rgba(0, 102, 204, 0.3);
+}
+
+.availability h2 {
+  margin-bottom: 1.5rem;
+  color: #0066cc;
+  font-size: 1.3rem;
+}
+
+.availability ul {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.availability li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 102, 204, 0.1);
+  position: relative;
+  padding-left: 1rem;
+}
+
+.availability li:before {
+  content: "•";
+  color: #0066cc;
+  position: absolute;
+  left: 0;
+}
+
+.availability li:last-child {
+  border-bottom: none;
+}
+
+.eu-note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .split-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .contact-item strong {
+    min-width: auto;
+  }
+  
+  .copy-btn {
+    margin-left: 0;
+    margin-top: 4px;
+  }
+}
