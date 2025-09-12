@@ -6,15 +6,14 @@ title: Projects
 <style>
 .projects-container {
     display: flex;
-    gap: 30px;
-    margin: 20px auto;
+    gap: 40px;
+    margin: 20px 40px;
     min-height: 600px;
-    max-width: 1400px;
-    width: 100%;
+    width: calc(100% - 80px);
 }
 
 .projects-sidebar {
-    flex: 0 0 320px;
+    flex: 0 0 350px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border-radius: 12px;
@@ -103,7 +102,7 @@ title: Projects
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border-radius: 12px;
-    padding: 40px;
+    padding: 50px 60px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     min-width: 0;
 }
@@ -138,23 +137,32 @@ title: Projects
     font-size: 1.4em;
 }
 
-.project-overview p,
+.project-overview p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
 .key-achievements p {
     line-height: 1.7;
     margin-bottom: 15px;
     color: var(--text-color);
-    max-width: none;
+    font-size: 16px;
 }
 
 .key-achievements ul {
     padding-left: 20px;
     color: var(--text-color);
-    columns: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
 }
 
 .key-achievements li {
-    margin-bottom: 8px;
-    line-height: 1.5;
+    margin-bottom: 0;
+    line-height: 1.6;
+    font-size: 15px;
 }
 
 .project-tags {
@@ -162,7 +170,6 @@ title: Projects
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    max-width: none;
 }
 
 .tag {
@@ -205,27 +212,48 @@ title: Projects
 }
 
 /* Large screens - two column layout for achievements */
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
     .key-achievements ul {
-        columns: 2;
-        column-gap: 40px;
-    }
-    
-    .key-achievements li {
-        break-inside: avoid;
-        margin-bottom: 12px;
-        line-height: 1.6;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 60px;
     }
     
     .featured-project {
-        padding: 50px;
+        padding: 50px 80px;
+    }
+    
+    .projects-container {
+        margin: 20px 60px;
+    }
+}
+
+/* Extra large screens */
+@media (min-width: 1800px) {
+    .projects-container {
+        margin: 20px 100px;
+    }
+    
+    .featured-project {
+        padding: 50px 100px;
+    }
+}
+
+/* Medium-large screens */
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .projects-container {
+        margin: 20px 30px;
+    }
+    
+    .featured-project {
+        padding: 40px 50px;
     }
 }
 
 /* Medium screens */
 @media (min-width: 768px) and (max-width: 1199px) {
     .projects-container {
-        max-width: 1200px;
+        margin: 20px 20px;
+        gap: 30px;
     }
     
     .projects-sidebar {
@@ -233,7 +261,7 @@ title: Projects
     }
     
     .featured-project {
-        padding: 35px;
+        padding: 35px 40px;
     }
 }
 
@@ -243,6 +271,7 @@ title: Projects
         flex-direction: column;
         gap: 20px;
         margin: 20px 10px;
+        width: calc(100% - 20px);
     }
     
     .projects-sidebar {
@@ -276,7 +305,7 @@ title: Projects
     }
     
     .key-achievements ul {
-        columns: 1 !important;
+        grid-template-columns: 1fr !important;
     }
     
     .featured-project h2 {
@@ -284,11 +313,28 @@ title: Projects
     }
 }
 
-/* Ensure content doesn't feel cramped */
+/* Page header width adjustment */
 .page-header {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: 0 40px;
+    padding: 0;
+}
+
+@media (min-width: 1400px) {
+    .page-header {
+        margin: 0 60px;
+    }
+}
+
+@media (min-width: 1800px) {
+    .page-header {
+        margin: 0 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        margin: 0 10px;
+    }
 }
 
 /* Dark mode specific adjustments */
