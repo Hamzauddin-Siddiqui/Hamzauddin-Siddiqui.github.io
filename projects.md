@@ -5,453 +5,676 @@ title: Projects
 
 <style>
 .projects-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-}
-
-.projects-intro {
-    text-align: center;
-    margin: 2rem 0 3rem 0;
-}
-
-.intro-statement {
-    font-size: 1.2rem;
-    font-style: italic;
-    opacity: 0.9;
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-.featured-layout {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 2rem;
-    margin: 2rem 0;
-    height: 600px;
+    display: flex;
+    gap: 30px;
+    margin: 20px 0;
+    min-height: 600px;
 }
 
 .projects-sidebar {
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    padding: 1rem;
-    overflow-y: auto;
-}
-
-body.dark-mode .projects-sidebar {
-    background: rgba(40, 40, 40, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.sidebar-tabs {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.tab-btn {
-    flex: 1;
-    padding: 0.75rem 1rem;
-    background: rgba(0, 0, 0, 0.02);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 0.9rem;
-    color: #333;
-}
-
-body.dark-mode .tab-btn {
+    flex: 0 0 300px;
     background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 20px;
+    height: fit-content;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #e0e0e0;
 }
 
-.tab-btn:hover {
-    background: rgba(0, 0, 0, 0.05);
+.tab-buttons {
+    display: flex;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 12px 20px;
+    background: transparent;
+    border: none;
+    color: #8e8e93;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.tab-button.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
     transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
 }
 
-body.dark-mode .tab-btn:hover {
+.tab-button:hover:not(.active) {
     background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
 }
 
-.tab-btn.active {
-    background: rgba(102, 126, 234, 0.2);
-    border-color: #667eea;
-}
-
-.tab-content {
+.projects-list {
     display: none;
 }
 
-.tab-content.active {
+.projects-list.active {
     display: block;
 }
 
-.sidebar-item {
-    padding: 1rem;
-    margin-bottom: 0.5rem;
+.project-item {
+    padding: 15px;
+    margin: 8px 0;
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 0.9rem;
     border: 1px solid transparent;
-    color: #333;
 }
 
-body.dark-mode .sidebar-item {
-    color: #e0e0e0;
-}
-
-.sidebar-item:hover {
-    background: rgba(0, 0, 0, 0.02);
-    border-color: rgba(0, 0, 0, 0.1);
+.project-item:hover {
+    background: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
+    border-color: rgba(102, 126, 234, 0.3);
 }
 
-body.dark-mode .sidebar-item:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-.sidebar-item.active {
+.project-item.active {
     background: rgba(102, 126, 234, 0.2);
     border-color: #667eea;
 }
 
-.featured-project {
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    padding: 2rem;
-    overflow-y: auto;
+.project-title {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: var(--text-color);
 }
 
-body.dark-mode .featured-project {
-    background: rgba(40, 40, 40, 0.95);
+.project-subtitle {
+    font-size: 12px;
+    opacity: 0.7;
+    color: var(--text-color);
+}
+
+.featured-project {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 30px;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.featured-title {
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #333;
+.featured-project h2 {
+    margin-top: 0;
+    color: var(--text-color);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-body.dark-mode .featured-title {
-    color: #e0e0e0;
-}
-
-.featured-meta {
+.project-meta {
+    font-size: 14px;
     opacity: 0.8;
-    margin-bottom: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
 }
 
-.featured-project h3 {
-    margin: 1.5rem 0 0.75rem 0;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #333;
+.project-overview h3,
+.key-achievements h3 {
+    color: var(--text-color);
+    margin-top: 25px;
+    margin-bottom: 15px;
 }
 
-body.dark-mode .featured-project h3 {
-    color: #e0e0e0;
-}
-
-.featured-project p {
-    margin-bottom: 1rem;
+.project-overview p,
+.key-achievements p {
     line-height: 1.6;
+    margin-bottom: 15px;
+    color: var(--text-color);
 }
 
-.featured-project ul {
-    margin: 1rem 0 1rem 1.5rem;
+.key-achievements ul {
+    padding-left: 20px;
+    color: var(--text-color);
 }
 
-.featured-project li {
-    margin-bottom: 0.5rem;
+.key-achievements li {
+    margin-bottom: 8px;
+    line-height: 1.5;
 }
 
-.project-tech {
+.project-tags {
+    margin: 25px 0;
     display: flex;
-    gap: 0.5rem;
-    margin: 1.5rem 0;
     flex-wrap: wrap;
+    gap: 8px;
 }
 
-.tech-tag {
-    background: rgba(102, 126, 234, 0.1);
+.tag {
+    background: rgba(102, 126, 234, 0.2);
     color: #667eea;
-    padding: 0.25rem 0.75rem;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    border: 1px solid rgba(102, 126, 234, 0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid rgba(102, 126, 234, 0.3);
 }
 
-.project-links {
-    margin-top: 1.5rem;
-    display: flex;
-    gap: 1rem;
-}
-
-/* Enhanced GitHub button styling for better visibility */
-.project-link {
+.github-button {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.25rem;
+    gap: 8px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border: none;
-    border-radius: 8px;
-    color: white !important;
+    color: white;
+    padding: 12px 24px;
     text-decoration: none;
-    font-weight: 500;
+    border-radius: 8px;
+    font-weight: 600;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
-.project-link:hover {
+.github-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    color: white;
+    text-decoration: none;
 }
 
-/* Mobile Responsiveness - FIXED */
+.no-project {
+    text-align: center;
+    padding: 60px 20px;
+    opacity: 0.6;
+    color: var(--text-color);
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .featured-layout {
-        grid-template-columns: 1fr;
-        height: auto;
-        display: flex;
+    .projects-container {
         flex-direction: column;
+        gap: 20px;
     }
-
+    
     .projects-sidebar {
-        order: 1;  /* Sidebar appears FIRST on mobile */
-        height: auto;
-        max-height: 300px;
+        flex: none;
+        order: -1;
     }
-
+    
+    .tab-buttons {
+        margin-bottom: 15px;
+    }
+    
+    .tab-button {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+    
     .featured-project {
-        order: 2;  /* Featured project appears SECOND on mobile */
-        min-height: 400px;
+        padding: 20px;
     }
+    
+    .project-item {
+        padding: 12px;
+    }
+    
+    .project-title {
+        font-size: 14px;
+    }
+    
+    .project-subtitle {
+        font-size: 11px;
+    }
+}
 
-    .sidebar-tabs {
-        flex-direction: row;
-    }
+/* Dark mode specific adjustments */
+body.dark-mode .projects-sidebar,
+body.dark-mode .featured-project {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
 
-    .tab-btn {
-        font-size: 0.8rem;
-        padding: 0.5rem;
-    }
+body.dark-mode .project-item {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+body.dark-mode .project-item:hover {
+    background: rgba(255, 255, 255, 0.08);
 }
 </style>
 
-# Projects
-
-<div class="projects-intro">
-    <p class="intro-statement">Deep dive into analytical projects with comprehensive technical details and business insights.</p>
+<div class="page-header">
+    <h1>Projects</h1>
+    <p class="page-description">Deep dive into analytical projects with comprehensive technical details and business insights.</p>
 </div>
 
-<div class="featured-layout">
+<div class="projects-container">
     <div class="projects-sidebar">
-        <!-- Tab Navigation -->
-        <div class="sidebar-tabs">
-            <button class="tab-btn active" onclick="switchTab('academic')">🎓 Academic</button>
-            <button class="tab-btn" onclick="switchTab('professional')">💼 Professional</button>
+        <div class="tab-buttons">
+            <button class="tab-button active" onclick="switchTab('academic')">
+                🎓 Academic
+            </button>
+            <button class="tab-button" onclick="switchTab('professional')">
+                💼 Professional
+            </button>
         </div>
-        
-        <!-- Academic Projects List -->
-        <div class="tab-content active" id="academic-tab">
-            <div class="sidebar-item active" data-project="tbrd">Last-Mile Delivery Robots</div>
-            <div class="sidebar-item" data-project="option">Option Pricing Model</div>
+
+        <!-- Academic Projects -->
+        <div class="projects-list active" id="academic-projects">
+            <div class="project-item active" onclick="selectProject('last-mile-delivery')">
+                <div class="project-title">Last-Mile Delivery Robots</div>
+                <div class="project-subtitle">Otto-von-Guericke University</div>
+            </div>
+            <div class="project-item" onclick="selectProject('option-pricing')">
+                <div class="project-title">Option Pricing Model</div>
+                <div class="project-subtitle">Otto-von-Guericke University</div>
+            </div>
+            <div class="project-item" onclick="selectProject('risk-analysis')">
+                <div class="project-title">Risk Analysis Framework</div>
+                <div class="project-subtitle">IBA Karachi</div>
+            </div>
+            <div class="project-item" onclick="selectProject('industry-review')">
+                <div class="project-title">Industry Review</div>
+                <div class="project-subtitle">IBA Karachi</div>
+            </div>
+            <div class="project-item" onclick="selectProject('merger-analysis')">
+                <div class="project-title">Merger Analysis</div>
+                <div class="project-subtitle">IBA Karachi</div>
+            </div>
+            <div class="project-item" onclick="selectProject('financial-modelling')">
+                <div class="project-title">Financial Modelling</div>
+                <div class="project-subtitle">IBA Karachi</div>
+            </div>
         </div>
-        
-        <!-- Professional Projects List -->
-        <div class="tab-content" id="professional-tab">
-            <div class="sidebar-item" data-project="risk">Risk Analysis Framework</div>
-            <div class="sidebar-item" data-project="industry">Industry Review</div>
-            <div class="sidebar-item" data-project="merger">Merger Analysis</div>
-            <div class="sidebar-item" data-project="financial">Financial Modelling</div>
+
+        <!-- Professional Projects -->
+        <div class="projects-list" id="professional-projects">
+            <div class="project-item" onclick="selectProject('bettermile-dashboards')">
+                <div class="project-title">Analytics Dashboards</div>
+                <div class="project-subtitle">Bettermile (GLS eCom Lab)</div>
+            </div>
+            <div class="project-item" onclick="selectProject('depot-analysis')">
+                <div class="project-title">Depot Performance Analysis</div>
+                <div class="project-subtitle">Bettermile (GLS eCom Lab)</div>
+            </div>
+            <div class="project-item" onclick="selectProject('mobile-analytics')">
+                <div class="project-title">Mobile Experience Analytics</div>
+                <div class="project-subtitle">US Mobile</div>
+            </div>
+            <div class="project-item" onclick="selectProject('bi-dashboards')">
+                <div class="project-title">Business Intelligence Platform</div>
+                <div class="project-subtitle">SWVL Pakistan</div>
+            </div>
         </div>
     </div>
-    
+
     <div class="featured-project">
-        <h2 class="featured-title">Last-Mile Delivery with Autonomous Robots</h2>
-        <div class="featured-meta">Otto-von-Guericke University • October 2024 - January 2025</div>
-        
-        <h3>Project Overview</h3>
-        <p>Mathematical optimization research tackling the Truck-Based Robot Delivery (TBRD) problem. Developed both exact and heuristic solution methods for urban logistics scheduling.</p>
-        
-        <h3>Key Achievements</h3>
-        <ul>
-            <li>98% optimal solutions on small instances using Gurobi</li>
-            <li>290× computational speedup with custom heuristic algorithm</li>
-            <li>Comprehensive sensitivity analysis identifying critical performance thresholds</li>
-        </ul>
-        
-        <div class="project-tech">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Gurobi Optimization</span>
-            <span class="tech-tag">Algorithm Design</span>
-            <span class="tech-tag">Academic Research</span>
-        </div>
-        
-        <div class="project-links">
-            <a href="https://github.com/Hamzauddin-Siddiqui/ovgu-last-mile-delivery-robots" class="project-link" target="_blank">
-                🔗 View GitHub Repository
+        <!-- Last-Mile Delivery Project (Default) -->
+        <div id="last-mile-delivery" class="project-content">
+            <h2>Last-Mile Delivery with Autonomous Robots</h2>
+            <div class="project-meta">Otto-von-Guericke University • October 2024 - January 2025</div>
+
+            <div class="project-overview">
+                <h3>Project Overview</h3>
+                <p>Developed and implemented two distinct algorithmic approaches to solve the complex optimization problem of scheduling last-mile deliveries using truck-based autonomous robots. This research addresses the growing demand for efficient urban logistics solutions by combining traditional operations research with cutting-edge autonomous technology.</p>
+            </div>
+
+            <div class="key-achievements">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li><strong>Gurobi Optimization Implementation:</strong> Developed exact mathematical model using mixed-integer linear programming, achieving optimal solutions for small to medium-sized problem instances</li>
+                    <li><strong>Heuristic Algorithm Development:</strong> Created custom nearest-neighbor heuristic with local optimization, enabling scalable solutions for large-scale real-world scenarios</li>
+                    <li><strong>Comparative Performance Analysis:</strong> Conducted comprehensive benchmarking showing heuristic achieves 85-95% of optimal solution quality while reducing computation time by 99.8%</li>
+                    <li><strong>Industry-Relevant Problem Modeling:</strong> Addressed real logistics constraints including vehicle capacity, robot battery life, and urban delivery time windows</li>
+                </ul>
+            </div>
+
+            <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Gurobi Optimizer</span>
+                <span class="tag">Operations Research</span>
+                <span class="tag">Algorithm Development</span>
+                <span class="tag">Mathematical Modeling</span>
+                <span class="tag">Logistics Optimization</span>
+            </div>
+
+            <a href="https://github.com/Hamzauddin-Siddiqui/ovgu-last-mile-delivery-robots" target="_blank" class="github-button">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                View on GitHub
             </a>
+        </div>
+
+        <!-- Option Pricing Project -->
+        <div id="option-pricing" class="project-content" style="display: none;">
+            <h2>Option Pricing Model</h2>
+            <div class="project-meta">Otto-von-Guericke University • March 2024 - July 2024</div>
+
+            <div class="project-overview">
+                <h3>Project Overview</h3>
+                <p>Engineered a comprehensive option pricing model in Python utilizing 5 years of historical stock data from Yahoo Finance to evaluate the accuracy and assumptions of the European Market Hypothesis and Black-Scholes Model through comparative analysis with real-world option prices.</p>
+            </div>
+
+            <div class="key-achievements">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li><strong>Financial Data Analysis:</strong> Processed and analyzed 5+ years of historical stock price data to calculate volatility, returns, and risk parameters</li>
+                    <li><strong>Model Implementation:</strong> Developed Black-Scholes pricing algorithm with Monte Carlo simulation validation techniques</li>
+                    <li><strong>Market Validation:</strong> Conducted empirical analysis comparing theoretical vs. market option prices to assess model accuracy</li>
+                    <li><strong>Statistical Testing:</strong> Applied statistical hypothesis testing to evaluate European Market Hypothesis assumptions</li>
+                </ul>
+            </div>
+
+            <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Financial Modeling</span>
+                <span class="tag">Black-Scholes</span>
+                <span class="tag">Monte Carlo</span>
+                <span class="tag">Statistical Analysis</span>
+                <span class="tag">Yahoo Finance API</span>
+            </div>
+
+            <p style="color: #8e8e93; font-style: italic; margin-top: 20px;">
+                GitHub repository coming soon - code documentation in progress
+            </p>
+        </div>
+
+        <!-- Risk Analysis Project -->
+        <div id="risk-analysis" class="project-content" style="display: none;">
+            <h2>Risk Analysis Framework</h2>
+            <div class="project-meta">Institute of Business Administration • October 2019 - December 2019</div>
+
+            <div class="project-overview">
+                <h3>Project Overview</h3>
+                <p>Conducted comprehensive market risk analysis for a diversified portfolio comprising investments in 10 companies from the KMI-30 index, implementing advanced risk assessment methodologies and portfolio optimization techniques.</p>
+            </div>
+
+            <div class="key-achievements">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li><strong>Liquidity Risk Analysis:</strong> Performed liquidity risk assessment for randomly generated assets using advanced statistical models</li>
+                    <li><strong>Credit Risk Evaluation:</strong> Executed detailed credit risk analysis for selected individual securities with comprehensive risk profiling</li>
+                    <li><strong>Risk Assessment Methodologies:</strong> Demonstrated proficiency in multiple risk assessment frameworks including VaR and stress testing</li>
+                    <li><strong>Portfolio Optimization:</strong> Applied modern portfolio theory to optimize risk-return profiles across diverse asset classes</li>
+                </ul>
+            </div>
+
+            <div class="project-tags">
+                <span class="tag">Excel</span>
+                <span class="tag">Risk Assessment</span>
+                <span class="tag">Portfolio Analysis</span>
+                <span class="tag">Financial Modeling</span>
+                <span class="tag">Statistical Analysis</span>
+                <span class="tag">VaR Modeling</span>
+            </div>
+        </div>
+
+        <!-- Industry Review Project -->
+        <div id="industry-review" class="project-content" style="display: none;">
+            <h2>Industry Review Analysis</h2>
+            <div class="project-meta">Institute of Business Administration • April 2019 - May 2019</div>
+
+            <div class="project-overview">
+                <h3>Project Overview</h3>
+                <p>Conducted comprehensive industry analysis examining market structure, competitive dynamics, and growth trends within the Pakistani telecommunications sector, providing strategic insights for investment decision-making.</p>
+            </div>
+
+            <div class="key-achievements">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li><strong>Market Structure Analysis:</strong> Analyzed competitive landscape and market concentration ratios across major telecommunications players</li>
+                    <li><strong>Financial Performance Evaluation:</strong> Conducted comparative financial analysis of key industry participants over 5-year period</li>
+                    <li><strong>Growth Trend Forecasting:</strong> Developed market growth projections using historical data and industry indicators</li>
+                    <li><strong>Strategic Recommendations:</strong> Provided data-driven investment recommendations based on industry outlook analysis</li>
+                </ul>
+            </div>
+
+            <div class="project-tags">
+                <span class="tag">Industry Analysis</span>
+                <span class="tag">Market Research</span>
+                <span class="tag">Financial Analysis</span>
+                <span class="tag">Strategic Planning</span>
+                <span class="tag">Excel</span>
+                <span class="tag">Data Visualization</span>
+            </div>
+        </div>
+
+        <!-- Merger Analysis Project -->
+        <div id="merger-analysis" class="project-content" style="display: none;">
+            <h2>Merger & Acquisition Analysis</h2>
+            <div class="project-meta">Institute of Business Administration • April 2019 - May 2019</div>
+
+            <div class="project-overview">
+                <h3>Project Overview</h3>
+                <p>Analyzed the strategic and financial implications of major M&A transactions within the Pakistani banking sector, evaluating synergy potential, valuation methodologies, and post-merger performance outcomes.</p>
+            </div>
+
+            <div class="key-achievements">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li><strong>Valuation Analysis:</strong> Applied multiple valuation methodologies including DCF, comparable company analysis, and precedent transactions</li>
+                    <li><strong>Synergy Assessment:</strong> Quantified potential cost and revenue synergies through detailed operational analysis</li>
+                    <li><strong>Due Diligence Framework:</strong> Developed comprehensive due diligence checklist covering financial, operational, and regulatory aspects</li>
+                    <li><strong>Post-Merger Integration:</strong> Analyzed integration challenges and success factors from historical M&A case studies</li>
+                </ul>
+            </div>
+
+            <div class="project-tags">
+                <span class="tag">M&A Analysis</span>
+                <span class="tag">Valuation Modeling</span>
+                <span class="tag">DCF Analysis</span>
+                <span class="tag">Financial Due Diligence</span>
+                <span class="tag">Excel</span>
+                <span class="tag">Strategic Analysis</span>
+            </div>
+        </div>
+
+        <!-- Financial Modelling Project -->
+        <div id="financial-modelling" class="project-content" style="display: none;">
+            <h2>Financial Modeling & Forecasting</h2>
+            <div class="project-meta">Institute of Business Administration • October 2018 - December 2018</div>
+
+            <div class="project-overview">
+                <h3>Project Overview</h3>
+                <p>Developed comprehensive financial models for corporate valuation and performance forecasting, implementing advanced Excel techniques and financial analysis methodologies for strategic decision support.</p>
+            </div>
+
+            <div class="key-achievements">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li><strong>Three-Statement Model:</strong> Built integrated financial model linking income statement, balance sheet, and cash flow statement</li>
+                    <li><strong>Scenario Analysis:</strong> Implemented Monte Carlo simulations and sensitivity analysis for risk assessment</li>
+                    <li><strong>Forecasting Models:</strong> Developed revenue and expense forecasting models using regression analysis and time series methods</li>
+                    <li><strong>Performance Metrics:</strong> Created automated dashboard tracking key financial ratios and performance indicators</li>
+                </ul>
+            </div>
+
+            <div class="project-tags">
+                <span class="tag">Financial Modeling</span>
+                <span class="tag">Excel Advanced</span>
+                <span class="tag">Forecasting</span>
+                <span class="tag">Scenario Analysis</span>
+                <span class="tag">Monte Carlo</span>
+                <span class="tag">Financial Planning</span>
+            </div>
+        </div>
+
+        <!-- Bettermile Dashboards Project -->
+        <div id="bettermile-dashboards" class="project-content" style="display: none;">
+            <h2>Interactive Analytics Dashboards</h2>
+            <div class="project-meta">Bettermile (GLS eCom Lab) • December 2024 - Present</div>
+
+            <div class="project-overview">
+                <h3>Project Overview</h3>
+                <p>Strategically utilized AI coding agents to rapidly develop 8+ interactive HTML dashboards for comprehensive logistics operations analysis, customer support intelligence, and software quality tracking across multiple European markets.</p>
+            </div>
+
+            <div class="key-achievements">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li><strong>Rapid Development Workflow:</strong> Leveraged AI-assisted development to accelerate dashboard creation by 70% while maintaining code quality and functionality</li>
+                    <li><strong>Multi-Country Analytics:</strong> Built driver performance analysis systems tracking operational metrics across Germany, Netherlands, and Poland with automated categorization</li>
+                    <li><strong>Customer Intelligence Platform:</strong> Developed user experience analytics processing survey data from multiple markets with qualitative feedback categorization</li>
+                    <li><strong>Quality Assurance Tools:</strong> Created bug tracking and app version performance analysis systems with statistical validity algorithms</li>
+                </ul>
+            </div>
+
+            <div class="project-tags">
+                <span class="tag">JavaScript (ES6+)</span>
+                <span class="tag">Chart.js</span>
+                <span class="tag">CSV Processing</span>
+                <span class="tag">Papa Parse</span>
+                <span class="tag">AI-Assisted Development</span>
+                <span class="tag">Responsive Design</span>
+                <span class="tag">Statistical Analysis</span>
+            </div>
+        </div>
+
+        <!-- Depot Analysis Project -->
+        <div id="depot-analysis" class="project-content" style="display: none;">
+            <h2>German Depot Performance Analysis</h2>
+            <div class="project-meta">Bettermile (GLS eCom Lab) • December 2024 - Present</div>
+
+            <div class="project-overview">
+                <h3>Project Overview</h3>
+                <p>Developed comprehensive depot analysis system for German logistics operations, implementing advanced statistical analysis and regression modeling to identify critical operational inefficiencies across 6 regional zones.</p>
+            </div>
+
+            <div class="key-achievements">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li><strong>Regional Performance Analysis:</strong> Created dynamic analysis tool with region-based filtering across Nord, Süd, West, Ost, Center, and Süd-West zones</li>
+                    <li><strong>Statistical Process Control:</strong> Implemented correlation studies and regression modeling to uncover underlying performance trends and operational inefficiencies</li>
+                    <li><strong>Automated KPI Tracking:</strong> Built Python automation scripts eliminating manual reporting processes and reducing analysis time by 85%</li>
+                    <li><strong>Data-Driven Decision Support:</strong> Enabled management teams to make informed operational decisions through interactive visualizations and real-time metrics</li>
+                </ul>
+            </div>
+
+            <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Statistical Analysis</span>
+                <span class="tag">Regression Modeling</span>
+                <span class="tag">Operations Research</span>
+                <span class="tag">KPI Development</span>
+                <span class="tag">Logistics Analytics</span>
+            </div>
+        </div>
+
+        <!-- Mobile Analytics Project -->
+        <div id="mobile-analytics" class="project-content" style="display: none;">
+            <h2>Mobile Customer Experience Analytics</h2>
+            <div class="project-meta">US Mobile • July 2023 - February 2024</div>
+
+            <div class="project-overview">
+                <h3>Project Overview</h3>
+                <p>Led customer experience optimization initiatives through comprehensive analytics of 90-100+ daily customer interactions, implementing systematic quality control processes and performance monitoring systems across multiple communication channels.</p>
+            </div>
+
+            <div class="key-achievements">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li><strong>Customer Service Analytics:</strong> Successfully managed 40-45 daily network issue resolutions while maintaining 95%+ customer satisfaction scores</li>
+                    <li><strong>Quality Control Systems:</strong> Implemented Klaus-based performance review process for 15+ junior analysts monthly, ensuring consistent service quality</li>
+                    <li><strong>Compliance Analytics:</strong> Managed 8-10 daily fraud detection cases using Stripe Radar analytics, ensuring regulatory compliance and risk mitigation</li>
+                    <li><strong>Performance Optimization:</strong> Developed systematic approach to identify improvement opportunities enhancing team productivity aligned with KPIs</li>
+                </ul>
+            </div>
+
+            <div class="project-tags">
+                <span class="tag">Customer Analytics</span>
+                <span class="tag">Quality Control</span>
+                <span class="tag">Performance Metrics</span>
+                <span class="tag">Fraud Detection</span>
+                <span class="tag">Klaus Platform</span>
+                <span class="tag">Stripe Analytics</span>
+            </div>
+        </div>
+
+        <!-- BI Dashboards Project -->
+        <div id="bi-dashboards" class="project-content" style="display: none;">
+            <h2>Business Intelligence Platform</h2>
+            <div class="project-meta">SWVL Pakistan • February 2021 - August 2021</div>
+
+            <div class="project-overview">
+                <h3>Project Overview</h3>
+                <p>Engineered real-time business intelligence dashboards integrating Google BigQuery database with Google Sheets, providing operations teams with comprehensive data analysis capabilities for strategic decision-making and supply chain optimization.</p>
+            </div>
+
+            <div class="key-achievements">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li><strong>Real-Time Data Integration:</strong> Built seamless integration between Google BigQuery and Sheets enabling live operational dashboards</li>
+                    <li><strong>Supply Chain Analytics:</strong> Developed comprehensive supply chain management analytics improving operational efficiency by 30%</li>
+                    <li><strong>Financial Decision Support:</strong> Created data-driven reporting systems enabling management to make informed financial decisions</li>
+                    <li><strong>Operational Optimization:</strong> Implemented automated reporting processes reducing manual analysis time and improving data accuracy</li>
+                </ul>
+            </div>
+
+            <div class="project-tags">
+                <span class="tag">Google BigQuery</span>
+                <span class="tag">Google Sheets</span>
+                <span class="tag">Business Intelligence</span>
+                <span class="tag">Supply Chain Analytics</span>
+                <span class="tag">Data Integration</span>
+                <span class="tag">Real-Time Dashboards</span>
+            </div>
+        </div>
+
+        <!-- Default message when no specific project is selected in Professional tab -->
+        <div id="no-project" class="project-content" style="display: none;">
+            <div class="no-project">
+                <h3>Select a project from the sidebar</h3>
+                <p>Choose a professional project to view detailed information about my industry experience and technical implementations.</p>
+            </div>
         </div>
     </div>
 </div>
 
 <script>
-function switchTab(tabName) {
+let currentTab = 'academic';
+let currentProject = 'last-mile-delivery';
+
+function switchTab(tab) {
     // Update tab buttons
-    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    document.querySelector(`[onclick="switchTab('${tabName}')"]`).classList.add('active');
+    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`[onclick="switchTab('${tab}')"]`).classList.add('active');
     
-    // Update tab content
-    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-    document.getElementById(`${tabName}-tab`).classList.add('active');
+    // Update projects lists
+    document.querySelectorAll('.projects-list').forEach(list => list.classList.remove('active'));
+    document.getElementById(`${tab}-projects`).classList.add('active');
     
-    // Update featured project to first item in the active tab
-    const firstItem = document.querySelector(`#${tabName}-tab .sidebar-item`);
-    if (firstItem) {
-        // Clear all active states
-        document.querySelectorAll('.sidebar-item').forEach(item => item.classList.remove('active'));
-        // Set first item as active
-        firstItem.classList.add('active');
-        // Update featured project content
-        updateFeaturedProject(firstItem.getAttribute('data-project'));
+    currentTab = tab;
+    
+    // Select first project in the new tab
+    const firstProject = document.querySelector(`#${tab}-projects .project-item`);
+    if (firstProject) {
+        const projectId = firstProject.getAttribute('onclick').match(/'([^']+)'/)[1];
+        selectProject(projectId);
     }
 }
 
-function updateFeaturedProject(projectKey) {
-    const featuredContent = document.querySelector('.featured-project');
+function selectProject(projectId) {
+    // Update sidebar selection
+    document.querySelectorAll('.project-item').forEach(item => item.classList.remove('active'));
+    document.querySelector(`[onclick="selectProject('${projectId}')"]`).classList.add('active');
     
-    const featuredProjects = {
-        'tbrd': {
-            title: 'Last-Mile Delivery with Autonomous Robots',
-            meta: 'Otto-von-Guericke University • October 2024 - January 2025',
-            overview: 'Mathematical optimization research tackling the Truck-Based Robot Delivery (TBRD) problem. Developed both exact and heuristic solution methods for urban logistics scheduling.',
-            achievements: [
-                '98% optimal solutions on small instances using Gurobi',
-                '290× computational speedup with custom heuristic algorithm',
-                'Comprehensive sensitivity analysis identifying critical performance thresholds'
-            ],
-            tags: ['Python', 'Gurobi Optimization', 'Algorithm Design', 'Academic Research'],
-            links: [
-                { url: 'https://github.com/Hamzauddin-Siddiqui/ovgu-last-mile-delivery-robots', text: '🔗 View GitHub Repository' }
-            ]
-        },
-        'option': {
-            title: 'Option Pricing Model',
-            meta: 'Otto-von-Guericke University • March 2024 - July 2024',
-            overview: 'Financial engineering project implementing Black-Scholes pricing model with Monte Carlo simulations for Tesla stock analysis.',
-            achievements: [
-                'Implemented Black-Scholes pricing model from scratch',
-                'Validated theoretical assumptions against real market data',
-                'Generated insights on model performance and limitations'
-            ],
-            tags: ['Python', 'Monte Carlo', 'Financial Engineering', 'Statistical Analysis'],
-            links: []
-        },
-        'risk': {
-            title: 'Risk Analysis Framework',
-            meta: 'Institute of Business Administration • October 2019 - December 2019',
-            overview: 'Conducted market risk analysis for a diversified portfolio comprising investments in 10 companies from the KMI-30 index.',
-            achievements: [
-                'Performed liquidity risk analysis for randomly generated assets',
-                'Executed detailed credit risk analysis for selected individual',
-                'Demonstrated proficiency in risk assessment methodologies'
-            ],
-            tags: ['Excel', 'Risk Assessment', 'Portfolio Analysis', 'Financial Modeling'],
-            links: []
-        },
-        'industry': {
-            title: 'Industry Review',
-            meta: 'Institute of Business Administration • April 2019 - May 2019',
-            overview: 'Conducted a comprehensive review of Oil Marketing Companies for 2019, analyzing market shares, key drivers, regulatory challenges, and the overall health of the sector.',
-            achievements: [
-                'Comprehensive market share analysis',
-                'Regulatory framework assessment',
-                'Strategic recommendations for sector improvement'
-            ],
-            tags: ['Research', 'Market Analysis', 'Regulatory Assessment', 'Strategic Planning'],
-            links: []
-        },
-        'merger': {
-            title: 'Merger Analysis',
-            meta: 'Institute of Business Administration • April 2019 - May 2019',
-            overview: 'Conducted an in-depth pre- and post-merger analysis of ICI Pakistan\'s acquisition by the Lucky Cement-led group, evaluating key financial performance metrics.',
-            achievements: [
-                'Pre and post-merger financial performance comparison',
-                'Liquidity and profitability trend analysis',
-                'Strategic impact assessment of the acquisition'
-            ],
-            tags: ['M&A Analysis', 'Financial Assessment', 'Performance Evaluation', 'Strategic Analysis'],
-            links: []
-        },
-        'financial': {
-            title: 'Financial Modelling',
-            meta: 'Institute of Business Administration • October 2018 - December 2018',
-            overview: 'Developed a comprehensive financial model for Thatta Cement, utilizing moving averages to forecast the company\'s Statement of Financial Position for the next three years.',
-            achievements: [
-                'Historical data analysis spanning 5 years',
-                'Moving average forecasting methodology implementation',
-                '3-year financial projection with detailed assumptions'
-            ],
-            tags: ['Financial Modeling', 'Forecasting', 'Excel', 'Data Analysis'],
-            links: []
-        }
-    };
-
-    const project = featuredProjects[projectKey];
-    if (project) {
-        let linksHTML = '';
-        if (project.links && project.links.length > 0) {
-            linksHTML = `
-                <div class="project-links">
-                    ${project.links.map(link => 
-                        `<a href="${link.url}" class="project-link" target="_blank">${link.text}</a>`
-                    ).join('')}
-                </div>
-            `;
-        }
-
-        featuredContent.innerHTML = `
-            <h2 class="featured-title">${project.title}</h2>
-            <div class="featured-meta">${project.meta}</div>
-            
-            <h3>Project Overview</h3>
-            <p>${project.overview}</p>
-            
-            <h3>Key Achievements</h3>
-            <ul>
-                ${project.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
-            </ul>
-            
-            <div class="project-tech">
-                ${project.tags.map(tag => `<span class="tech-tag">${tag}</span>`).join('')}
-            </div>
-            
-            ${linksHTML}
-        `;
-    }
-}
-
-// Sidebar functionality
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.sidebar-item').forEach(item => {
-        item.addEventListener('click', function() {
-            document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
-            this.classList.add('active');
-            updateFeaturedProject(this.getAttribute('data-project'));
-        });
+    // Update featured project
+    document.querySelectorAll('.project-content').forEach(content => {
+        content.style.display = 'none';
     });
+    
+    const selectedProject = document.getElementById(projectId);
+    if (selectedProject) {
+        selectedProject.style.display = 'block';
+    }
+    
+    currentProject = projectId;
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+    switchTab('academic');
 });
 </script>
