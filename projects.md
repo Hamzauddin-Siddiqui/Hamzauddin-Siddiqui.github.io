@@ -6,14 +6,16 @@ title: Projects
 <style>
 .projects-container {
     display: flex;
-    gap: 40px;
-    margin: 20px 40px;
+    gap: 30px;
+    margin: 20px auto;
     min-height: 600px;
-    width: calc(100% - 80px);
+    max-width: 1600px;
+    width: 95%;
+    padding: 0 20px;
 }
 
 .projects-sidebar {
-    flex: 0 0 350px;
+    flex: 0 0 320px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border-radius: 12px;
@@ -102,9 +104,10 @@ title: Projects
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border-radius: 12px;
-    padding: 50px 60px;
+    padding: 40px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     min-width: 0;
+    overflow: hidden;
 }
 
 .featured-project h2 {
@@ -137,32 +140,24 @@ title: Projects
     font-size: 1.4em;
 }
 
-.project-overview p {
-    line-height: 1.7;
-    margin-bottom: 15px;
-    color: var(--text-color);
-    font-size: 16px;
-}
-
+.project-overview p,
 .key-achievements p {
     line-height: 1.7;
     margin-bottom: 15px;
     color: var(--text-color);
-    font-size: 16px;
 }
 
 .key-achievements ul {
     padding-left: 20px;
     color: var(--text-color);
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
+    columns: 1;
+    column-gap: 40px;
 }
 
 .key-achievements li {
-    margin-bottom: 0;
+    margin-bottom: 12px;
     line-height: 1.6;
-    font-size: 15px;
+    break-inside: avoid;
 }
 
 .project-tags {
@@ -214,46 +209,20 @@ title: Projects
 /* Large screens - two column layout for achievements */
 @media (min-width: 1400px) {
     .key-achievements ul {
-        grid-template-columns: 1fr 1fr;
-        column-gap: 60px;
+        columns: 2;
+        column-gap: 50px;
     }
     
     .featured-project {
-        padding: 50px 80px;
-    }
-    
-    .projects-container {
-        margin: 20px 60px;
-    }
-}
-
-/* Extra large screens */
-@media (min-width: 1800px) {
-    .projects-container {
-        margin: 20px 100px;
-    }
-    
-    .featured-project {
-        padding: 50px 100px;
-    }
-}
-
-/* Medium-large screens */
-@media (min-width: 1200px) and (max-width: 1399px) {
-    .projects-container {
-        margin: 20px 30px;
-    }
-    
-    .featured-project {
-        padding: 40px 50px;
+        padding: 50px;
     }
 }
 
 /* Medium screens */
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (min-width: 768px) and (max-width: 1399px) {
     .projects-container {
-        margin: 20px 20px;
-        gap: 30px;
+        max-width: 1200px;
+        width: 90%;
     }
     
     .projects-sidebar {
@@ -261,7 +230,7 @@ title: Projects
     }
     
     .featured-project {
-        padding: 35px 40px;
+        padding: 35px;
     }
 }
 
@@ -272,6 +241,7 @@ title: Projects
         gap: 20px;
         margin: 20px 10px;
         width: calc(100% - 20px);
+        padding: 0;
     }
     
     .projects-sidebar {
@@ -305,7 +275,7 @@ title: Projects
     }
     
     .key-achievements ul {
-        grid-template-columns: 1fr !important;
+        columns: 1 !important;
     }
     
     .featured-project h2 {
@@ -313,27 +283,16 @@ title: Projects
     }
 }
 
-/* Page header width adjustment */
+/* Page header */
 .page-header {
-    margin: 0 40px;
-    padding: 0;
-}
-
-@media (min-width: 1400px) {
-    .page-header {
-        margin: 0 60px;
-    }
-}
-
-@media (min-width: 1800px) {
-    .page-header {
-        margin: 0 100px;
-    }
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
 @media (max-width: 768px) {
     .page-header {
-        margin: 0 10px;
+        padding: 0 20px;
     }
 }
 
