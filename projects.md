@@ -7,12 +7,14 @@ title: Projects
 .projects-container {
     display: flex;
     gap: 30px;
-    margin: 20px 0;
+    margin: 20px auto;
     min-height: 600px;
+    max-width: 1400px;
+    width: 100%;
 }
 
 .projects-sidebar {
-    flex: 0 0 300px;
+    flex: 0 0 320px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border-radius: 12px;
@@ -101,43 +103,53 @@ title: Projects
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border-radius: 12px;
-    padding: 30px;
+    padding: 40px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    min-width: 0;
 }
 
 .featured-project h2 {
     margin-top: 0;
+    margin-bottom: 15px;
     color: var(--text-color);
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    font-size: 2.2em;
 }
 
 .project-meta {
-    font-size: 14px;
+    font-size: 15px;
     opacity: 0.8;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     color: var(--text-color);
+}
+
+.project-overview, .key-achievements {
+    margin-bottom: 30px;
 }
 
 .project-overview h3,
 .key-achievements h3 {
     color: var(--text-color);
-    margin-top: 25px;
-    margin-bottom: 15px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.4em;
 }
 
 .project-overview p,
 .key-achievements p {
-    line-height: 1.6;
+    line-height: 1.7;
     margin-bottom: 15px;
     color: var(--text-color);
+    max-width: none;
 }
 
 .key-achievements ul {
     padding-left: 20px;
     color: var(--text-color);
+    columns: 1;
 }
 
 .key-achievements li {
@@ -146,18 +158,19 @@ title: Projects
 }
 
 .project-tags {
-    margin: 25px 0;
+    margin: 30px 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
+    max-width: none;
 }
 
 .tag {
     background: rgba(102, 126, 234, 0.2);
     color: #667eea;
-    padding: 4px 12px;
+    padding: 6px 16px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
     border: 1px solid rgba(102, 126, 234, 0.3);
 }
@@ -168,12 +181,13 @@ title: Projects
     gap: 8px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 12px 24px;
+    padding: 14px 28px;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    margin-top: 20px;
 }
 
 .github-button:hover {
@@ -190,11 +204,45 @@ title: Projects
     color: var(--text-color);
 }
 
+/* Large screens - two column layout for achievements */
+@media (min-width: 1200px) {
+    .key-achievements ul {
+        columns: 2;
+        column-gap: 40px;
+    }
+    
+    .key-achievements li {
+        break-inside: avoid;
+        margin-bottom: 12px;
+        line-height: 1.6;
+    }
+    
+    .featured-project {
+        padding: 50px;
+    }
+}
+
+/* Medium screens */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .projects-container {
+        max-width: 1200px;
+    }
+    
+    .projects-sidebar {
+        flex: 0 0 300px;
+    }
+    
+    .featured-project {
+        padding: 35px;
+    }
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .projects-container {
         flex-direction: column;
         gap: 20px;
+        margin: 20px 10px;
     }
     
     .projects-sidebar {
@@ -212,7 +260,7 @@ title: Projects
     }
     
     .featured-project {
-        padding: 20px;
+        padding: 25px;
     }
     
     .project-item {
@@ -226,6 +274,21 @@ title: Projects
     .project-subtitle {
         font-size: 11px;
     }
+    
+    .key-achievements ul {
+        columns: 1 !important;
+    }
+    
+    .featured-project h2 {
+        font-size: 1.8em;
+    }
+}
+
+/* Ensure content doesn't feel cramped */
+.page-header {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Dark mode specific adjustments */
