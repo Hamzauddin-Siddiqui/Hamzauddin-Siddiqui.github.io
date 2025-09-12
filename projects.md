@@ -197,38 +197,45 @@ body.dark-mode .featured-project h3 {
     gap: 1rem;
 }
 
+/* Enhanced GitHub button styling for better visibility */
 .project-link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: rgba(102, 126, 234, 0.1);
-    border: 1px solid rgba(102, 126, 234, 0.2);
+    padding: 0.75rem 1.25rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
     border-radius: 8px;
-    color: #667eea;
+    color: white !important;
     text-decoration: none;
+    font-weight: 500;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
 .project-link:hover {
-    background: rgba(102, 126, 234, 0.2);
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
 }
 
-/* Mobile Responsiveness */
+/* Mobile Responsiveness - FIXED */
 @media (max-width: 768px) {
     .featured-layout {
         grid-template-columns: 1fr;
         height: auto;
+        display: flex;
+        flex-direction: column;
     }
 
     .projects-sidebar {
-        order: 2;
-        height: 300px;
+        order: 1;  /* Sidebar appears FIRST on mobile */
+        height: auto;
+        max-height: 300px;
     }
 
     .featured-project {
-        order: 1;
+        order: 2;  /* Featured project appears SECOND on mobile */
         min-height: 400px;
     }
 
@@ -295,7 +302,7 @@ body.dark-mode .featured-project h3 {
         
         <div class="project-links">
             <a href="https://github.com/Hamzauddin-Siddiqui/ovgu-last-mile-delivery-robots" class="project-link" target="_blank">
-                🔗 GitHub Repository
+                🔗 View GitHub Repository
             </a>
         </div>
     </div>
@@ -338,7 +345,7 @@ function updateFeaturedProject(projectKey) {
             ],
             tags: ['Python', 'Gurobi Optimization', 'Algorithm Design', 'Academic Research'],
             links: [
-                { url: 'https://github.com/Hamzauddin-Siddiqui/ovgu-last-mile-delivery-robots', text: '🔗 GitHub Repository' }
+                { url: 'https://github.com/Hamzauddin-Siddiqui/ovgu-last-mile-delivery-robots', text: '🔗 View GitHub Repository' }
             ]
         },
         'option': {
