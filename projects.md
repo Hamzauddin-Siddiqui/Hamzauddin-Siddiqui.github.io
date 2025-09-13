@@ -335,6 +335,18 @@ body.dark-mode .project-item:hover {
                 <div class="project-title">Last-Mile Delivery Robots</div>
                 <div class="project-subtitle">Otto-von-Guericke University</div>
             </div>
+            <div class="project-item" onclick="selectProject('cross-cultural-analysis')">
+                <div class="project-title">Cross-Cultural Business Strategy</div>
+                <div class="project-subtitle">University of Ljubljana</div>
+            </div>
+            <div class="project-item" onclick="selectProject('ai-b2b-sales')">
+                <div class="project-title">AI-Human Collaboration Analysis</div>
+                <div class="project-subtitle">University of Ljubljana</div>
+            </div>
+            <div class="project-item" onclick="selectProject('tesla-sustainability')">
+                <div class="project-title">Tesla Sustainability Assessment</div>
+                <div class="project-subtitle">University of Ljubljana</div>
+            </div>
             <div class="project-item" onclick="selectProject('option-pricing')">
                 <div class="project-title">Option Pricing Model</div>
                 <div class="project-subtitle">Otto-von-Guericke University</div>
@@ -414,6 +426,102 @@ body.dark-mode .project-item:hover {
                 </svg>
                 View on GitHub
             </a>
+        </div>
+
+        <!-- Cross-Cultural Analysis Project -->
+        <div id="cross-cultural-analysis" class="project-content" style="display: none;">
+            <h2>Cross-Cultural Business Strategy Analysis: Slovenia-China Tech Cooperation</h2>
+            <div class="project-meta">University of Ljubljana • Spring 2025 • Team Project (5 members)</div>
+
+            <div class="project-overview">
+                <h3>Project Overview</h3>
+                <p>Conducted comprehensive cross-cultural analysis examining business relationship dynamics between Slovenian and Chinese technology companies. Applied established cultural frameworks to develop actionable market entry strategies for tech startups seeking international expansion in the rapidly growing China-Slovenia technology corridor.</p>
+            </div>
+
+            <div class="key-achievements">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li><strong>Cultural Dimensions Analysis:</strong> Applied Hofstede's and GLOBE frameworks to identify critical differences in individualism vs. collectivism, power distance, and communication contexts between Slovenia and China</li>
+                    <li><strong>Market Entry Strategy Development:</strong> Created comprehensive recommendations for Slovenian tech startups expanding into Chinese markets, focusing on relationship-building and negotiation tactics</li>
+                    <li><strong>Theoretical Framework Application:</strong> Successfully applied MSAC theoretical concepts to real-world business scenarios, creating practical insights for cross-cultural B2B relationships</li>
+                    <li><strong>International Team Leadership:</strong> Collaborated with diverse international team to deliver comprehensive presentation analyzing cultural touchpoints and strategic market penetration recommendations</li>
+                </ul>
+            </div>
+
+            <div class="project-tags">
+                <span class="tag">Cross-Cultural Analysis</span>
+                <span class="tag">Market Research</span>
+                <span class="tag">Strategic Planning</span>
+                <span class="tag">Hofstede Framework</span>
+                <span class="tag">GLOBE Study</span>
+                <span class="tag">International Business</span>
+                <span class="tag">Team Leadership</span>
+                <span class="tag">Presentation Skills</span>
+            </div>
+        </div>
+
+        <!-- AI B2B Sales Project -->
+        <div id="ai-b2b-sales" class="project-content" style="display: none;">
+            <h2>AI-Human Collaboration in B2B Sales Analysis</h2>
+            <div class="project-meta">University of Ljubljana • Spring 2025 • Individual Project</div>
+
+            <div class="project-overview">
+                <h3>Project Overview</h3>
+                <p>Critical analysis of collaborative intelligence research examining how artificial intelligence and human intelligence create synergistic value throughout the B2B sales funnel. Based on comprehensive review of Paschen, Wilson & Ferreira's academic research on the future of AI-enabled sales processes.</p>
+            </div>
+
+            <div class="key-achievements">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li><strong>Academic Literature Review:</strong> Conducted comprehensive critical analysis of collaborative intelligence research in B2B sales context, synthesizing complex academic frameworks</li>
+                    <li><strong>AI Applications Mapping:</strong> Systematically examined AI applications across seven stages of B2B sales process including predictive lead qualification, personalized targeting, and dynamic pricing</li>
+                    <li><strong>Role Distribution Analysis:</strong> Evaluated optimal distribution between AI systems and human sales professionals across the sales funnel, identifying complementary strengths</li>
+                    <li><strong>Future Implications Assessment:</strong> Analyzed long-term implications of AI integration in sales profession and digitization trends for industry practitioners</li>
+                </ul>
+            </div>
+
+            <div class="project-tags">
+                <span class="tag">AI Applications</span>
+                <span class="tag">B2B Sales Analysis</span>
+                <span class="tag">Literature Review</span>
+                <span class="tag">Technology Trends</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Predictive Analytics</span>
+                <span class="tag">Academic Research</span>
+                <span class="tag">Critical Analysis</span>
+            </div>
+        </div>
+
+        <!-- Tesla Sustainability Project -->
+        <div id="tesla-sustainability" class="project-content" style="display: none;">
+            <h2>Tesla Sustainability Assessment: Life Cycle Analysis & Supply Chain Evaluation</h2>
+            <div class="project-meta">University of Ljubljana • Spring 2025 • Team Project (4 members)</div>
+
+            <div class="project-overview">
+                <h3>Project Overview</h3>
+                <p>Comprehensive sustainability assessment of Tesla's electric vehicles combining quantitative Life Cycle Assessment (LCA) with qualitative supply chain analysis using established SSCM frameworks. This research evaluated environmental and social impacts across the entire vehicle lifecycle from raw material extraction to end-of-life recycling.</p>
+            </div>
+
+            <div class="key-achievements">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li><strong>Rigorous Life Cycle Assessment:</strong> Conducted LCA of Tesla Model 3 using ISO 14040/14044/14067 standards, revealing 62% lower emissions than ICEVs in Europe but 17% higher in China due to electricity grid differences</li>
+                    <li><strong>Supply Chain Framework Analysis:</strong> Applied Turker and Altuntas SSCM framework to evaluate Tesla's sustainable supply chain practices, analyzing vertical integration strategy and ethical sourcing initiatives</li>
+                    <li><strong>Regional Impact Analysis:</strong> Demonstrated significant regional variations in environmental impact across different electricity grids (96 gCO2e/km in Europe vs. 376 gCO2e/km in China)</li>
+                    <li><strong>Strategic Recommendations Development:</strong> Created comprehensive Triple Bottom Line recommendations for automotive industry executives focusing on battery recycling and renewable energy integration</li>
+                </ul>
+            </div>
+
+            <div class="project-tags">
+                <span class="tag">Life Cycle Assessment</span>
+                <span class="tag">Supply Chain Management</span>
+                <span class="tag">Sustainability Assessment</span>
+                <span class="tag">ISO Standards</span>
+                <span class="tag">Environmental Analysis</span>
+                <span class="tag">Triple Bottom Line</span>
+                <span class="tag">Research Methodology</span>
+                <span class="tag">Team Collaboration</span>
+            </div>
         </div>
 
         <!-- Option Pricing Project -->
@@ -747,5 +855,3 @@ document.addEventListener('DOMContentLoaded', function() {
     switchTab('academic');
 });
 </script>
-
-
