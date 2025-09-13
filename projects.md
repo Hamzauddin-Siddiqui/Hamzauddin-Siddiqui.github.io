@@ -10,7 +10,6 @@ permalink: /projects/
             <strong>Portfolio Expansion in Progress</strong>
         </div>
         <p>Additional projects and detailed case studies are being added regularly. Current projects showcase core analytical capabilities.</p>
-        <small>Last updated: January 2025 | Next update: February 2025</small>
     </div>
 </div>
 
