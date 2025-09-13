@@ -7,4 +7,15 @@
   gtag('js', new Date());
   gtag('config', '{{ site.google_analytics }}');
 </script>
+<script>
+  // Track PDF downloads
+  document.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && e.target.href.includes('.pdf')) {
+      gtag('event', 'file_download', {
+        file_name: e.target.href.split('/').pop(),
+        link_url: e.target.href
+      });
+    }
+  });
+</script>
 {% endif %}
