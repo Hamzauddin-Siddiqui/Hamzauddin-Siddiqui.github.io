@@ -3,7 +3,57 @@ layout: projects  # Changed from 'default'
 title: Projects
 permalink: /projects/
 ---
+<div class="portfolio-status">
+    <div class="status-content">
+        <div class="status-header">
+            <span class="status-icon">📈</span>
+            <strong>Portfolio Expansion in Progress</strong>
+        </div>
+        <p>Additional projects and detailed case studies are being added regularly. Current projects showcase core analytical capabilities.</p>
+        <small>Last updated: January 2025 | Next update: February 2025</small>
+    </div>
+</div>
 
+<style>
+.portfolio-status {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.status-content {
+    text-align: center;
+}
+
+.status-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.status-icon {
+    font-size: 18px;
+}
+
+.portfolio-status p {
+    margin: 10px 0;
+    opacity: 0.8;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.portfolio-status small {
+    opacity: 0.6;
+    font-size: 12px;
+    color: var(--text-color);
+}
+</style>
 <style>
 .projects-container {
     display: flex;
