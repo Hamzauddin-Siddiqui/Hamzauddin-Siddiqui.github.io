@@ -2,7 +2,11 @@
 ---
 
 @import "{{ site.theme }}";
-
+.full-width {
+  width: 100%;
+  max-width: 100%;
+  padding: 2rem;
+}
 /* Ultra-specific CSS to override Jekyll minima theme */
 html body.dark-mode {
   background-color: #1a1a1a !important;
