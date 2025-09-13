@@ -371,12 +371,16 @@ body.dark-mode .project-item:hover {
 
         <!-- Professional Projects -->
         <div class="projects-list" id="professional-projects">
-            <div class="project-item" onclick="selectProject('bettermile-dashboards')">
-                <div class="project-title">Analytics Dashboards</div>
+            <div class="project-item" onclick="selectProject('driver-depot-analysis')">
+                <div class="project-title">Driver Performance & Depot Analysis</div>
                 <div class="project-subtitle">Bettermile (GLS eCom Lab)</div>
             </div>
-            <div class="project-item" onclick="selectProject('depot-analysis')">
-                <div class="project-title">Depot Performance Analysis</div>
+            <div class="project-item" onclick="selectProject('mobile-route-dashboards')">
+                <div class="project-title">Mobile UX & Route Management</div>
+                <div class="project-subtitle">Bettermile (GLS eCom Lab)</div>
+            </div>
+            <div class="project-item" onclick="selectProject('support-quality-analytics')">
+                <div class="project-title">Customer Support & Quality Analytics</div>
                 <div class="project-subtitle">Bettermile (GLS eCom Lab)</div>
             </div>
             <div class="project-item" onclick="selectProject('mobile-analytics')">
@@ -678,64 +682,99 @@ body.dark-mode .project-item:hover {
             </div>
         </div>
 
-        <!-- Bettermile Dashboards Project -->
-        <div id="bettermile-dashboards" class="project-content" style="display: none;">
-            <h2>Interactive Analytics Dashboards</h2>
+        <!-- Driver & Depot Analysis Project -->
+        <div id="driver-depot-analysis" class="project-content" style="display: none;">
+            <h2>Driver Performance & Depot Analysis System</h2>
             <div class="project-meta">Bettermile (GLS eCom Lab) • December 2024 - Present</div>
 
             <div class="project-overview">
                 <h3>Project Overview</h3>
-                <p>Strategically utilized AI coding agents to rapidly develop 8+ interactive HTML dashboards for comprehensive logistics operations analysis, customer support intelligence, and software quality tracking across multiple European markets.</p>
+                <p>Developed comprehensive analytics system combining driver performance analysis with German depot operations assessment. Built integrated dashboards processing driver feedback data and operational metrics across 6 regional zones to identify performance trends and operational inefficiencies in European logistics operations.</p>
             </div>
 
             <div class="key-achievements">
                 <h3>Key Achievements</h3>
                 <ul>
-                    <li><strong>Rapid Development Workflow:</strong> Leveraged AI-assisted development to accelerate dashboard creation by 70% while maintaining code quality and functionality</li>
-                    <li><strong>Multi-Country Analytics:</strong> Built driver performance analysis systems tracking operational metrics across Germany, Netherlands, and Poland with automated categorization</li>
-                    <li><strong>Customer Intelligence Platform:</strong> Developed user experience analytics processing survey data from multiple markets with qualitative feedback categorization</li>
-                    <li><strong>Quality Assurance Tools:</strong> Created bug tracking and app version performance analysis systems with statistical validity algorithms</li>
+                    <li><strong>Driver Performance Analytics:</strong> Created automated categorization system for driver notes and feedback, enabling systematic analysis of operational issues and performance patterns across multiple European markets</li>
+                    <li><strong>Regional Depot Analysis:</strong> Implemented dynamic analysis tool with region-based filtering across Nord, Süd, West, Ost, Center, and Süd-West zones in Germany</li>
+                    <li><strong>Statistical Process Control:</strong> Applied correlation studies and regression modeling to uncover underlying performance trends and operational inefficiencies across depot networks</li>
+                    <li><strong>Automated Reporting Systems:</strong> Built Python automation scripts eliminating manual reporting processes and reducing analysis time by 85% while improving data accuracy</li>
+                </ul>
+            </div>
+
+            <div class="project-tags">
+                <span class="tag">JavaScript (ES6+)</span>
+                <span class="tag">Python</span>
+                <span class="tag">Statistical Analysis</span>
+                <span class="tag">Chart.js</span>
+                <span class="tag">CSV Processing</span>
+                <span class="tag">Regional Analytics</span>
+                <span class="tag">Performance Metrics</span>
+                <span class="tag">Logistics Analytics</span>
+            </div>
+        </div>
+
+        <!-- Mobile UX & Route Management Project -->
+        <div id="mobile-route-dashboards" class="project-content" style="display: none;">
+            <h2>Mobile UX & Route Management Dashboards</h2>
+            <div class="project-meta">Bettermile (GLS eCom Lab) • December 2024 - Present</div>
+
+            <div class="project-overview">
+                <h3>Project Overview</h3>
+                <p>Developed comprehensive analytics platform combining mobile user experience insights with route management optimization tools. Created integrated dashboards processing customer survey data and route editing patterns to enhance driver app usability and optimize delivery route efficiency across European markets.</p>
+            </div>
+
+            <div class="key-achievements">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li><strong>Mobile Survey Analytics:</strong> Built comprehensive survey analysis system processing multi-market customer feedback with automated sentiment analysis and response categorization</li>
+                    <li><strong>Route Optimization Dashboard:</strong> Created interactive route editing analysis tool tracking modification patterns, efficiency improvements, and optimization opportunities</li>
+                    <li><strong>User Experience Intelligence:</strong> Implemented advanced analytics identifying pain points and improvement opportunities in mobile app workflows across different European markets</li>
+                    <li><strong>Cross-Platform Integration:</strong> Developed unified dashboard combining mobile app performance data with route optimization metrics to provide holistic operational insights</li>
                 </ul>
             </div>
 
             <div class="project-tags">
                 <span class="tag">JavaScript (ES6+)</span>
                 <span class="tag">Chart.js</span>
-                <span class="tag">CSV Processing</span>
-                <span class="tag">Papa Parse</span>
-                <span class="tag">AI-Assisted Development</span>
-                <span class="tag">Responsive Design</span>
-                <span class="tag">Statistical Analysis</span>
+                <span class="tag">User Experience Analytics</span>
+                <span class="tag">Survey Analysis</span>
+                <span class="tag">Route Optimization</span>
+                <span class="tag">Mobile Analytics</span>
+                <span class="tag">Data Visualization</span>
+                <span class="tag">Multi-Market Analysis</span>
             </div>
         </div>
 
-        <!-- Depot Analysis Project -->
-        <div id="depot-analysis" class="project-content" style="display: none;">
-            <h2>German Depot Performance Analysis</h2>
+        <!-- Customer Support & Quality Analytics Project -->
+        <div id="support-quality-analytics" class="project-content" style="display: none;">
+            <h2>Customer Support & Quality Analytics Platform</h2>
             <div class="project-meta">Bettermile (GLS eCom Lab) • December 2024 - Present</div>
 
             <div class="project-overview">
                 <h3>Project Overview</h3>
-                <p>Developed comprehensive depot analysis system for German logistics operations, implementing advanced statistical analysis and regression modeling to identify critical operational inefficiencies across 6 regional zones.</p>
+                <p>Built comprehensive analytics ecosystem encompassing customer support intelligence, software quality tracking, and app version performance analysis. Developed integrated dashboard suite processing Intercom reports, driver case management data, bug tracking systems, and app version analytics to provide 360-degree view of product quality and customer experience.</p>
             </div>
 
             <div class="key-achievements">
                 <h3>Key Achievements</h3>
                 <ul>
-                    <li><strong>Regional Performance Analysis:</strong> Created dynamic analysis tool with region-based filtering across Nord, Süd, West, Ost, Center, and Süd-West zones</li>
-                    <li><strong>Statistical Process Control:</strong> Implemented correlation studies and regression modeling to uncover underlying performance trends and operational inefficiencies</li>
-                    <li><strong>Automated KPI Tracking:</strong> Built Python automation scripts eliminating manual reporting processes and reducing analysis time by 85%</li>
-                    <li><strong>Data-Driven Decision Support:</strong> Enabled management teams to make informed operational decisions through interactive visualizations and real-time metrics</li>
+                    <li><strong>Customer Support Intelligence:</strong> Created advanced Intercom reports analyzer with automated categorization of support tickets, response time analytics, and customer satisfaction tracking across multiple communication channels</li>
+                    <li><strong>Quality Assurance Dashboard:</strong> Developed comprehensive bug tracking and analysis system with statistical validity algorithms, trend identification, and impact assessment capabilities</li>
+                    <li><strong>App Version Performance Analysis:</strong> Built sophisticated version comparison tool tracking performance metrics, user adoption rates, and quality indicators across different app releases</li>
+                    <li><strong>Driver Case Management Analytics:</strong> Implemented systematic analysis of driver-reported issues with pattern recognition, priority classification, and resolution tracking to improve operational efficiency</li>
                 </ul>
             </div>
 
             <div class="project-tags">
-                <span class="tag">Python</span>
+                <span class="tag">JavaScript (ES6+)</span>
+                <span class="tag">Chart.js</span>
+                <span class="tag">Customer Support Analytics</span>
+                <span class="tag">Quality Assurance</span>
+                <span class="tag">Bug Tracking</span>
+                <span class="tag">Version Analysis</span>
                 <span class="tag">Statistical Analysis</span>
-                <span class="tag">Regression Modeling</span>
-                <span class="tag">Operations Research</span>
-                <span class="tag">KPI Development</span>
-                <span class="tag">Logistics Analytics</span>
+                <span class="tag">Performance Monitoring</span>
             </div>
         </div>
 
