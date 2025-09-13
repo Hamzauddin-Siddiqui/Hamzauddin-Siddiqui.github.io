@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  {%- include head.html -%}
+  <body>
+    {%- include header.html -%}
+    
+    <main class="page-content full-width" aria-label="Content">
+      <!-- No wrapper div here - content goes edge to edge -->
+      {{ content }}
+    </main>
+    
+    {%- include footer.html -%}
+  </body>
+</html>
