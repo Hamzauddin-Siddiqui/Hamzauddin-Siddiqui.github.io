@@ -7,9 +7,9 @@ permalink: /projects/
     <div class="status-content">
         <div class="status-header">
             <span class="status-icon">📈</span>
-            <strong>Portfolio Expansion in Progress</strong>
+            <strong>This page is currently under construction</strong>
         </div>
-        <p>Additional projects and detailed case studies are being added regularly. Current projects showcase core analytical capabilities.</p>
+        <p>Projects are currently missing links to Github to view the code. Presentations/Research papers haven't been added yet as well.</p>
     </div>
 </div>
 
