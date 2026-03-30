@@ -384,6 +384,10 @@ body.dark-mode .project-item:hover {
                 <div class="project-title">Last-Mile Delivery Robots</div>
                 <div class="project-subtitle">Otto-von-Guericke University</div>
             </div>
+            <div class="project-item" onclick="selectProject('supply-chain-optimization')">
+                <div class="project-title">Supply Chain Network Optimization</div>
+                <div class="project-subtitle">Otto-von-Guericke University</div>
+            </div>
             <div class="project-item" onclick="selectProject('cross-cultural-analysis')">
                 <div class="project-title">Cross-Cultural Business Strategy</div>
                 <div class="project-subtitle">University of Ljubljana</div>
@@ -481,6 +485,39 @@ body.dark-mode .project-item:hover {
             </a>
         </div>
 
+        <!-- Supply Chain Network Optimization Project -->
+        <div id="supply-chain-optimization" class="project-content" style="display: none;">
+            <h2>Supply Chain Network Optimization</h2>
+            <div class="project-meta">Otto-von-Guericke University • October 2025 - January 2026</div>
+
+            <div class="project-overview">
+                <h3>Project Overview</h3>
+                <p>Formulated and solved a facility and carrier assignment problem for a global microchip manufacturer's outbound supply chain, optimizing the routing of 9,200+ orders across 19 plants, 9 carriers, and 11 ports. This research addresses real-world logistics decision-making by combining mathematical optimization with comprehensive data analysis on historical operational data.</p>
+            </div>
+
+            <div class="key-achievements">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li><strong>MIP Model Development:</strong> Formulated a Mixed-Integer Programming model in Python (SciPy) minimizing warehouse and freight costs under capacity, availability, network, and service-level constraints</li>
+                    <li><strong>Infeasibility Resolution:</strong> Designed a 3-tier progressive soft capacity penalty framework to handle demand concentration that made the hard-constraint model infeasible, achieving optimality in 0.33 seconds</li>
+                    <li><strong>Benchmarking & Cost Analysis:</strong> Identified $171K in warehouse and freight savings versus the baseline and revealed that capacity management — not freight optimization — is the primary cost driver (71.9% warehouse vs 0.1% freight)</li>
+                    <li><strong>Data-Driven Insights:</strong> Discovered critical operational risks including 92% order concentration at a single plant and severe capacity violations hidden in the company's historical assignment decisions</li>
+                </ul>
+            </div>
+
+            <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">SciPy</span>
+                <span class="tag">Operations Research</span>
+                <span class="tag">Mathematical Modeling</span>
+                <span class="tag">Supply Chain Optimization</span>
+                <span class="tag">Data Analysis</span>
+            </div>
+
+            <p style="color: #8e8e93; font-style: italic; margin-top: 20px;">
+                GitHub repository coming soon - code documentation in progress
+            </p>
+        </div>
         <!-- Cross-Cultural Analysis Project -->
         <div id="cross-cultural-analysis" class="project-content" style="display: none;">
             <h2>Cross-Cultural Business Strategy Analysis: Slovenia-China Tech Cooperation</h2>
