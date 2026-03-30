@@ -315,16 +315,16 @@ function openModal(role) {
       <p><strong>Location:</strong> Berlin, Germany</p>
       <h3>Insights Generation:</h3>
       <ul>
-        <li>Analyzed comprehensive performance metrics and KPIs across multiple logistics depots, identifying critical operational inefficiencies and improvement opportunities</li>
-        <li>Conducted advanced statistical analyses including correlation studies and regression modeling to uncover underlying performance trends and causal relationships</li>
-        <li>Developed interactive HTML dashboards to visualize complex operational data, enabling data-driven decision-making for management and operations teams</li>
-        <li>Architected and implemented Python automation scripts that eliminated manual reporting processes, increasing efficiency and reducing human error</li>
+        <li>Built 7+ standalone analytical dashboards — covering driver feedback analysis (Germany, Netherlands, Poland), multi-country mobile survey analytics, Intercom support case classification, app version quality tracking, depot operations monitoring, route editing analysis, and bug report validation — processing thousands of records with real-time filtering and period-over-period comparisons</li>
+        <li>Developed Python automation scripts to process and clean raw CSV exports from third-party platforms (Intercom, Instabug, YouTube), replacing manual data preparation with continuous, repeatable analysis pipelines</li>
+        <li>Conducted correlation studies across multiple depot KPIs to identify operational inefficiencies, translating statistical findings into interactive visualizations that enabled data-driven decisions at regional and depot levels</li>
+        <li>Engineered data processing systems using JavaScript, Papa Parse, and Chart.js with automated categorization algorithms, statistical validity checks, and conditional rendering for dynamic team-level insights</li>
       </ul>
       <h3>Operational Support:</h3>
       <ul>
         <li>Provided technical troubleshooting and real-time problem resolution for drivers and depot staff during critical operational hours</li>
         <li>Established systematic feedback collection protocols to capture user insights and operational challenges from frontline staff</li>
-        <li>Managed cross-functional communication channels between field operations and product development teams</li>
+        <li>Managed cross-functional communication channels between field operations and product development teams, ensuring user-reported issues were translated into actionable product improvements</li>
       </ul>
     `,
     'usmobile': `
