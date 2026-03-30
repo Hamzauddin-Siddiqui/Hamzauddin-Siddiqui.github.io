@@ -20,8 +20,8 @@ layout: default
       <img src="assets/Bettermile_logo.jpg" alt="Bettermile" class="logo-img">
     </div>
     <div class="experience-content">
-      <h3>User Insight and Support</h3>
-      <h4>Bettermile</h4>
+      <h3>User Insight and Support Analytics</h3>
+      <h4>Bettermile (GLS eCom Lab)</h4>
       <p class="duration">December 2024 - Present (16 months)</p>
       <p class="location">Berlin, Germany • Full-Time</p>
     </div>
@@ -45,7 +45,7 @@ layout: default
     </div>
     <div class="experience-content">
       <h3>Business Intelligence Specialist</h3>
-      <h4>Swvl</h4>
+      <h4>Swvl Pakistan PVT Limited</h4>
       <p class="duration">February 2021 - August 2021 (7 months)</p>
       <p class="location">Karachi, Pakistan • Full-Time</p>
       <div class="additional-role">
