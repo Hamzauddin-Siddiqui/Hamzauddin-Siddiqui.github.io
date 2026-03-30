@@ -22,7 +22,7 @@ layout: default
     <div class="experience-content">
       <h3>User Insight and Support</h3>
       <h4>Bettermile</h4>
-      <p class="duration">December 2024 - Present (9 months)</p>
+      <p class="duration">December 2024 - Present (16 months)</p>
       <p class="location">Berlin, Germany • Full-Time</p>
     </div>
   </div>
