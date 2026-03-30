@@ -249,6 +249,54 @@ permalink: /projects/
     text-decoration: none;
 }
 
+.example-dashboards {
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.example-dashboards h4 {
+    margin: 0 0 15px 0;
+    font-size: 1.1em;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.dashboard-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.dashboard-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    transition: all 0.3s ease;
+}
+
+.dashboard-link:hover {
+    background: rgba(102, 126, 234, 0.2);
+    border-color: rgba(102, 126, 234, 0.4);
+    transform: translateY(-1px);
+    color: #667eea;
+    text-decoration: none;
+}
+
+.dashboard-link svg {
+    flex-shrink: 0;
+}
+
 .no-project {
     text-align: center;
     padding: 60px 20px;
@@ -331,6 +379,14 @@ permalink: /projects/
     .featured-project h2 {
         font-size: 1.8em;
     }
+
+    .dashboard-links {
+        flex-direction: column;
+    }
+
+    .dashboard-link {
+        justify-content: center;
+    }
 }
 
 /* Page header */
@@ -359,6 +415,26 @@ body.dark-mode .project-item {
 
 body.dark-mode .project-item:hover {
     background: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .example-dashboards {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+body:not(.dark-mode) .example-dashboards {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+body:not(.dark-mode) .dashboard-link {
+    background: rgba(102, 126, 234, 0.08);
+    border-color: rgba(102, 126, 234, 0.15);
+}
+
+body:not(.dark-mode) .dashboard-link:hover {
+    background: rgba(102, 126, 234, 0.15);
+    border-color: rgba(102, 126, 234, 0.3);
 }
 </style>
 
@@ -424,16 +500,16 @@ body.dark-mode .project-item:hover {
 
         <!-- Professional Projects -->
         <div class="projects-list" id="professional-projects">
-            <div class="project-item" onclick="selectProject('driver-depot-analysis')">
-                <div class="project-title">Driver Performance & Depot Analysis</div>
+            <div class="project-item" onclick="selectProject('survey-analytics')">
+                <div class="project-title">Multilingual Survey Analytics</div>
                 <div class="project-subtitle">Bettermile (GLS eCom Lab)</div>
             </div>
-            <div class="project-item" onclick="selectProject('mobile-route-dashboards')">
-                <div class="project-title">Mobile UX & Route Management</div>
+            <div class="project-item" onclick="selectProject('platform-intelligence')">
+                <div class="project-title">Third-Party Platform Intelligence</div>
                 <div class="project-subtitle">Bettermile (GLS eCom Lab)</div>
             </div>
-            <div class="project-item" onclick="selectProject('support-quality-analytics')">
-                <div class="project-title">Customer Support & Quality Analytics</div>
+            <div class="project-item" onclick="selectProject('operational-performance')">
+                <div class="project-title">Operational Performance Analytics</div>
                 <div class="project-subtitle">Bettermile (GLS eCom Lab)</div>
             </div>
             <div class="project-item" onclick="selectProject('mobile-analytics')">
@@ -518,6 +594,7 @@ body.dark-mode .project-item:hover {
                 GitHub repository coming soon - code documentation in progress
             </p>
         </div>
+
         <!-- Cross-Cultural Analysis Project -->
         <div id="cross-cultural-analysis" class="project-content" style="display: none;">
             <h2>Cross-Cultural Business Strategy Analysis: Slovenia-China Tech Cooperation</h2>
@@ -768,101 +845,167 @@ body.dark-mode .project-item:hover {
             </div>
         </div>
 
-        <!-- Driver & Depot Analysis Project -->
-        <div id="driver-depot-analysis" class="project-content" style="display: none;">
-            <h2>Driver Performance & Depot Analysis System</h2>
+        <!-- ============================================= -->
+        <!-- PROFESSIONAL PROJECTS - BETTERMILE (REVISED)  -->
+        <!-- ============================================= -->
+
+        <!-- Multilingual Survey Analytics -->
+        <div id="survey-analytics" class="project-content" style="display: none;">
+            <h2>Multilingual Survey Analytics Platform</h2>
             <div class="project-meta">Bettermile (GLS eCom Lab) • December 2024 - Present</div>
 
             <div class="project-overview">
                 <h3>Project Overview</h3>
-                <p>Developed comprehensive analytics system combining driver performance analysis with German depot operations assessment. Built integrated dashboards processing driver feedback data and operational metrics across 6 regional zones to identify performance trends and operational inefficiencies in European logistics operations.</p>
+                <p>Designed and built a repeatable survey analytics workflow used across 4 separate product surveys spanning up to 5 countries and multiple languages. For each survey, multilingual responses were collected via internal questionnaires, exported as CSV files, then cleaned, analyzed, and presented to product stakeholders through purpose-built interactive HTML dashboards — replacing what would otherwise be hours of manual spreadsheet work with a structured, visual deliverable ready for decision-making.</p>
             </div>
 
             <div class="key-achievements">
                 <h3>Key Achievements</h3>
                 <ul>
-                    <li><strong>Driver Performance Analytics:</strong> Created automated categorization system for driver notes and feedback, enabling systematic analysis of operational issues and performance patterns across multiple European markets</li>
-                    <li><strong>Regional Depot Analysis:</strong> Implemented dynamic analysis tool with region-based filtering across Nord, Süd, West, Ost, Center, and Süd-West zones in Germany</li>
-                    <li><strong>Statistical Process Control:</strong> Applied correlation studies and regression modeling to uncover underlying performance trends and operational inefficiencies across depot networks</li>
-                    <li><strong>Automated Reporting Systems:</strong> Built Python automation scripts eliminating manual reporting processes and reducing analysis time by 85% while improving data accuracy</li>
+                    <li><strong>Multi-Country Data Processing:</strong> Built data pipelines handling survey responses across up to 5 countries with mixed-language free-text fields, automated junk detection (e.g. 12 invalid responses flagged and excluded in landing page survey), and consistent cross-country comparison logic</li>
+                    <li><strong>Actionable Product Insights:</strong> Surfaced concrete findings that directly informed product decisions — such as 92.7% route editing demand across all markets, 87.4% daily live-monitoring usage, and a 4.12/5 landing page satisfaction score with Poland vs. Canada gaps identified</li>
+                    <li><strong>Stakeholder-Ready Deliverables:</strong> Each dashboard was presented to the General Manager and product teams as the definitive analysis — not a supplement to a spreadsheet, but the primary vehicle for communicating survey results and recommendations</li>
+                    <li><strong>Reusable Framework:</strong> Established a consistent survey-to-dashboard pattern that was applied across 4 distinct surveys, reducing turnaround time for each subsequent analysis as the approach and code patterns matured</li>
                 </ul>
             </div>
 
             <div class="project-tags">
                 <span class="tag">JavaScript (ES6+)</span>
-                <span class="tag">Python</span>
-                <span class="tag">Statistical Analysis</span>
                 <span class="tag">Chart.js</span>
+                <span class="tag">Papa Parse</span>
                 <span class="tag">CSV Processing</span>
+                <span class="tag">Survey Analysis</span>
+                <span class="tag">Data Cleaning</span>
+                <span class="tag">Multi-Language Data</span>
+                <span class="tag">Stakeholder Reporting</span>
+            </div>
+
+            <div class="example-dashboards">
+                <h4>📊 Example Dashboards</h4>
+                <div class="dashboard-links">
+                    <a href="#" class="dashboard-link" title="Coming soon">
+                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M4.5 3a2.5 2.5 0 0 1 5 0v1h-5V3zm-1 1v-1a3.5 3.5 0 1 1 7 0v1h1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h1z"/></svg>
+                        Mobile Backoffice Survey
+                    </a>
+                    <a href="#" class="dashboard-link" title="Coming soon">
+                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M4.5 3a2.5 2.5 0 0 1 5 0v1h-5V3zm-1 1v-1a3.5 3.5 0 1 1 7 0v1h1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h1z"/></svg>
+                        Route Editing Survey
+                    </a>
+                    <a href="#" class="dashboard-link" title="Coming soon">
+                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M4.5 3a2.5 2.5 0 0 1 5 0v1h-5V3zm-1 1v-1a3.5 3.5 0 1 1 7 0v1h1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h1z"/></svg>
+                        Live Monitoring Survey
+                    </a>
+                    <a href="#" class="dashboard-link" title="Coming soon">
+                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M4.5 3a2.5 2.5 0 0 1 5 0v1h-5V3zm-1 1v-1a3.5 3.5 0 1 1 7 0v1h1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h1z"/></svg>
+                        Landing Page Feedback
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Third-Party Platform Intelligence -->
+        <div id="platform-intelligence" class="project-content" style="display: none;">
+            <h2>Third-Party Platform Intelligence System</h2>
+            <div class="project-meta">Bettermile (GLS eCom Lab) • December 2024 - Present</div>
+
+            <div class="project-overview">
+                <h3>Project Overview</h3>
+                <p>Built a suite of automated analysis tools that transform raw CSV exports from third-party platforms — Intercom (customer support), Instabug (bug reporting), and internal tracking systems — into structured, interactive dashboards. These replaced ad-hoc manual analysis that previously consumed significant time each reporting cycle, providing the team with on-demand insights from data that was otherwise sitting in exported spreadsheets.</p>
+            </div>
+
+            <div class="key-achievements">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li><strong>Intercom Analytics Automation:</strong> Built analyzers for both general support reports and driver-specific cases, automatically categorizing conversations, tracking response times, and surfacing resolution patterns — work that previously required manual ticket-by-ticket review</li>
+                    <li><strong>Bug Report Intelligence:</strong> Created an Instabug CSV analyzer with statistical validity checks, trend identification across time periods, and impact severity assessment — turning raw crash/bug exports into prioritized engineering insights</li>
+                    <li><strong>App Version Performance Tracking:</strong> Developed a version comparison tool that ingests release data and maps quality metrics, user adoption rates, and regression patterns across app releases — enabling the team to quantify whether a new version improved or degraded the user experience</li>
+                    <li><strong>Eliminated Manual Reporting Cycles:</strong> Each tool follows a consistent upload-and-analyze pattern: drop in the latest CSV export, get an immediate interactive dashboard. This saved an estimated 10+ hours per week across the team that was previously spent on manual data wrangling in spreadsheets</li>
+                </ul>
+            </div>
+
+            <div class="project-tags">
+                <span class="tag">JavaScript (ES6+)</span>
+                <span class="tag">Chart.js</span>
+                <span class="tag">Papa Parse</span>
+                <span class="tag">Intercom Analytics</span>
+                <span class="tag">Instabug Integration</span>
+                <span class="tag">CSV Automation</span>
+                <span class="tag">Statistical Analysis</span>
+                <span class="tag">Quality Assurance</span>
+            </div>
+
+            <div class="example-dashboards">
+                <h4>📊 Example Dashboards</h4>
+                <div class="dashboard-links">
+                    <a href="#" class="dashboard-link" title="Coming soon">
+                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M4.5 3a2.5 2.5 0 0 1 5 0v1h-5V3zm-1 1v-1a3.5 3.5 0 1 1 7 0v1h1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h1z"/></svg>
+                        Intercom Reports Analyzer
+                    </a>
+                    <a href="#" class="dashboard-link" title="Coming soon">
+                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M4.5 3a2.5 2.5 0 0 1 5 0v1h-5V3zm-1 1v-1a3.5 3.5 0 1 1 7 0v1h1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h1z"/></svg>
+                        Driver Cases Analyzer
+                    </a>
+                    <a href="#" class="dashboard-link" title="Coming soon">
+                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M4.5 3a2.5 2.5 0 0 1 5 0v1h-5V3zm-1 1v-1a3.5 3.5 0 1 1 7 0v1h1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h1z"/></svg>
+                        Bug Report Analyzer
+                    </a>
+                    <a href="#" class="dashboard-link" title="Coming soon">
+                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M4.5 3a2.5 2.5 0 0 1 5 0v1h-5V3zm-1 1v-1a3.5 3.5 0 1 1 7 0v1h1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h1z"/></svg>
+                        App Version Analyzer
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Operational Performance Analytics -->
+        <div id="operational-performance" class="project-content" style="display: none;">
+            <h2>Operational Performance Analytics</h2>
+            <div class="project-meta">Bettermile (GLS eCom Lab) • December 2024 - Present</div>
+
+            <div class="project-overview">
+                <h3>Project Overview</h3>
+                <p>Developed geolocation-aware analytics tools for analyzing driver behavior and depot-level performance across Germany's logistics network. These dashboards process internal operational data — driver notes with GPS coordinates and depot KPIs across 6 regional zones — to surface performance patterns and operational bottlenecks that were previously invisible in raw spreadsheet exports.</p>
+            </div>
+
+            <div class="key-achievements">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li><strong>Driver Notes Intelligence:</strong> Built an analyzer that processes GPS-tagged driver notes, automatically categorizing free-text feedback by issue type and mapping patterns geographically — transforming unstructured field data into actionable operational insights</li>
+                    <li><strong>Regional Depot Benchmarking:</strong> Created a depot performance tool with dynamic filtering across Germany's Nord, Süd, West, Ost, Center, and Süd-West zones, enabling management to identify underperforming depots and compare operational metrics regionally</li>
+                    <li><strong>Correlation Studies:</strong> Applied statistical analysis to uncover relationships between driver feedback patterns and depot-level KPIs, grounding operational improvement recommendations in data rather than anecdotes</li>
+                    <li><strong>Geospatial Data Processing:</strong> Implemented coordinate-based analysis linking driver notes to specific delivery areas, enabling geographic clustering of recurring issues for targeted operational interventions</li>
+                </ul>
+            </div>
+
+            <div class="project-tags">
+                <span class="tag">JavaScript (ES6+)</span>
+                <span class="tag">Chart.js</span>
+                <span class="tag">Papa Parse</span>
+                <span class="tag">Geolocation Analysis</span>
                 <span class="tag">Regional Analytics</span>
                 <span class="tag">Performance Metrics</span>
-                <span class="tag">Logistics Analytics</span>
+                <span class="tag">Statistical Correlation</span>
+                <span class="tag">Logistics Operations</span>
+            </div>
+
+            <div class="example-dashboards">
+                <h4>📊 Example Dashboards</h4>
+                <div class="dashboard-links">
+                    <a href="#" class="dashboard-link" title="Coming soon">
+                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M4.5 3a2.5 2.5 0 0 1 5 0v1h-5V3zm-1 1v-1a3.5 3.5 0 1 1 7 0v1h1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h1z"/></svg>
+                        Driver Notes Analyzer
+                    </a>
+                    <a href="#" class="dashboard-link" title="Coming soon">
+                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M4.5 3a2.5 2.5 0 0 1 5 0v1h-5V3zm-1 1v-1a3.5 3.5 0 1 1 7 0v1h1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h1z"/></svg>
+                        German Depot Analyzer
+                    </a>
+                </div>
             </div>
         </div>
 
-        <!-- Mobile UX & Route Management Project -->
-        <div id="mobile-route-dashboards" class="project-content" style="display: none;">
-            <h2>Mobile UX & Route Management Dashboards</h2>
-            <div class="project-meta">Bettermile (GLS eCom Lab) • December 2024 - Present</div>
-
-            <div class="project-overview">
-                <h3>Project Overview</h3>
-                <p>Developed comprehensive analytics platform combining mobile user experience insights with route management optimization tools. Created integrated dashboards processing customer survey data and route editing patterns to enhance driver app usability and optimize delivery route efficiency across European markets.</p>
-            </div>
-
-            <div class="key-achievements">
-                <h3>Key Achievements</h3>
-                <ul>
-                    <li><strong>Mobile Survey Analytics:</strong> Built comprehensive survey analysis system processing multi-market customer feedback with automated sentiment analysis and response categorization</li>
-                    <li><strong>Route Optimization Dashboard:</strong> Created interactive route editing analysis tool tracking modification patterns, efficiency improvements, and optimization opportunities</li>
-                    <li><strong>User Experience Intelligence:</strong> Implemented advanced analytics identifying pain points and improvement opportunities in mobile app workflows across different European markets</li>
-                    <li><strong>Cross-Platform Integration:</strong> Developed unified dashboard combining mobile app performance data with route optimization metrics to provide holistic operational insights</li>
-                </ul>
-            </div>
-
-            <div class="project-tags">
-                <span class="tag">JavaScript (ES6+)</span>
-                <span class="tag">Chart.js</span>
-                <span class="tag">User Experience Analytics</span>
-                <span class="tag">Survey Analysis</span>
-                <span class="tag">Route Optimization</span>
-                <span class="tag">Mobile Analytics</span>
-                <span class="tag">Data Visualization</span>
-                <span class="tag">Multi-Market Analysis</span>
-            </div>
-        </div>
-
-        <!-- Customer Support & Quality Analytics Project -->
-        <div id="support-quality-analytics" class="project-content" style="display: none;">
-            <h2>Customer Support & Quality Analytics Platform</h2>
-            <div class="project-meta">Bettermile (GLS eCom Lab) • December 2024 - Present</div>
-
-            <div class="project-overview">
-                <h3>Project Overview</h3>
-                <p>Built comprehensive analytics ecosystem encompassing customer support intelligence, software quality tracking, and app version performance analysis. Developed integrated dashboard suite processing Intercom reports, driver case management data, bug tracking systems, and app version analytics to provide 360-degree view of product quality and customer experience.</p>
-            </div>
-
-            <div class="key-achievements">
-                <h3>Key Achievements</h3>
-                <ul>
-                    <li><strong>Customer Support Intelligence:</strong> Created advanced Intercom reports analyzer with automated categorization of support tickets, response time analytics, and customer satisfaction tracking across multiple communication channels</li>
-                    <li><strong>Quality Assurance Dashboard:</strong> Developed comprehensive bug tracking and analysis system with statistical validity algorithms, trend identification, and impact assessment capabilities</li>
-                    <li><strong>App Version Performance Analysis:</strong> Built sophisticated version comparison tool tracking performance metrics, user adoption rates, and quality indicators across different app releases</li>
-                    <li><strong>Driver Case Management Analytics:</strong> Implemented systematic analysis of driver-reported issues with pattern recognition, priority classification, and resolution tracking to improve operational efficiency</li>
-                </ul>
-            </div>
-
-            <div class="project-tags">
-                <span class="tag">JavaScript (ES6+)</span>
-                <span class="tag">Chart.js</span>
-                <span class="tag">Customer Support Analytics</span>
-                <span class="tag">Quality Assurance</span>
-                <span class="tag">Bug Tracking</span>
-                <span class="tag">Version Analysis</span>
-                <span class="tag">Statistical Analysis</span>
-                <span class="tag">Performance Monitoring</span>
-            </div>
-        </div>
+        <!-- ============================================= -->
+        <!-- PROFESSIONAL PROJECTS - US MOBILE & SWVL      -->
+        <!-- ============================================= -->
 
         <!-- Mobile Analytics Project -->
         <div id="mobile-analytics" class="project-content" style="display: none;">
