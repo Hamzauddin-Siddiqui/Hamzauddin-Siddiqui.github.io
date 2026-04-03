@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Network Diagram - Facility and Carrier Assignment Problem</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        svg {
+            width: 100%;
+            height: 800px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fafafa;
+        }
+        .stage-label {
+            font-size: 16px;
+            font-weight: bold;
+            fill: #2c3e50;
+        }
+        .customer {
+            fill: #95a5a6;
+            stroke: #7f8c8d;
+            stroke-width: 2;
+        }
+        .plant {
+            fill: #3498db;
+            stroke: #2980b9;
+            stroke-width: 2;
+        }
+        .port {
+            fill: #27ae60;
+            stroke: #229954;
+            stroke-width: 2;
+        }
+        .port-dual {
+            fill: #9b59b6;
+            stroke: #8e44ad;
+            stroke-width: 2;
+        }
+        .carrier {
+            fill: #e67e22;
+            stroke: #d35400;
+            stroke-width: 2;
+        }
+        .destination {
+            fill: #9b59b6;
+            stroke: #8e44ad;
+            stroke-width: 2;
+        }
+        .entity-label {
+            font-size: 10px;
+            fill: white;
+            text-anchor: middle;
+            font-weight: 600;
+        }
+        .connection {
+            stroke: #95a5a6;
+            stroke-width: 1;
+            fill: none;
+            opacity: 0.3;
+            transition: all 0.3s ease;
+        }
+        .connection:hover {
+            stroke: #3498db;
+            stroke-width: 2;
+            opacity: 0.8;
+        }
+        .connection-highlighted {
+            stroke: #e74c3c !important;
+            stroke-width: 3 !important;
+            opacity: 1 !important;
+            filter: drop-shadow(0 0 3px #e74c3c);
+        }
+        .entity-clickable {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .entity-clickable:hover {
+            filter: brightness(1.1) drop-shadow(0 0 5px rgba(52, 152, 219, 0.5));
+        }
+        .entity-selected {
+            filter: brightness(1.2) drop-shadow(0 0 8px rgba(231, 76, 60, 0.8));
+        }
+        .capacity-label {
+            font-size: 9px;
+            fill: #7f8c8d;
+        }
+        .info-box {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        .info-box h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .info-box ul {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+        .legend {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .legend-box {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            border: 2px solid;
+        }
+        details {
+            background-color: white;
+            border-radius: 4px;
+        }
+        details summary {
+            user-select: none;
+            outline: none;
+            transition: all 0.2s;
+        }
+        details summary:hover {
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        details[open] summary span:first-child {
+            transform: rotate(90deg);
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+        details summary span:first-child {
+            transition: transform 0.2s;
+        }
+        .connection-grid {
+            font-family: monospace;
+            font-size: 12px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Complete Network Diagram</h1>
+        <div class="subtitle">Full-Scale Representation: Facility and Carrier Assignment Problem</div>
+        <div style="text-align: center; color: #7f8c8d; margin-bottom: 15px; font-size: 13px; font-style: italic;">
+            💡 Click on any entity (box) to highlight its connections
+        </div>
+        
+        <svg id="network" viewBox="0 0 1600 800">
+            <!-- Define markers for arrows -->
+            <defs>
+                <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                    <polygon points="0 0, 10 3, 0 6" fill="#95a5a6" />
+                </marker>
+            </defs>
+        </svg>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-box" style="background-color: #95a5a6; border-color: #7f8c8d;"></div>
+                <span>Customers (46)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box" style="background-color: #3498db; border-color: #2980b9;"></div>
+                <span>Plants (19)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box" style="background-color: #27ae60; border-color: #229954;"></div>
+                <span>Origin Ports (10)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box" style="background-color: #9b59b6; border-color: #8e44ad;"></div>
+                <span>PORT09 (Origin & Dest)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box" style="background-color: #e67e22; border-color: #d35400;"></div>
+                <span>Carriers (9)</span>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>Network Structure</h3>
+            <ul>
+                <li><strong>Stage 1 - Customers:</strong> 46 customers placing 9,215 orders</li>
+                <li><strong>Stage 2 - Plants:</strong> 19 plants (PLANT01-PLANT19) with varying daily capacities (7-1,070 orders/day)</li>
+                <li><strong>Stage 3 - Origin Ports:</strong> 11 ports total:
+                    <ul>
+                        <li>10 regular origin ports: PORT01, PORT02, PORT03, PORT04, PORT05, PORT06, PORT07, PORT08, PORT10, PORT11</li>
+                        <li class="highlight">1 dual-role port: PORT09 (serves as BOTH origin AND destination)</li>
+                        <li><em>Note: PORT01 appears in plant-port connections but has no freight rates defined</em></li>
+                    </ul>
+                </li>
+                <li><strong>Stage 4 - Carriers:</strong> 9 carriers (V444_0, V444_1, V444_2, V444_4, V444_5, V444_6, V444_7, V444_8, V444_9) with service levels (DTD, DTP, CRF)</li>
+                <li><strong>Stage 5 - Destination:</strong> Single destination port (PORT09) - <span class="highlight">same physical location as origin PORT09</span></li>
+                <li><strong>Temporal Dimension:</strong> 9-day planning horizon (May 26 - June 3, 2013)</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>Key Constraints</h3>
+            <ul>
+                <li>Plant-port connectivity: Not all plant-port combinations are feasible</li>
+                <li>Product availability: 82.5% of products available at only 1 plant</li>
+                <li>VMI restrictions: 10 customers with restricted plant assignments; <strong>1,045 VMI orders (50.0% of 2,089 VMI orders) are infeasible</strong> due to product unavailability at assigned plants</li>
+                <li>Service level requirements: Carrier-service level exclusive pairings</li>
+                <li>Capacity: Daily network capacity = 5,791 orders/day (sum of all plant capacities)</li>
+                <li>Temporal windows: Each order has min/max shipping dates based on delivery date, TPT, and warehousing constraints</li>
+            </ul>
+        </div>
+
+        <div class="info-box" style="margin-top: 20px;">
+            <details>
+                <summary style="cursor: pointer; font-weight: bold; font-size: 16px; color: #2c3e50; padding: 10px 0;">
+                    <span style="font-size: 18px; margin-right: 10px;">▶</span> Network Connection Verification (Click to expand)
+                </summary>
+                
+                <div style="margin-top: 20px;">
+                    <h3>Corrected Connections in Final Diagram</h3>
+                    
+                    <h4 style="color: #2c3e50; margin-top: 20px;">Stage 1 → Stage 2: Customers to Plants</h4>
+                    <ul>
+                        <li>Customer box (46 customers, 9,215 orders) connects to <strong>ALL 19 plants</strong></li>
+                    </ul>
+
+                    <h4 style="color: #2c3e50; margin-top: 20px;">Stage 2 → Stage 3: Plants to Origin Ports</h4>
+                    <p>Based on PlantPorts data:</p>
+                    <div style="font-family: monospace; font-size: 12px; background-color: #f8f9fa; padding: 15px; border-radius: 4px; margin-top: 10px;">
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: 8px;">
+                            <span>PLANT01 →</span><span>PORT01, PORT02</span>
+                            <span>PLANT02 →</span><span>PORT03</span>
+                            <span>PLANT03 →</span><span>PORT04</span>
+                            <span>PLANT04 →</span><span>PORT05</span>
+                            <span>PLANT05 →</span><span>PORT06</span>
+                            <span>PLANT06 →</span><span>PORT06</span>
+                            <span>PLANT07 →</span><span>PORT01, PORT02</span>
+                            <span>PLANT08 →</span><span>PORT04</span>
+                            <span>PLANT09 →</span><span>PORT04</span>
+                            <span style="font-weight: bold;">PLANT10 →</span><span style="font-weight: bold;">PORT01, PORT02 ✔</span>
+                            <span>PLANT11 →</span><span>PORT04</span>
+                            <span>PLANT12 →</span><span>PORT04</span>
+                            <span>PLANT13 →</span><span>PORT04</span>
+                            <span>PLANT14 →</span><span>PORT07</span>
+                            <span>PLANT15 →</span><span>PORT08</span>
+                            <span>PLANT16 →</span><span>PORT09</span>
+                            <span>PLANT17 →</span><span>PORT10</span>
+                            <span>PLANT18 →</span><span>PORT11</span>
+                            <span>PLANT19 →</span><span>PORT04</span>
+                        </div>
+                    </div>
+
+                    <h4 style="color: #2c3e50; margin-top: 20px;">Stage 3 → Stage 4: Origin Ports to Carriers</h4>
+                    <p>Based on FreightRates data:</p>
+                    <div style="font-family: monospace; font-size: 12px; background-color: #f8f9fa; padding: 15px; border-radius: 4px; margin-top: 10px;">
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: 8px;">
+                            <span style="color: #e74c3c;">PORT01 →</span><span style="color: #e74c3c;">(none - no freight rates defined)</span>
+                            <span style="font-weight: bold;">PORT02 →</span><span style="font-weight: bold;">V444_0, V444_1, V444_2, V444_4, V444_5, V444_8 ✔ (6 carriers)</span>
+                            <span>PORT03 →</span><span>V444_0, V444_5, V444_7, V444_8 (4 carriers)</span>
+                            <span>PORT04 →</span><span>V444_0, V444_1, V444_4, V444_8 (4 carriers)</span>
+                            <span>PORT05 →</span><span>V444_1, V444_4, V444_5 (3 carriers)</span>
+                            <span>PORT06 →</span><span>V444_1, V444_4, V444_5 (3 carriers)</span>
+                            <span>PORT07 →</span><span>V444_2 (1 carrier)</span>
+                            <span>PORT08 →</span><span>V444_2, V444_6, V444_9 (3 carriers)</span>
+                            <span>PORT09 →</span><span>V444_0, V444_5, V444_8 (3 carriers)</span>
+                            <span>PORT10 →</span><span>V444_1, V444_2, V444_4, V444_6 (4 carriers)</span>
+                            <span>PORT11 →</span><span>V444_2, V444_8 (2 carriers)</span>
+                        </div>
+                    </div>
+
+                    <h4 style="color: #2c3e50; margin-top: 20px;">Stage 4 → Stage 5: Carriers to Destination</h4>
+                    <ul>
+                        <li><strong>ALL 9 carriers</strong> (V444_0, V444_1, V444_2, V444_4, V444_5, V444_6, V444_7, V444_8, V444_9) → PORT09 (destination)</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <script>
+        const svg = document.getElementById('network');
+        const width = 1600;
+        const height = 800;
+
+        // Entity data
+        const plants = ['PLANT01', 'PLANT02', 'PLANT03', 'PLANT04', 'PLANT05', 'PLANT06', 'PLANT07', 
+                       'PLANT08', 'PLANT09', 'PLANT10', 'PLANT11', 'PLANT12', 'PLANT13', 'PLANT14',
+                       'PLANT15', 'PLANT16', 'PLANT17', 'PLANT18', 'PLANT19'];
+        
+        // 10 origin ports - PORT09 will be special, PORT01 has no freight rates
+        const originPorts = ['PORT01', 'PORT02', 'PORT03', 'PORT04', 'PORT05', 'PORT06', 
+                            'PORT07', 'PORT08', 'PORT09', 'PORT10', 'PORT11'];
+        
+        const carriers = ['V444_0', 'V444_1', 'V444_2', 'V444_4', 'V444_5', 
+                         'V444_6', 'V444_7', 'V444_8', 'V444_9'];
+        
+        const destPort = 'PORT09';
+
+        // Stage positions
+        const stageX = {
+            customers: 80,
+            plants: 350,
+            ports: 650,
+            carriers: 950,
+            destination: 1250
+        };
+
+        // Draw stage labels
+        function drawStageLabel(x, y, text) {
+            const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            label.setAttribute('x', x);
+            label.setAttribute('y', y);
+            label.setAttribute('class', 'stage-label');
+            label.setAttribute('text-anchor', 'middle');
+            label.textContent = text;
+            svg.appendChild(label);
+        }
+
+        drawStageLabel(stageX.customers, 30, 'Stage 1: Customers (46)');
+        drawStageLabel(stageX.plants, 30, 'Stage 2: Plants (19)');
+        drawStageLabel(stageX.ports, 30, 'Stage 3: Origin Ports (11)');
+        drawStageLabel(stageX.carriers, 30, 'Stage 4: Carriers (9)');
+        drawStageLabel(stageX.destination, 30, 'Stage 5: Destination (1)');
+
+        // Global arrays to store connections and entity elements
+        const allConnections = [];
+        const entityElements = new Map(); // Maps entity ID to {rect, text, entityId, entityType}
+        let selectedEntity = null;
+
+        // Draw entities - returns entity group with rect and text
+        function drawRect(x, y, width, height, className, label, sublabel = null, entityId = null) {
+            const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+            group.setAttribute('class', 'entity-clickable');
+            if (entityId) {
+                group.setAttribute('data-entity-id', entityId);
+            }
+            
+            const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+            rect.setAttribute('x', x - width/2);
+            rect.setAttribute('y', y - height/2);
+            rect.setAttribute('width', width);
+            rect.setAttribute('height', height);
+            rect.setAttribute('class', className);
+            rect.setAttribute('rx', 4);
+            group.appendChild(rect);
+
+            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttribute('x', x);
+            text.setAttribute('y', y + (sublabel ? -2 : 3));
+            text.setAttribute('class', 'entity-label');
+            text.textContent = label;
+            group.appendChild(text);
+
+            if (sublabel) {
+                const sub = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                sub.setAttribute('x', x);
+                sub.setAttribute('y', y + 8);
+                sub.setAttribute('class', 'capacity-label');
+                sub.setAttribute('text-anchor', 'middle');
+                sub.textContent = sublabel;
+                group.appendChild(sub);
+            }
+
+            svg.appendChild(group);
+
+            // Store entity info
+            if (entityId) {
+                entityElements.set(entityId, {group, rect, entityId});
+                
+                // Add click handler
+                group.addEventListener('click', () => handleEntityClick(entityId));
+            }
+
+            return {x, y, group, rect};
+        }
+
+        // Draw connections with metadata
+        function drawConnection(x1, y1, x2, y2, sourceId, targetId) {
+            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('x1', x1);
+            line.setAttribute('y1', y1);
+            line.setAttribute('x2', x2);
+            line.setAttribute('y2', y2);
+            line.setAttribute('class', 'connection');
+            line.setAttribute('marker-end', 'url(#arrowhead)');
+            line.setAttribute('data-source', sourceId);
+            line.setAttribute('data-target', targetId);
+            svg.appendChild(line);
+            
+            // Store connection info
+            allConnections.push({line, sourceId, targetId});
+            
+            return line;
+        }
+
+        // Handle entity click
+        function handleEntityClick(entityId) {
+            // If clicking the same entity, deselect
+            if (selectedEntity === entityId) {
+                clearHighlights();
+                selectedEntity = null;
+                return;
+            }
+
+            // Clear previous selection
+            clearHighlights();
+            
+            // Set new selection
+            selectedEntity = entityId;
+            
+            // Highlight selected entity
+            const entityInfo = entityElements.get(entityId);
+            if (entityInfo && entityInfo.group) {
+                entityInfo.group.classList.add('entity-selected');
+            }
+            
+            // Highlight all connections involving this entity
+            allConnections.forEach(conn => {
+                if (conn.sourceId === entityId || conn.targetId === entityId) {
+                    conn.line.classList.add('connection-highlighted');
+                    
+                    // Also highlight connected entities
+                    const connectedId = conn.sourceId === entityId ? conn.targetId : conn.sourceId;
+                    const connectedEntity = entityElements.get(connectedId);
+                    if (connectedEntity && connectedEntity.group) {
+                        connectedEntity.group.style.opacity = '1';
+                    }
+                }
+            });
+        }
+
+        // Clear all highlights
+        function clearHighlights() {
+            // Remove entity selection
+            entityElements.forEach(entityInfo => {
+                if (entityInfo.group) {
+                    entityInfo.group.classList.remove('entity-selected');
+                    entityInfo.group.style.opacity = '1';
+                }
+            });
+            
+            // Remove connection highlights
+            allConnections.forEach(conn => {
+                conn.line.classList.remove('connection-highlighted');
+            });
+        }
+
+        // Stage 1: Customers (represented as a cluster)
+        const customerY = height / 2;
+        const customerPosition = drawRect(stageX.customers, customerY, 90, 50, 'customer', '46 Customers', '9,215 orders', 'CUSTOMERS');
+
+        // Stage 2: Plants (19 in grid)
+        const plantPositions = [];
+        const plantRows = 10;
+        const plantCols = 2;
+        const plantStartY = 80;
+        const plantSpacingY = 65;
+        const plantSpacingX = 100;
+        
+        plants.forEach((plant, i) => {
+            const row = i % plantRows;
+            const col = Math.floor(i / plantRows);
+            const y = plantStartY + row * plantSpacingY;
+            const x = stageX.plants + col * plantSpacingX - 40;
+            const pos = drawRect(x, y, 80, 30, 'plant', plant, null, plant);
+            plantPositions.push({...pos, plant});
+        });
+
+        // Stage 3: Origin Ports (11 ports)
+        const portPositions = [];
+        const portStartY = 80;
+        const portSpacing = 65;
+        
+        originPorts.forEach((port, i) => {
+            const y = portStartY + i * portSpacing;
+            // Use special styling for PORT09
+            const className = port === 'PORT09' ? 'port-dual' : 'port';
+            const label = port === 'PORT09' ? port + '*' : port;
+            const pos = drawRect(stageX.ports, y, 70, 28, className, label, null, port);
+            portPositions.push({...pos, port});
+        });
+
+        // Stage 4: Carriers (9 carriers)
+        const carrierPositions = [];
+        const carrierStartY = 110;
+        const carrierSpacing = 75;
+        
+        carriers.forEach((carrier, i) => {
+            const y = carrierStartY + i * carrierSpacing;
+            const pos = drawRect(stageX.carriers, y, 70, 28, 'carrier', carrier, 'DTD/DTP/CRF', carrier);
+            carrierPositions.push({...pos, carrier});
+        });
+
+        // Stage 5: Destination (PORT09 - same as origin)
+        const destY = height / 2;
+        const destPosition = drawRect(stageX.destination, destY, 80, 35, 'destination', 'PORT09*', '(Destination)', 'DESTINATION_PORT09');
+
+        // Actual connection data from database
+        const plantPortConnections = {
+            'PLANT01': ['PORT01', 'PORT02'],
+            'PLANT02': ['PORT03'],
+            'PLANT03': ['PORT04'],
+            'PLANT04': ['PORT05'],
+            'PLANT05': ['PORT06'],
+            'PLANT06': ['PORT06'],
+            'PLANT07': ['PORT01', 'PORT02'],
+            'PLANT08': ['PORT04'],
+            'PLANT09': ['PORT04'],
+            'PLANT10': ['PORT01', 'PORT02'],
+            'PLANT11': ['PORT04'],
+            'PLANT12': ['PORT04'],
+            'PLANT13': ['PORT04'],
+            'PLANT14': ['PORT07'],
+            'PLANT15': ['PORT08'],
+            'PLANT16': ['PORT09'],
+            'PLANT17': ['PORT10'],
+            'PLANT18': ['PORT11'],
+            'PLANT19': ['PORT04']
+        };
+        
+        const portCarrierConnections = {
+            'PORT01': [], // No carriers in FreightRates data
+            'PORT02': ['V444_0', 'V444_1', 'V444_2', 'V444_4', 'V444_5', 'V444_8'],
+            'PORT03': ['V444_0', 'V444_5', 'V444_7', 'V444_8'],
+            'PORT04': ['V444_0', 'V444_1', 'V444_4', 'V444_8'],
+            'PORT05': ['V444_1', 'V444_4', 'V444_5'],
+            'PORT06': ['V444_1', 'V444_4', 'V444_5'],
+            'PORT07': ['V444_2'],
+            'PORT08': ['V444_2', 'V444_6', 'V444_9'],
+            'PORT09': ['V444_0', 'V444_5', 'V444_8'],
+            'PORT10': ['V444_1', 'V444_2', 'V444_4', 'V444_6'],
+            'PORT11': ['V444_2', 'V444_8']
+        };
+
+        // Draw connections: Customers to ALL Plants
+        plantPositions.forEach((plantPos) => {
+            drawConnection(customerPosition.x, customerPosition.y, plantPos.x, plantPos.y, 'CUSTOMERS', plantPos.plant);
+        });
+
+        // Draw connections: Plants to Ports (based on actual data)
+        plantPositions.forEach((plantPos, i) => {
+            const plantName = plants[i];
+            const connectedPorts = plantPortConnections[plantName];
+            if (connectedPorts) {
+                connectedPorts.forEach(portName => {
+                    const portPos = portPositions.find(p => p.port === portName);
+                    if (portPos) {
+                        drawConnection(plantPos.x, plantPos.y, portPos.x, portPos.y, plantName, portName);
+                    }
+                });
+            }
+        });
+
+        // Draw connections: Ports to Carriers (based on actual FreightRates data)
+        portPositions.forEach(portPos => {
+            const portName = portPos.port;
+            const connectedCarriers = portCarrierConnections[portName];
+            if (connectedCarriers && connectedCarriers.length > 0) {
+                connectedCarriers.forEach(carrierName => {
+                    const carrierIndex = carriers.indexOf(carrierName);
+                    if (carrierIndex >= 0) {
+                        const carrierPos = carrierPositions[carrierIndex];
+                        drawConnection(portPos.x, portPos.y, carrierPos.x, carrierPos.y, portName, carrierName);
+                    }
+                });
+            }
+        });
+
+        // Draw connections: Carriers to Destination
+        carrierPositions.forEach((carrierPos) => {
+            drawConnection(carrierPos.x, carrierPos.y, destPosition.x, destPosition.y, carrierPos.carrier, 'DESTINATION_PORT09');
+        });
+
+        // Special curved connection from PORT09 origin to PORT09 destination
+        const port09Origin = portPositions.find(p => p.port === 'PORT09');
+        if (port09Origin) {
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            const startX = port09Origin.x + 35;
+            const startY = port09Origin.y;
+            const endX = destPosition.x - 40;
+            const endY = destPosition.y;
+            const midX = (startX + endX) / 2;
+            const midY = (startY + endY) / 2 - 50; // Curve upward
+            
+            path.setAttribute('d', `M ${startX} ${startY} Q ${midX} ${midY} ${endX} ${endY}`);
+            path.setAttribute('class', 'connection');
+            path.setAttribute('stroke', '#9b59b6');
+            path.setAttribute('stroke-width', '2');
+            path.setAttribute('opacity', '0.6');
+            path.setAttribute('marker-end', 'url(#arrowhead)');
+            path.setAttribute('data-source', 'PORT09');
+            path.setAttribute('data-target', 'DESTINATION_PORT09');
+            svg.appendChild(path);
+            
+            // Store this special connection
+            allConnections.push({line: path, sourceId: 'PORT09', targetId: 'DESTINATION_PORT09'});
+        }
+
+        // Add note about PORT09
+        const note = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        note.setAttribute('x', width / 2);
+        note.setAttribute('y', 60);
+        note.setAttribute('text-anchor', 'middle');
+        note.setAttribute('font-size', '12');
+        note.setAttribute('fill', '#9b59b6');
+        note.setAttribute('font-weight', 'bold');
+        note.textContent = '* PORT09 appears in both Stage 3 (origin) and Stage 5 (destination) - same physical port';
+        svg.appendChild(note);
+    </script>
+</body>
+</html>
