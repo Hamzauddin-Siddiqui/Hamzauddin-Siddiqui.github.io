@@ -9,17 +9,17 @@ permalink: /projects/
 .projects-sidebar { flex: 0 0 320px; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border-radius: 12px; padding: 20px; height: fit-content; border: 1px solid rgba(255,255,255,0.1); }
 .tab-buttons { display: flex; margin-bottom: 20px; background: rgba(0,0,0,0.3); border-radius: 8px; padding: 4px; }
 .tab-button { flex: 1; padding: 12px 20px; background: transparent; border: none; color: #8e8e93; cursor: pointer; border-radius: 6px; font-weight: 500; transition: all 0.3s ease; font-size: 14px; }
-.tab-button.active { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; transform: translateY(-1px); box-shadow: 0 2px 8px rgba(102,126,234,0.3); }
+.tab-button.active { background: #0066cc; color: white; transform: translateY(-1px); box-shadow: 0 2px 8px rgba(102,126,234,0.3); }
 .tab-button:hover:not(.active) { background: rgba(255,255,255,0.1); color: #ffffff; }
 .projects-list { display: none; }
 .projects-list.active { display: block; }
 .project-item { padding: 15px; margin: 8px 0; background: rgba(255,255,255,0.05); border-radius: 8px; cursor: pointer; transition: all 0.3s ease; border: 1px solid transparent; }
 .project-item:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); border-color: rgba(102,126,234,0.3); }
-.project-item.active { background: rgba(102,126,234,0.2); border-color: #667eea; }
+.project-item.active { background: rgba(102,126,234,0.2); border-color: #0066cc; }
 .project-title { font-weight: 600; font-size: 16px; margin-bottom: 5px; color: var(--text-color); }
 .project-subtitle { font-size: 12px; opacity: 0.7; color: var(--text-color); }
 .featured-project { flex: 1; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border-radius: 12px; padding: 40px; border: 1px solid rgba(255,255,255,0.1); min-width: 0; overflow: hidden; }
-.featured-project h2 { margin-top: 0; margin-bottom: 15px; color: var(--text-color); background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 2.2em; }
+.featured-project h2 { margin-top: 0; margin-bottom: 15px; color: var(--text-color); background: #0066cc; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 2.2em; }
 .project-meta { font-size: 15px; opacity: 0.8; margin-bottom: 25px; color: var(--text-color); }
 .project-overview, .key-achievements { margin-bottom: 30px; }
 .project-overview h3, .key-achievements h3 { color: var(--text-color); margin-top: 0; margin-bottom: 20px; font-size: 1.4em; }
@@ -27,15 +27,15 @@ permalink: /projects/
 .key-achievements ul { padding-left: 20px; color: var(--text-color); columns: 1; column-gap: 40px; }
 .key-achievements li { margin-bottom: 12px; line-height: 1.6; break-inside: avoid; }
 .project-tags { margin: 30px 0; display: flex; flex-wrap: wrap; gap: 10px; }
-.tag { background: rgba(102,126,234,0.2); color: #667eea; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 500; border: 1px solid rgba(102,126,234,0.3); }
+.tag { background: rgba(102,126,234,0.2); color: #0066cc; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 500; border: 1px solid rgba(102,126,234,0.3); }
 .project-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
-.github-button { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(102,126,234,0.3); }
+.github-button { display: inline-flex; align-items: center; gap: 8px; background: #0066cc; color: white; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(102,126,234,0.3); }
 .github-button:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(102,126,234,0.4); color: white; text-decoration: none; }
 .project-documents, .example-dashboards { margin-top: 25px; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); }
 .project-documents h4, .example-dashboards h4 { margin: 0 0 15px 0; font-size: 1.1em; color: var(--text-color); opacity: 0.9; }
 .doc-links, .dashboard-links { display: flex; flex-wrap: wrap; gap: 10px; }
-.doc-link, .dashboard-link { display: inline-flex; align-items: center; gap: 6px; background: rgba(102,126,234,0.1); color: #667eea; padding: 10px 18px; text-decoration: none; border-radius: 8px; font-size: 13px; font-weight: 500; border: 1px solid rgba(102,126,234,0.2); transition: all 0.3s ease; }
-.doc-link:hover, .dashboard-link:hover { background: rgba(102,126,234,0.2); border-color: rgba(102,126,234,0.4); transform: translateY(-1px); color: #667eea; text-decoration: none; }
+.doc-link, .dashboard-link { display: inline-flex; align-items: center; gap: 6px; background: rgba(102,126,234,0.1); color: #0066cc; padding: 10px 18px; text-decoration: none; border-radius: 8px; font-size: 13px; font-weight: 500; border: 1px solid rgba(102,126,234,0.2); transition: all 0.3s ease; }
+.doc-link:hover, .dashboard-link:hover { background: rgba(102,126,234,0.2); border-color: rgba(102,126,234,0.4); transform: translateY(-1px); color: #0066cc; text-decoration: none; }
 .doc-link svg, .dashboard-link svg { flex-shrink: 0; }
 .no-project { text-align: center; padding: 60px 20px; opacity: 0.6; color: var(--text-color); }
 
