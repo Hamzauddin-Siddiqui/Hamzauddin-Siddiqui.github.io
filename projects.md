@@ -9,13 +9,13 @@ permalink: /projects/
 .projects-sidebar { flex: 0 0 320px; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border-radius: 12px; padding: 20px; height: fit-content; border: 1px solid rgba(255,255,255,0.1); }
 .tab-buttons { display: flex; margin-bottom: 20px; background: rgba(0,0,0,0.3); border-radius: 8px; padding: 4px; }
 .tab-button { flex: 1; padding: 12px 20px; background: transparent; border: none; color: #8e8e93; cursor: pointer; border-radius: 6px; font-weight: 500; transition: all 0.3s ease; font-size: 14px; }
-.tab-button.active { background: #0066cc; color: white; transform: translateY(-1px); box-shadow: 0 2px 8px rgba(102,126,234,0.3); }
+.tab-button.active { background: #0066cc; color: white; transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,102,204,0.25); }
 .tab-button:hover:not(.active) { background: rgba(255,255,255,0.1); color: #ffffff; }
 .projects-list { display: none; }
 .projects-list.active { display: block; }
 .project-item { padding: 15px; margin: 8px 0; background: rgba(255,255,255,0.05); border-radius: 8px; cursor: pointer; transition: all 0.3s ease; border: 1px solid transparent; }
-.project-item:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); border-color: rgba(102,126,234,0.3); }
-.project-item.active { background: rgba(102,126,234,0.2); border-color: #0066cc; }
+.project-item:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); border-color: rgba(0,102,204,0.3); }
+.project-item.active { background: rgba(0,102,204,0.15); border-color: #0066cc; }
 .project-title { font-weight: 600; font-size: 16px; margin-bottom: 5px; color: var(--text-color); }
 .project-subtitle { font-size: 12px; opacity: 0.7; color: var(--text-color); }
 .featured-project { flex: 1; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border-radius: 12px; padding: 40px; border: 1px solid rgba(255,255,255,0.1); min-width: 0; overflow: hidden; }
@@ -27,15 +27,15 @@ permalink: /projects/
 .key-achievements ul { padding-left: 20px; color: var(--text-color); columns: 1; column-gap: 40px; }
 .key-achievements li { margin-bottom: 12px; line-height: 1.6; break-inside: avoid; }
 .project-tags { margin: 30px 0; display: flex; flex-wrap: wrap; gap: 10px; }
-.tag { background: rgba(102,126,234,0.2); color: #0066cc; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 500; border: 1px solid rgba(102,126,234,0.3); }
+.tag { background: rgba(0,102,204,0.08); color: #0066cc; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 500; border: 1px solid rgba(0,102,204,0.15); }
 .project-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
-.github-button { display: inline-flex; align-items: center; gap: 8px; background: #0066cc; color: white; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(102,126,234,0.3); }
-.github-button:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(102,126,234,0.4); color: white; text-decoration: none; }
+.github-button { display: inline-flex; align-items: center; gap: 8px; background: #0066cc; color: white; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,102,204,0.25); }
+.github-button:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,102,204,0.3); color: white; text-decoration: none; }
 .project-documents, .example-dashboards { margin-top: 25px; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); }
 .project-documents h4, .example-dashboards h4 { margin: 0 0 15px 0; font-size: 1.1em; color: var(--text-color); opacity: 0.9; }
 .doc-links, .dashboard-links { display: flex; flex-wrap: wrap; gap: 10px; }
-.doc-link, .dashboard-link { display: inline-flex; align-items: center; gap: 6px; background: rgba(102,126,234,0.1); color: #0066cc; padding: 10px 18px; text-decoration: none; border-radius: 8px; font-size: 13px; font-weight: 500; border: 1px solid rgba(102,126,234,0.2); transition: all 0.3s ease; }
-.doc-link:hover, .dashboard-link:hover { background: rgba(102,126,234,0.2); border-color: rgba(102,126,234,0.4); transform: translateY(-1px); color: #0066cc; text-decoration: none; }
+.doc-link, .dashboard-link { display: inline-flex; align-items: center; gap: 6px; background: rgba(0,102,204,0.08); color: #0066cc; padding: 10px 18px; text-decoration: none; border-radius: 8px; font-size: 13px; font-weight: 500; border: 1px solid rgba(0,102,204,0.15); transition: all 0.3s ease; }
+.doc-link:hover, .dashboard-link:hover { background: rgba(0,102,204,0.15); border-color: rgba(0,102,204,0.3); transform: translateY(-1px); color: #0066cc; text-decoration: none; }
 .doc-link svg, .dashboard-link svg { flex-shrink: 0; }
 .no-project { text-align: center; padding: 60px 20px; opacity: 0.6; color: var(--text-color); }
 
@@ -60,8 +60,8 @@ body.dark-mode .project-item { background: rgba(255,255,255,0.03); }
 body.dark-mode .project-item:hover { background: rgba(255,255,255,0.08); }
 body.dark-mode .project-documents, body.dark-mode .example-dashboards { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.08); }
 body:not(.dark-mode) .project-documents, body:not(.dark-mode) .example-dashboards { background: rgba(0,0,0,0.02); border-color: rgba(0,0,0,0.08); }
-body:not(.dark-mode) .doc-link, body:not(.dark-mode) .dashboard-link { background: rgba(102,126,234,0.08); border-color: rgba(102,126,234,0.15); }
-body:not(.dark-mode) .doc-link:hover, body:not(.dark-mode) .dashboard-link:hover { background: rgba(102,126,234,0.15); border-color: rgba(102,126,234,0.3); }
+body:not(.dark-mode) .doc-link, body:not(.dark-mode) .dashboard-link { background: rgba(0,102,204,0.06); border-color: rgba(0,102,204,0.12); }
+body:not(.dark-mode) .doc-link:hover, body:not(.dark-mode) .dashboard-link:hover { background: rgba(0,102,204,0.12); border-color: rgba(0,102,204,0.25); }
 </style>
 
 <div class="page-header">
@@ -77,8 +77,8 @@ body:not(.dark-mode) .doc-link:hover, body:not(.dark-mode) .dashboard-link:hover
         </div>
 
         <div class="projects-list active" id="academic-projects">
-            <div class="project-item active" onclick="selectProject('last-mile-delivery')"><div class="project-title">Last-Mile Delivery Robots</div><div class="project-subtitle">Otto-von-Guericke University</div></div>
-            <div class="project-item" onclick="selectProject('supply-chain-optimization')"><div class="project-title">Supply Chain Network Optimization</div><div class="project-subtitle">Otto-von-Guericke University</div></div>
+            <div class="project-item active" onclick="selectProject('supply-chain-optimization')"><div class="project-title">Supply Chain Network Optimization</div><div class="project-subtitle">Otto-von-Guericke University</div></div>
+            <div class="project-item" onclick="selectProject('last-mile-delivery')"><div class="project-title">Last-Mile Delivery Robots</div><div class="project-subtitle">Otto-von-Guericke University</div></div>
             <div class="project-item" onclick="selectProject('cross-cultural-analysis')"><div class="project-title">Cross-Cultural Business Strategy</div><div class="project-subtitle">University of Ljubljana</div></div>
             <div class="project-item" onclick="selectProject('ai-b2b-sales')"><div class="project-title">AI-Human Collaboration Analysis</div><div class="project-subtitle">University of Ljubljana</div></div>
             <div class="project-item" onclick="selectProject('tesla-sustainability')"><div class="project-title">Tesla Sustainability Assessment</div><div class="project-subtitle">University of Ljubljana</div></div>
@@ -134,9 +134,15 @@ body:not(.dark-mode) .doc-link:hover, body:not(.dark-mode) .dashboard-link:hover
                 <li><strong>Data-Driven Insights:</strong> Discovered critical operational risks including 92% order concentration at a single plant and severe capacity violations hidden in the company's historical assignment decisions</li>
             </ul></div>
             <div class="project-tags"><span class="tag">Python</span><span class="tag">SciPy</span><span class="tag">Operations Research</span><span class="tag">Mathematical Modeling</span><span class="tag">Supply Chain Optimization</span><span class="tag">Data Analysis</span></div>
+            <div class="project-actions">
+                <a href="https://github.com/Hamzauddin-Siddiqui/ovgu-supply-chain-optimization" target="_blank" class="github-button"><svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg> View on GitHub</a>
+            </div>
             <div class="project-documents"><h4>📄 Project Documents</h4><div class="doc-links">
                 <a href="https://hamzauddin-siddiqui.github.io/assets/projects/supply-chain-optimization/Scientific-Project-Final%20Paper.pdf" target="_blank" class="doc-link"><svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/></svg> Final Paper</a>
                 <a href="https://hamzauddin-siddiqui.github.io/assets/projects/supply-chain-optimization/Scientific-Project-Presentation.pdf" target="_blank" class="doc-link"><svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/></svg> Presentation</a>
+            </div></div>
+            <div class="example-dashboards"><h4>📊 Interactive Visualization</h4><div class="dashboard-links">
+                <a href="https://hamzauddin-siddiqui.github.io/HTML-Dashboards/network_diagram_INTERACTIVE_FINAL.html" target="_blank" class="dashboard-link"><svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zM7.86 10.44l.04-.52h.04l1.16 3.56h.76l1.2-3.56h.02l.04.52.16 3.04h.82L11.82 8h-.92l-1.12 3.32h-.02L8.66 8h-.94l-.36 5.48h.78l.16-3.04h-.02z"/></svg> Supply Chain Network Diagram</a>
             </div></div>
         </div>
 
@@ -321,7 +327,7 @@ body:not(.dark-mode) .doc-link:hover, body:not(.dark-mode) .dashboard-link:hover
 
 <script>
 let currentTab = 'academic';
-let currentProject = 'last-mile-delivery';
+let currentProject = 'supply-chain-optimization';
 
 function switchTab(tab) {
     document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
