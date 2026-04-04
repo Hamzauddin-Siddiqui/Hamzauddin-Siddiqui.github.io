@@ -142,7 +142,7 @@ body:not(.dark-mode) .doc-link:hover, body:not(.dark-mode) .dashboard-link:hover
                 <a href="https://hamzauddin-siddiqui.github.io/assets/projects/supply-chain-optimization/Scientific-Project-Presentation.pdf" target="_blank" class="doc-link"><svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/></svg> Presentation</a>
             </div></div>
             <div class="example-dashboards"><h4>📊 Interactive Visualization</h4><div class="dashboard-links">
-                <a href="https://hamzauddin-siddiqui.github.io/HTML-Dashboards/network_diagram_INTERACTIVE_FINAL.html" target="_blank" class="dashboard-link"><svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zM7.86 10.44l.04-.52h.04l1.16 3.56h.76l1.2-3.56h.02l.04.52.16 3.04h.82L11.82 8h-.92l-1.12 3.32h-.02L8.66 8h-.94l-.36 5.48h.78l.16-3.04h-.02z"/></svg> Supply Chain Network Diagram</a>
+                <a href="https://hamzauddin-siddiqui.github.io/assets/projects/supply-chain-optimization/network_diagram_INTERACTIVE_FINAL.html" target="_blank" class="dashboard-link"><svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zM7.86 10.44l.04-.52h.04l1.16 3.56h.76l1.2-3.56h.02l.04.52.16 3.04h.82L11.82 8h-.92l-1.12 3.32h-.02L8.66 8h-.94l-.36 5.48h.78l.16-3.04h-.02z"/></svg> Supply Chain Network Diagram</a>
             </div></div>
         </div>
 
